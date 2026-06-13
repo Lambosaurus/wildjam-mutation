@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c1haiaflt5bbi"]
+
+[ext_resource type="Script" uid="uid://csbp67j7t3d2r" path="res://creatures/mutations/chassis.gd" id="1_2n2iq"]
+[ext_resource type="PackedScene" uid="uid://dd5pgqin72mhp" path="res://creatures/mutations/slot.tscn" id="2_ulkix"]
+[ext_resource type="PackedScene" uid="uid://c7irtss7l4c5x" path="res://creatures/mutations/body_parts/simple_torso.tscn" id="3_2n2iq"]
+[ext_resource type="PackedScene" uid="uid://bb4ktb1ix8oic" path="res://creatures/mutations/body_parts/simple_arms.tscn" id="4_2n2iq"]
+[ext_resource type="PackedScene" uid="uid://jqwfoykshu7j" path="res://creatures/mutations/body_parts/simple_legs.tscn" id="5_ulkix"]
+
+[node name="Chassis" type="Node2D" unique_id=1999792877]
+script = ExtResource("1_2n2iq")
+
+[node name="BodySlot" parent="." unique_id=2110189134 instance=ExtResource("2_ulkix")]
+position = Vector2(294, 61)
+
+[node name="SimpleTorso" parent="BodySlot" unique_id=481403363 instance=ExtResource("3_2n2iq")]
+
+[node name="ArmSlot" parent="." unique_id=1739855429 instance=ExtResource("2_ulkix")]
+position = Vector2(225, 185)
+
+[node name="SimpleArms" parent="ArmSlot" unique_id=1738447256 instance=ExtResource("4_2n2iq")]
+
+[node name="LegSlot" type="Node2D" parent="." unique_id=656564383]
+position = Vector2(178, 174)
+
+[node name="SimpleLegs" parent="LegSlot" unique_id=694026601 instance=ExtResource("5_ulkix")]

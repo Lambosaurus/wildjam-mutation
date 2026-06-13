@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dpmqm8xseusat"]
+
+[ext_resource type="Script" uid="uid://bvb4unmbfmir" path="res://creatures/mutations/body_part.gd" id="1_bs73c"]
+
+[node name="BodyPart" type="Node2D" unique_id=481403363]
+script = ExtResource("1_bs73c")
