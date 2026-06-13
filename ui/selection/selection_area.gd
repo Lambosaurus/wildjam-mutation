@@ -8,5 +8,5 @@ func _ready():
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton and event.pressed):
-		select.emit(self)
-		print("Selected")
+		select.emit(self.get_parent())
+		SelectionManager.select_node(self.get_parent())
