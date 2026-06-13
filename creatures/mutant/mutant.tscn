@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bualp06wh2glo" path="res://creatures/mutant/human_detector.gd" id="2_b41ij"]
 [ext_resource type="PackedScene" uid="uid://ctamdjidcqrkr" path="res://ui/selection/SelectionArea.tscn" id="3_mr306"]
 [ext_resource type="Material" uid="uid://tq6jx1ubc4xy" path="res://ui/selection/shaders/friendly_selection_shader.tres" id="4_ybval"]
+[ext_resource type="Script" uid="uid://d02hn7jrn1pnr" path="res://creatures/mutant/swarm_detector.gd" id="5_37x11"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lb6h7"]
 radius = 20.0
@@ -17,6 +18,9 @@ gradient = SubResource("Gradient_4bvkd")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gep2"]
+radius = 250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ybval"]
 radius = 250.0
 
 [node name="Mutant" type="CharacterBody2D" unique_id=88951864]
@@ -50,3 +54,12 @@ highlight_shader = ExtResource("4_ybval")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionArea" unique_id=1449345962]
 shape = SubResource("CapsuleShape2D_lb6h7")
+
+[node name="SwarmDetector" type="Area2D" parent="." unique_id=1274852789]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+script = ExtResource("5_37x11")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwarmDetector" unique_id=589590378]
+shape = SubResource("CircleShape2D_ybval")

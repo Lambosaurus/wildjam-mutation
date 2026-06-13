@@ -9,6 +9,11 @@ enum Direction { left, right }
 @export var MELEE_RANGE = 50.0
 const MELEE_STRIKE = preload('res://entities/strike/strike.tscn')
 
+@export var BOIDS_REPULSION = 5000.0
+@export var BOIDS_COHESION = 2.0
+@export var BOIDS_THRESH_MIN = 50.0
+@export var BOIDS_THRESH_MAX = 1000.0
+
 var health = 100
 var action = Action.idle;
 var action_timeout = 0
@@ -62,12 +67,27 @@ func pick_next_action() -> void:
 			candidate_target
 		);
 		
+	return start_boids_action()
+		
+func start_boids_action() -> void:
+	# MAGIC NUMBERS BEWARE!
+	var swarm = $SwarmDetector
+	swarm.compute()
+	var force = (swarm.repulsion * BOIDS_REPULSION) + (swarm.cohesion * BOIDS_COHESION)
+	
+	if abs(force.x) < BOIDS_THRESH_MIN:
+		return start_action(
+			randi_range(Action.idle, Action.walk) as Action,
+			randf_range(0.25, 1.0),
+			direction
+			)
+	
 	return start_action(
 		Action.walk,
-		randf_range(0.25, 2.0),
-		randi_range(Direction.left, Direction.right) as Direction
-		)
-		
+		clampf(abs(force.x) / BOIDS_THRESH_MAX, 0.25, 1.0),
+		vector_to_direction(force.x)
+	)
+	
 
 func start_action(act: Action, time: float, dir: Direction, target: Node2D = null) -> void:
 	action = act
