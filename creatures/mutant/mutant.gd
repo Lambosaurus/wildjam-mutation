@@ -9,7 +9,7 @@ enum Direction { left, right }
 @export var MELEE_RANGE = 50.0
 const MELEE_STRIKE = preload('res://entities/strike/strike.tscn')
 
-@export var BOIDS_REPULSION = 5000.0
+@export var BOIDS_REPULSION = 1000.0
 @export var BOIDS_COHESION = 2.0
 @export var BOIDS_THRESH_MIN = 50.0
 @export var BOIDS_THRESH_MAX = 1000.0
@@ -77,14 +77,14 @@ func start_boids_action() -> void:
 	
 	if abs(force.x) < BOIDS_THRESH_MIN:
 		return start_action(
-			randi_range(Action.idle, Action.walk) as Action,
+			Action.walk if randf() > 0.75 else Action.idle,
 			randf_range(0.25, 1.0),
 			direction
 			)
 	
 	return start_action(
 		Action.walk,
-		clampf(abs(force.x) / BOIDS_THRESH_MAX, 0.25, 1.0),
+		clampf(abs(force.x) / BOIDS_THRESH_MAX, 0.1, 1.0),
 		vector_to_direction(force.x)
 	)
 	
