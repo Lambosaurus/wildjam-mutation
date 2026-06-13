@@ -1,13 +1,17 @@
 extends CharacterBody2D
 
-enum MutantState { idle, walk, run }
+enum Action { idle, walk, run, attack }
 enum Direction { left, right }
 
-const WALK_SPEED = 100.0
-const RUN_SPEED = 200.0
+@export var WALK_SPEED = 100.0
+@export var RUN_SPEED = 200.0
+@export var MELEE_DAMAGE = 20.0
+@export var MELEE_RANGE = 50.0
+const MELEE_STRIKE = preload('res://entities/strike/strike.tscn')
 
-var state = MutantState.idle;
-var state_timeout = 0
+var health = 100
+var action = Action.idle;
+var action_timeout = 0
 var direction = Direction.right
 var target: Node2D = null;
 
@@ -20,23 +24,61 @@ func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
 func vector_to_direction(x: float) -> Direction:
 	return Direction.right if x > 0 else Direction.left
 
-func pick_new_state() -> void:
-	var candidate_target = $HumanDetector.get_closest_target()
+func kill() -> void:
+	health = 0.0
+	queue_free()
+
+func apply_damage(damage: float) -> bool:
+	if damage >= health:
+		kill();
+		return true
+	health -= damage
+	return false
+
+func pick_next_action() -> void:
+	var candidate_target: Node2D = $HumanDetector.get_closest_target()
 	if candidate_target:
-		target = candidate_target
-		state = MutantState.run
-		direction = vector_to_direction(target.position.x - position.x)
-		state_timeout = 0.25
-	else:
-		target = null
-		state = MutantState.walk
-		direction = randi_range(Direction.left, Direction.right) as Direction
-		state_timeout = randf_range(0.25, 2.0)
+		
+		var candidate_direction = vector_to_direction(candidate_target.position.x - position.x)
+		
+		var dist = position.distance_to(candidate_target.position)
+		if dist < MELEE_RANGE:
+			var strike = MELEE_STRIKE.instantiate()
+			strike.damage = MELEE_DAMAGE
+			strike.position = candidate_target.position
+			add_sibling(strike)
+			
+			return start_action(
+				Action.attack,
+				0.25,
+				candidate_direction,
+				candidate_target
+			);
+		
+		return start_action(
+			Action.run,
+			0.25,
+			candidate_direction,
+			candidate_target
+		);
+		
+	return start_action(
+		Action.walk,
+		randf_range(0.25, 2.0),
+		randi_range(Direction.left, Direction.right) as Direction
+		)
+		
+
+func start_action(act: Action, time: float, dir: Direction, target: Node2D = null) -> void:
+	action = act
+	action_timeout = time
+	direction = dir
+	target = target
 
 func _process(delta: float) -> void:
-	state_timeout -= delta
-	if (state_timeout < 0):
-		pick_new_state()
+	action_timeout -= delta
+	if (action_timeout < 0):
+		pick_next_action()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -44,9 +86,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	var x_speed = 0
-	if (state == MutantState.walk):
+	if (action == Action.walk):
 		x_speed = direction_to_vector(direction, WALK_SPEED)
-	elif (state == MutantState.run):
+	elif (action == Action.run):
 		x_speed = direction_to_vector(direction, RUN_SPEED)
 	
 	velocity.x = move_toward(velocity.x, x_speed, RUN_SPEED)
