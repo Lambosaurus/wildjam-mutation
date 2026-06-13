@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ciwf7hih862nx"]
+
+[ext_resource type="Shader" uid="uid://btagyhdbdvabb" path="res://shaders/outline_shader.gdshader" id="1_mfw5q"]
+
+[resource]
+shader = ExtResource("1_mfw5q")
+shader_parameter/color = Color(0.9338217, 0.2924739, 0.2741526, 1)
+shader_parameter/thickness = 2.000000095
+shader_parameter/tolerance = 0.0
+shader_parameter/diagonals = false
+shader_parameter/rounded = true

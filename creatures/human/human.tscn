@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcckgfd8qlmhm"]
 
-[ext_resource type="Script" uid="uid://egsaqmdqevi1" path="res://creatures/human/human.gd" id="1_4bvkd"]
+[ext_resource type="Script" uid="uid://82hrjvhh1hqc" path="res://creatures/human/human.gd" id="1_4bvkd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebbsm"]
 radius = 20.0
@@ -22,6 +22,7 @@ script = ExtResource("1_4bvkd")
 shape = SubResource("CapsuleShape2D_ebbsm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1420493283]
+use_parent_material = true
 position = Vector2(-4.7683716e-07, 2.4437904e-06)
 scale = Vector2(0.625, 1.2500001)
 texture = SubResource("GradientTexture2D_h2rce")
