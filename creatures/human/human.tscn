@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bcckgfd8qlmhm"]
+
+[ext_resource type="Script" uid="uid://egsaqmdqevi1" path="res://creatures/human/human.gd" id="1_4bvkd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebbsm"]
+radius = 20.0
+height = 80.0
+
+[sub_resource type="Gradient" id="Gradient_4bvkd"]
+colors = PackedColorArray(0.90207684, 0.5434376, 0.3220967, 1, 0.52690995, 0.6471087, 0.957956, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h2rce"]
+gradient = SubResource("Gradient_4bvkd")
+fill_to = Vector2(0, 1)
+
+[node name="Human" type="CharacterBody2D" unique_id=1906732542]
+platform_floor_layers = 1
+platform_wall_layers = 1
+script = ExtResource("1_4bvkd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1169393457]
+shape = SubResource("CapsuleShape2D_ebbsm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1420493283]
+position = Vector2(-4.7683716e-07, 2.4437904e-06)
+scale = Vector2(0.625, 1.2500001)
+texture = SubResource("GradientTexture2D_h2rce")
