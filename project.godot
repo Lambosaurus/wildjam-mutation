@@ -22,6 +22,8 @@ SelectionManager="*uid://bacn8n7bv1hdo"
 [layer_names]
 
 2d_physics/layer_1="Terrain"
+2d_physics/layer_2="Humans"
+2d_physics/layer_3="Mutants"
 
 [physics]
 

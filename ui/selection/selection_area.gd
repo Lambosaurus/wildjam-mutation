@@ -1,8 +1,7 @@
 class_name SelectionArea
 extends Area2D
 
-@onready var parent: CanvasItem = get_parent()
-
+@export var parent: CanvasItem = get_parent()
 @export var highlight_shader: ShaderMaterial
 
 func _ready():

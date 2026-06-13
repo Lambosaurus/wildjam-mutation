@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://7ywy5e1lymn1" path="res://building/components/wall.tscn" id="2_e18bv"]
 
 [node name="Building" type="Node2D" unique_id=310968372]
-position = Vector2(0, -368)
 
 [node name="floor1" parent="." unique_id=1360175460 instance=ExtResource("1_pi4mk")]
 position = Vector2(432, 352)
