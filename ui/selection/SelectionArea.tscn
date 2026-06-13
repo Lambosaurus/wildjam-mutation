@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ctamdjidcqrkr"]
+
+[ext_resource type="Script" uid="uid://b8edmj83j5ufq" path="res://ui/selection/selaction_area.gd" id="1_u5gpo"]
+
+[node name="SelectionArea" type="Area2D" unique_id=2102157275]
+script = ExtResource("1_u5gpo")
