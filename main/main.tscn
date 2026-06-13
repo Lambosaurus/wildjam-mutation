@@ -9,6 +9,9 @@
 [node name="Building" parent="." unique_id=310968372 instance=ExtResource("1_53q0u")]
 position = Vector2(149, 273)
 
+[node name="EntitySpawner" parent="." unique_id=658344345 instance=ExtResource("3_xwkvk")]
+position = Vector2(533, 486)
+
 [node name="Human1" parent="." unique_id=582856251 instance=ExtResource("2_pjrb6")]
 position = Vector2(612, 392)
 
