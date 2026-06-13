@@ -24,7 +24,7 @@ platform_floor_layers = 1
 platform_wall_layers = 1
 script = ExtResource("1_4bvkd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1169393457]
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1169393457]
 shape = SubResource("CapsuleShape2D_ebbsm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1420493283]

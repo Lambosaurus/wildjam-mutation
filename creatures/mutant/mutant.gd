@@ -36,16 +36,16 @@ func apply_damage(damage: float) -> bool:
 	return false
 
 func pick_next_action() -> void:
-	var candidate_target: Node2D = $HumanDetector.get_closest_target()
+	var candidate_target: Node2D = $HumanDetector.get_closest_target(target)
 	if candidate_target:
 		
-		var candidate_direction = vector_to_direction(candidate_target.position.x - position.x)
+		var candidate_direction = vector_to_direction(candidate_target.global_position.x - global_position.x)
 		
-		var dist = position.distance_to(candidate_target.position)
+		var dist = global_position.distance_to(candidate_target.global_position)
 		if dist < MELEE_RANGE:
 			var strike = MELEE_STRIKE.instantiate()
 			strike.damage = MELEE_DAMAGE
-			strike.position = candidate_target.position
+			strike.global_position = candidate_target.global_position
 			add_sibling(strike)
 			
 			return start_action(
