@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://hu3cg5w8bloo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx5a2"]
+size = Vector2(21, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fowkp"]
+size = Vector2(26, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h85bt"]
+size = Vector2(25, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g016c"]
+size = Vector2(35, 14)
+
+[node name="BaseEnemy" type="Node2D" unique_id=1299052168]
+
+[node name="Head" type="Area2D" parent="." unique_id=1309661052]
+
+[node name="HeadCollider" type="CollisionShape2D" parent="Head" unique_id=944311914]
+position = Vector2(-0.5, -64.5)
+shape = SubResource("RectangleShape2D_qx5a2")
+
+[node name="HeadRect" type="ColorRect" parent="Head" unique_id=827297872]
+offset_left = -11.0
+offset_top = -75.0
+offset_right = 10.0
+offset_bottom = -54.0
+color = Color(0.87, 0.754145, 0.46109998, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Torso" type="Area2D" parent="." unique_id=251365182]
+
+[node name="TorsoCollider" type="CollisionShape2D" parent="Torso" unique_id=554209963]
+position = Vector2(-1, -34)
+shape = SubResource("RectangleShape2D_fowkp")
+
+[node name="TorsoRect" type="ColorRect" parent="Torso" unique_id=1042647405]
+offset_left = -14.0
+offset_top = -53.0
+offset_right = 12.0
+offset_bottom = -15.0
+color = Color(0.7830426, 0.3760884, 0.3331787, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Arms" type="Area2D" parent="." unique_id=2074008039]
+
+[node name="ArmsCollider" type="CollisionShape2D" parent="Arms" unique_id=1446068277]
+position = Vector2(-27.5, -48.5)
+shape = SubResource("RectangleShape2D_h85bt")
+
+[node name="ColorRect" type="ColorRect" parent="Arms" unique_id=612984078]
+offset_left = -40.0
+offset_top = -53.0
+offset_right = -15.0
+offset_bottom = -44.0
+color = Color(0.68, 0.45968, 0.3128, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Mobility" type="Area2D" parent="." unique_id=1247515156]
+
+[node name="MobilityCollider" type="CollisionShape2D" parent="Mobility" unique_id=1511270144]
+position = Vector2(-0.5, -7)
+shape = SubResource("RectangleShape2D_g016c")
+
+[node name="ColorRect" type="ColorRect" parent="Mobility" unique_id=1675335043]
+offset_left = -18.0
+offset_top = -14.0
+offset_right = 17.0
+color = Color(0.5691419, 0.32424018, 0.6483454, 1)
+metadata/_edit_use_anchors_ = true
