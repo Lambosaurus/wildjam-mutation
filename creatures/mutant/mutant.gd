@@ -1,22 +1,37 @@
 extends CharacterBody2D
 
-enum HumanState { idle, walk, run }
+enum MutantState { idle, walk, run }
 enum Direction { left, right }
 
 const WALK_SPEED = 100.0
 const RUN_SPEED = 200.0
 
-var state = HumanState.idle;
+var state = MutantState.idle;
 var state_timeout = 0
 var direction = Direction.right
+var target: Node2D = null;
+
+func _ready() -> void:
+	$HumanDetector.set_range(500)
 
 func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
 	return scalar if dir == Direction.right else -scalar
 
+func vector_to_direction(x: float) -> Direction:
+	return Direction.right if x > 0 else Direction.left
+
 func pick_new_state() -> void:
-	state_timeout = randf_range(0.5, 3)
-	state = randi_range(HumanState.idle, HumanState.walk) as HumanState
-	direction = randi_range(Direction.left, Direction.right) as Direction
+	var candidate_target = $HumanDetector.get_closest_target()
+	if candidate_target:
+		target = candidate_target
+		state = MutantState.run
+		direction = vector_to_direction(target.position.x - position.x)
+		state_timeout = 0.25
+	else:
+		target = null
+		state = MutantState.walk
+		direction = randi_range(Direction.left, Direction.right) as Direction
+		state_timeout = randf_range(0.25, 2.0)
 
 func _process(delta: float) -> void:
 	state_timeout -= delta
@@ -29,9 +44,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	var x_speed = 0
-	if (state == HumanState.walk):
+	if (state == MutantState.walk):
 		x_speed = direction_to_vector(direction, WALK_SPEED)
-	elif (state == HumanState.run):
+	elif (state == MutantState.run):
 		x_speed = direction_to_vector(direction, RUN_SPEED)
 	
 	velocity.x = move_toward(velocity.x, x_speed, RUN_SPEED)

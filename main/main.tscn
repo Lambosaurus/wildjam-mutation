@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://crka7hrc1jgg0" path="res://building/building.tscn" id="1_53q0u"]
 [ext_resource type="PackedScene" uid="uid://bcckgfd8qlmhm" path="res://creatures/human/human.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://byescby3rnuk1" path="res://entities/entity_spawner.tscn" id="3_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://dlom32x0f3tyr" path="res://creatures/mutant/mutant.tscn" id="4_c651c"]
 
 [node name="Main" type="Node2D" unique_id=634852315]
 script = ExtResource("1_3wy1v")
@@ -21,3 +22,12 @@ collision_layer = 1
 [node name="Human2" parent="." unique_id=1906732542 instance=ExtResource("2_pjrb6")]
 position = Vector2(424, 378)
 collision_layer = 1
+
+[node name="Mutant" parent="." unique_id=88951864 instance=ExtResource("4_c651c")]
+position = Vector2(375, 555)
+
+[node name="Mutant2" parent="." unique_id=925934048 instance=ExtResource("4_c651c")]
+position = Vector2(592, 562)
+
+[node name="Mutant3" parent="." unique_id=1182164629 instance=ExtResource("4_c651c")]
+position = Vector2(725, 548)

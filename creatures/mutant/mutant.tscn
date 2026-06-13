@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dlom32x0f3tyr"]
+
+[ext_resource type="Script" uid="uid://bgb2wtx0h1gmt" path="res://creatures/mutant/mutant.gd" id="1_5gep2"]
+[ext_resource type="Script" uid="uid://bualp06wh2glo" path="res://creatures/mutant/human_detector.gd" id="2_b41ij"]
+[ext_resource type="PackedScene" uid="uid://ctamdjidcqrkr" path="res://ui/selection/SelectionArea.tscn" id="3_mr306"]
+[ext_resource type="Material" uid="uid://tq6jx1ubc4xy" path="res://ui/selection/shaders/friendly_selection_shader.tres" id="4_ybval"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lb6h7"]
+radius = 20.0
+height = 40.0
+
+[sub_resource type="Gradient" id="Gradient_4bvkd"]
+colors = PackedColorArray(0.97989553, 0.59410006, 0.57418156, 1, 0.5183724, 0.019741777, 0.10202163, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lb6h7"]
+gradient = SubResource("Gradient_4bvkd")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gep2"]
+radius = 250.0
+
+[node name="Mutant" type="CharacterBody2D" unique_id=88951864]
+collision_layer = 4
+script = ExtResource("1_5gep2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2017455713]
+shape = SubResource("CapsuleShape2D_lb6h7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=414630267]
+position = Vector2(-2.9802322e-08, 0)
+scale = Vector2(0.609375, 0.625)
+texture = SubResource("GradientTexture2D_lb6h7")
+
+[node name="HumanDetector" type="Area2D" parent="." unique_id=1269919680]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("2_b41ij")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HumanDetector" unique_id=1798224688]
+visible = false
+shape = SubResource("CircleShape2D_5gep2")
+
+[node name="SelectionArea" parent="." unique_id=2102157275 node_paths=PackedStringArray("parent") instance=ExtResource("3_mr306")]
+parent = NodePath("../Sprite2D")
+highlight_shader = ExtResource("4_ybval")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionArea" unique_id=1449345962]
+shape = SubResource("CapsuleShape2D_lb6h7")
