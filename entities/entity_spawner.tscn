@@ -6,10 +6,10 @@
 size = Vector2(18, 33)
 
 [node name="EntitySpawner" type="Node2D" unique_id=658344345]
+script = ExtResource("1_7lg3t")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=807156330]
 input_pickable = true
-script = ExtResource("1_7lg3t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=563952741]
 position = Vector2(9, 16.5)
@@ -20,3 +20,5 @@ offset_right = 18.0
 offset_bottom = 33.0
 mouse_filter = 2
 color = Color(1, 0.38, 0.38, 1)
+
+[connection signal="input_event" from="StaticBody2D" to="." method="_on_static_body_2d_input_event"]
