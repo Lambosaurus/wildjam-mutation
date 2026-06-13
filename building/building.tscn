@@ -4,24 +4,25 @@
 [ext_resource type="PackedScene" uid="uid://7ywy5e1lymn1" path="res://building/components/wall.tscn" id="2_e18bv"]
 
 [node name="Building" type="Node2D" unique_id=310968372]
+position = Vector2(0, -368)
 
 [node name="floor1" parent="." unique_id=1360175460 instance=ExtResource("1_pi4mk")]
-position = Vector2(602, 543)
+position = Vector2(432, 352)
 
 [node name="floor2" parent="." unique_id=624862018 instance=ExtResource("1_pi4mk")]
-position = Vector2(602, 375)
+position = Vector2(432, 184)
 
 [node name="wall1" parent="." unique_id=595298239 instance=ExtResource("2_e18bv")]
-position = Vector2(186, 459)
+position = Vector2(16, 268)
 
 [node name="wall3" parent="." unique_id=87961328 instance=ExtResource("2_e18bv")]
-position = Vector2(186, 291)
+position = Vector2(16, 100)
 
 [node name="wall2" parent="." unique_id=1646009057 instance=ExtResource("2_e18bv")]
-position = Vector2(1018, 459)
+position = Vector2(848, 268)
 
 [node name="wall4" parent="." unique_id=208066710 instance=ExtResource("2_e18bv")]
-position = Vector2(1018, 291)
+position = Vector2(848, 100)
 
 [node name="floor3" parent="." unique_id=850976594 instance=ExtResource("1_pi4mk")]
-position = Vector2(602, 207)
+position = Vector2(432, 16)
