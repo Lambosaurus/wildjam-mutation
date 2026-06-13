@@ -15,10 +15,9 @@ width = 800
 height = 32
 fill_to = Vector2(0, 1)
 
-[node name="Floor" type="Area2D" unique_id=1360175460]
+[node name="Floor" type="StaticBody2D" unique_id=2047282540]
 material = SubResource("CanvasItemMaterial_xjo41")
-input_pickable = false
-monitoring = false
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1597892813]
 shape = SubResource("RectangleShape2D_pi4mk")
