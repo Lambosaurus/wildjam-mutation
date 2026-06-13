@@ -35,7 +35,7 @@ spawn_location = NodePath("Location")
 spawnable = ExtResource("4_c651c")
 
 [node name="Location" type="Node2D" parent="Spawners/MutantLevel1" unique_id=503858260]
-position = Vector2(182, 23)
+position = Vector2(198, 9)
 
 [node name="EntitySpawner2" parent="Spawners" unique_id=658344345 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
 position = Vector2(72, 356)
