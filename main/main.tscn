@@ -12,9 +12,6 @@ script = ExtResource("1_3wy1v")
 [node name="Building" parent="." unique_id=310968372 instance=ExtResource("1_53q0u")]
 position = Vector2(149, 273)
 
-[node name="EntitySpawner" parent="." unique_id=658344345 instance=ExtResource("3_xwkvk")]
-position = Vector2(533, 486)
-
 [node name="Mutant" parent="." unique_id=88951864 instance=ExtResource("4_c651c")]
 position = Vector2(375, 555)
 
@@ -29,3 +26,21 @@ position = Vector2(432, 382)
 
 [node name="Human2" parent="." unique_id=1573269216 instance=ExtResource("2_pjrb6")]
 position = Vector2(616, 381)
+
+[node name="Spawners" type="Node" parent="." unique_id=699582945]
+
+[node name="MutantLevel1" parent="Spawners" unique_id=1106100923 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
+position = Vector2(74, 514)
+spawn_location = NodePath("Location")
+spawnable = ExtResource("4_c651c")
+
+[node name="Location" type="Node2D" parent="Spawners/MutantLevel1" unique_id=503858260]
+position = Vector2(182, 23)
+
+[node name="EntitySpawner2" parent="Spawners" unique_id=658344345 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
+position = Vector2(72, 356)
+spawn_location = NodePath("Location")
+spawnable = ExtResource("2_pjrb6")
+
+[node name="Location" type="Node2D" parent="Spawners/EntitySpawner2" unique_id=1435144818]
+position = Vector2(833, 12)
