@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcckgfd8qlmhm"]
 
-[ext_resource type="Script" uid="uid://egsaqmdqevi1" path="res://creatures/human/human.gd" id="1_4bvkd"]
+[ext_resource type="Script" uid="uid://q6a1ffwlqq24" path="res://creatures/human/human.gd" id="1_4bvkd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebbsm"]
 radius = 20.0
@@ -14,6 +14,7 @@ gradient = SubResource("Gradient_4bvkd")
 fill_to = Vector2(0, 1)
 
 [node name="Human" type="CharacterBody2D" unique_id=1906732542]
+collision_layer = 2
 platform_floor_layers = 1
 platform_wall_layers = 1
 script = ExtResource("1_4bvkd")
