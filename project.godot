@@ -18,6 +18,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 SelectionManager="*uid://bacn8n7bv1hdo"
+GameState="*uid://kxl2fiept4rn"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 

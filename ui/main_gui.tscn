@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://etva80dwgv3l"]
+
+[ext_resource type="Script" uid="uid://cbx8a11hs7fl6" path="res://ui/main_gui.gd" id="1_2lw0j"]
+[ext_resource type="Texture2D" uid="uid://plwvceke53ws" path="res://ui/sprites/biomass.png" id="2_lcwsb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g0n8d"]
+font_size = 32
+
+[node name="MainGUI" type="Control" unique_id=1754052925]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2lw0j")
+
+[node name="BioMass" type="HBoxContainer" parent="." unique_id=1520679074]
+layout_mode = 0
+offset_right = 127.0
+offset_bottom = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="BioMass" unique_id=1139676690]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("2_lcwsb")
+
+[node name="Amount" type="Label" parent="BioMass" unique_id=1902310021]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+text = "10000"
+label_settings = SubResource("LabelSettings_g0n8d")
