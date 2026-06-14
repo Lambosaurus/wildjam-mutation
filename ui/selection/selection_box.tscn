@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bj0mpdsi66gx4"]
+
+[ext_resource type="Script" uid="uid://qe8v86lbsvvi" path="res://ui/selection/selection_box.gd" id="1_eb4c5"]
+
+[node name="SelectionBox" type="Sprite2D" unique_id=825240479]
+script = ExtResource("1_eb4c5")
+color = Color(0.8274112, 0.00014530674, 7.970452e-05, 1)

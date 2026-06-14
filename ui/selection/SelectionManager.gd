@@ -3,7 +3,7 @@ extends Node
 signal node_selected(node: SelectionArea)
 signal node_deselected(node: SelectionArea)
 
-var selected_nodes_dict = {}
+var selected_nodes_dict: Dictionary[SelectionArea, bool] = {}
 
 func clicked_node(node, button):
 	if (is_selected(node)):
@@ -17,15 +17,15 @@ func is_selected(node):
 	return selected_nodes_dict.has(node)
 
 func select_node(node: SelectionArea):
-	var shader_material = node.highlight_shader
 	selected_nodes_dict[node] = true
-	if shader_material:
-		node.get_selectable_node().material = shader_material
+	if node.get_selectable_node():
+		node.highlight(true)
 	node_selected.emit(node)
 	
 func deselect_node(node: SelectionArea):
 	selected_nodes_dict.erase(node)
-	node.get_selectable_node().material = null
+	if node.get_selectable_node():
+		node.highlight(false)
 	node_deselected.emit(node)
 
 func get_selected_nodes():

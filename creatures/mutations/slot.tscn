@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://dd5pgqin72mhp"]
 
+[ext_resource type="Script" uid="uid://cvxvf8om3wyxm" path="res://creatures/mutations/slot.gd" id="1_an6o3"]
+
 [node name="Slot" type="Node2D" unique_id=2110189134]
+script = ExtResource("1_an6o3")

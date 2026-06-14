@@ -125,13 +125,16 @@ _data = {
 &"walk": SubResource("Animation_v0i33")
 }
 
-[node name="SimpleArms" type="Node2D" unique_id=1738447256]
+[node name="SimpleArms" type="Node2D" unique_id=1738447256 node_paths=PackedStringArray("skeleton", "animation")]
+use_parent_material = true
 script = ExtResource("1_66q24")
+skeleton = NodePath("Skeleton2D")
+animation = NodePath("AnimationPlayer")
 metadata/_custom_type_script = "uid://bvb4unmbfmir"
 
 [node name="RightArm" type="Polygon2D" parent="." unique_id=1180496837]
 z_index = -1
-position = Vector2(-168, 21)
+position = Vector2(-457.59998, -79.8)
 texture = ExtResource("2_rssvi")
 skeleton = NodePath("../Skeleton2D")
 polygon = PackedVector2Array(148, 15.199997, 188.79999, 29.59999, 226.39996, 36.799988, 268.8, 39.199997, 289.59998, 25.59999, 314.3999, 12, 343.19995, 8.800003, 379.19995, 8.800003, 393.59998, 27.199997, 401.59998, 51.199997, 398.3999, 87.999985, 380.79993, 113.59999, 368.79993, 130.39998, 335.19995, 140.8, 284.8, 148.79997, 227.19995, 141.59999, 171.19995, 133.59999, 131.19995, 112.8, 104.79999, 91.2, 76.79999, 79.2, 36, 71.2, 14.399963, 71.999985, 2.3999634, 65.59999, -2.4000244, 43.199997, 2.3999634, 20, 16.799988, 3.199997, 46.399963, -3.199997, 96.79999, 0.80000305)
@@ -139,14 +142,14 @@ bones = ["ShoulderBone", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 
 [node name="LeftArm" type="Polygon2D" parent="." unique_id=948792764]
 z_index = 1
-position = Vector2(-70, 45)
+position = Vector2(-359.59998, -55.800003)
 texture = ExtResource("2_rssvi")
 skeleton = NodePath("../Skeleton2D")
 polygon = PackedVector2Array(148, 15.199997, 188.79999, 29.59999, 226.39996, 36.799988, 268.8, 39.199997, 289.59998, 25.59999, 314.3999, 12, 343.19995, 8.800003, 379.19995, 8.800003, 393.59998, 27.199997, 401.59998, 51.199997, 398.3999, 87.999985, 380.79993, 113.59999, 368.79993, 130.39998, 335.19995, 140.8, 284.8, 148.79997, 227.19995, 141.59999, 171.19995, 133.59999, 131.19995, 112.8, 104.79999, 91.2, 76.79999, 79.2, 36, 71.2, 14.399963, 71.999985, 2.3999634, 65.59999, -2.4000244, 43.199997, 2.3999634, 20, 16.799988, 3.199997, 46.399963, -3.199997, 96.79999, 0.80000305)
 bones = ["ShoulderBone", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "ShoulderBone/RightArmBone", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "ShoulderBone/LeftArmBone", PackedFloat32Array(0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48, 0.48)]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=528548665]
-position = Vector2(246, 86)
+position = Vector2(-43.599976, -14.800003)
 
 [node name="ShoulderBone" type="Bone2D" parent="Skeleton2D" unique_id=1488347031]
 position = Vector2(44, 13)

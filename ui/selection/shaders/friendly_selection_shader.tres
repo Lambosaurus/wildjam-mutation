@@ -4,8 +4,3 @@
 
 [resource]
 shader = ExtResource("1_qwj60")
-shader_parameter/color = Color(0.64582115, 0.76722443, 0.15236273, 1)
-shader_parameter/thickness = 2.000000095
-shader_parameter/tolerance = 0.0
-shader_parameter/diagonals = false
-shader_parameter/rounded = true

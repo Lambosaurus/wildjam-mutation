@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://q6a1ffwlqq24" path="res://creatures/human/human.gd" id="1_4bvkd"]
 [ext_resource type="PackedScene" uid="uid://ctamdjidcqrkr" path="res://ui/selection/SelectionArea.tscn" id="2_gnv0q"]
-[ext_resource type="Material" uid="uid://ciwf7hih862nx" path="res://ui/selection/shaders/enemy_selection_shader.tres" id="3_iru6h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebbsm"]
 radius = 20.0
@@ -33,9 +32,10 @@ position = Vector2(-4.7683716e-07, 2.4437904e-06)
 scale = Vector2(0.625, 1.2500001)
 texture = SubResource("GradientTexture2D_h2rce")
 
-[node name="SelectionArea" parent="." unique_id=2102157275 node_paths=PackedStringArray("parent") instance=ExtResource("2_gnv0q")]
-parent = NodePath("..")
-highlight_shader = ExtResource("3_iru6h")
+[node name="SelectionArea" parent="." unique_id=2102157275 node_paths=PackedStringArray("action_target", "highlight_target") instance=ExtResource("2_gnv0q")]
+action_target = NodePath("..")
+highlight_target = NodePath("../Hitbox")
+highlight_color = Color(0.64288336, 1.889132e-06, 5.2943824e-07, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionArea" unique_id=1445429957]
 shape = SubResource("RectangleShape2D_gnv0q")

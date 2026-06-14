@@ -1,12 +1,28 @@
+class_name Mutant
 extends CharacterBody2D
 
 enum Action { idle, walk, run, attack }
 enum Direction { left, right }
 
+var action_animation_map = {
+	Action.idle: Chassis.Animations.IDLE,
+	Action.walk: Chassis.Animations.WALK,
+	Action.run: Chassis.Animations.WALK,
+	Action.attack: Chassis.Animations.ATTACK
+}
+
+var attributes = {
+	"agression": 0.0
+}
+
 @export var WALK_SPEED = 100.0
 @export var RUN_SPEED = 200.0
 @export var MELEE_DAMAGE = 20.0
 @export var MELEE_RANGE = 50.0
+
+@export_group("Test Data")
+@export var NewArms: PackedScene
+
 const MELEE_STRIKE = preload('res://entities/strike/strike.tscn')
 
 @export var BOIDS_REPULSION = 5000.0
@@ -94,6 +110,14 @@ func start_action(act: Action, time: float, dir: Direction, target: Node2D = nul
 	action_timeout = time
 	direction = dir
 	target = target
+	
+	# Handle Chassis updates
+	$Chassis.set_direction(dir)
+	$Chassis.animate(action_animation_map[action])
+
+func mutate(mutation: Mutation):
+	# TODO: mutation.modify_attributes()
+	$Chassis.set_slot(mutation.slot, mutation.get_body_part())
 
 func _process(delta: float) -> void:
 	action_timeout -= delta

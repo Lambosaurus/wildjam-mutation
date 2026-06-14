@@ -1,17 +1,35 @@
 class_name Chassis
 extends Node2D
 
-@export var arms_to_replace: BodyPart
+const Direction = Mutant.Direction
+enum Animations {ATTACK, WALK, RUN, IDLE}
 
-func _process(delta):
-	if Input.is_action_just_pressed("swap_arms"):
-		attach_arm()
+var direction = Direction.left
 
-func attach_arm():
-	$ArmSlot.get_child(0).replace_by(arms_to_replace)
-	pass
+@onready var slots_dict: Dictionary[Slot.Type, Slot] = {
+	Slot.Type.ARMS: $ArmSlot,
+	Slot.Type.LEGS: $LegSlot,
+	Slot.Type.BODY: $BodySlot
+}
+
+func set_direction(dir: Direction):
+	if dir == direction: return
 	
-func animate(name: String):
+	direction = dir
+	# Flip entire Chassis
+	scale.x *= -1
+
+func set_slot(slot: Slot.Type, body_part: BodyPart):
+	var old_part = slots_dict[slot].get_child(0)
+	slots_dict[slot].add_child(body_part)
+	old_part.apply_animation_state_to(body_part)
+	old_part.queue_free()
+	
+func remove_from_slot(slot: Slot.Type):
+	slots_dict[slot].get_child(0).queue_free()
+	
+	
+func animate(name: Animations):
 	$BodySlot.get_child(0).animate(name)
 	$ArmSlot.get_child(0).animate(name)
 	$LegSlot.get_child(0).animate(name)

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://badtf77rocatp"]
+
+[ext_resource type="Script" uid="uid://dcn3vc6xa7jor" path="res://creatures/mutations/behaviour_modification.gd" id="1_47lew"]
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_o11gm"]
+[ext_resource type="PackedScene" uid="uid://dof5icnqf75r5" path="res://creatures/mutations/body_parts/silly_arms.tscn" id="2_mtmwr"]
+
+[sub_resource type="Resource" id="Resource_mtmwr"]
+script = ExtResource("1_47lew")
+aggression = 100.0
+attack_range = 100.0
+attack_speed = 100.0
+metadata/_custom_type_script = "uid://dcn3vc6xa7jor"
+
+[resource]
+script = ExtResource("1_o11gm")
+behaviour = SubResource("Resource_mtmwr")
+body_part = ExtResource("2_mtmwr")
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"

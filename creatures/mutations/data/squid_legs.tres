@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://i6dpe3jnhhdy"]
+
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_d33k5"]
+
+[resource]
+script = ExtResource("1_d33k5")
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"
