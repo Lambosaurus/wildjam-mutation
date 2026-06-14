@@ -5,8 +5,9 @@ enum Direction { left, right }
 
 const WALK_SPEED = 100.0
 const RUN_SPEED = 200.0
+const BULLET = preload('res://entities/bullet/bullet.tscn')
 
-var health = 100;
+@export var health = 100;
 var action = Action.idle;
 var action_timeout = 0
 var direction = Direction.right
@@ -14,7 +15,24 @@ var direction = Direction.right
 func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
 	return scalar if dir == Direction.right else -scalar
 
+func vector_to_direction(x: float) -> Direction:
+	return Direction.right if x > 0 else Direction.left
+
 func pick_next_action() -> void:
+	
+	var target = $TargetSelector.scan()
+	if target:
+		var bullet = BULLET.instantiate()
+		add_sibling(bullet)
+		bullet.global_position = global_position
+		bullet.set_target(target.global_position)
+		
+		start_action(
+			Action.attack,
+			0.5,
+			vector_to_direction(target.global_position.x - global_position.x)
+		)
+	
 	start_action(
 		randi_range(Action.idle, Action.walk) as Action,
 		randf_range(0.5, 3),

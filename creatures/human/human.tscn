@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://q6a1ffwlqq24" path="res://creatures/human/human.gd" id="1_4bvkd"]
 [ext_resource type="PackedScene" uid="uid://ctamdjidcqrkr" path="res://ui/selection/SelectionArea.tscn" id="2_gnv0q"]
 [ext_resource type="Material" uid="uid://ciwf7hih862nx" path="res://ui/selection/shaders/enemy_selection_shader.tres" id="3_iru6h"]
+[ext_resource type="PackedScene" uid="uid://cqq8iiqfveykq" path="res://creatures/detector/target_selector.tscn" id="4_iru6h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebbsm"]
 radius = 20.0
@@ -39,3 +40,7 @@ highlight_shader = ExtResource("3_iru6h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionArea" unique_id=1445429957]
 shape = SubResource("RectangleShape2D_gnv0q")
+
+[node name="TargetSelector" parent="." unique_id=1582399921 instance=ExtResource("4_iru6h")]
+range = 500.0
+target_bit = 3
