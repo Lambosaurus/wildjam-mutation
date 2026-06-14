@@ -5,6 +5,7 @@ enum Direction { left, right }
 
 @export var human_type: HumanType;
 const BULLET = preload('res://entities/bullet/bullet.tscn')
+const GIBLET = preload('res://entities/giblet/giblet.tscn')
 
 @export var health = 100;
 var action = Action.idle;
@@ -70,6 +71,12 @@ func start_action(act: Action, time: float, dir: Direction) -> void:
 	
 func kill() -> void:
 	health = 0.0
+	
+	for i in range(human_type.giblet_count):
+		var gib = GIBLET.instantiate()
+		add_sibling(gib)
+		gib.position = position
+	
 	queue_free()
 
 func apply_damage(damage: float) -> bool:
