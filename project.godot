@@ -60,6 +60,7 @@ right={
 2d_physics/layer_1="Terrain"
 2d_physics/layer_2="Humans"
 2d_physics/layer_3="Mutants"
+2d_physics/layer_4="Objects"
 
 [physics]
 

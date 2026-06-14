@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cvc1pjlia2oiv"]
+
+[ext_resource type="Script" uid="uid://b8ofdgh57fc4k" path="res://entities/giblet/giblet.gd" id="1_iupp1"]
+
+[sub_resource type="Gradient" id="Gradient_c0nc5"]
+offsets = PackedFloat32Array(0.6076555, 0.76076555)
+colors = PackedColorArray(0.6236201, 0.04251334, 0.05270806, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dyq1g"]
+gradient = SubResource("Gradient_c0nc5")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6fdmk"]
+radius = 8.0
+
+[node name="Giblet" type="RigidBody2D" unique_id=1650156907]
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_iupp1")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1267084934]
+texture = SubResource("GradientTexture2D_dyq1g")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=713044427]
+shape = SubResource("CircleShape2D_6fdmk")
