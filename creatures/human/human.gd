@@ -7,13 +7,14 @@ enum Direction { left, right }
 const BULLET = preload('res://entities/bullet/bullet.tscn')
 const GIBLET = preload('res://entities/giblet/giblet.tscn')
 
-@export var health = 100;
+var health = 0;
 var action = Action.idle;
 var action_timeout = 0
 var direction = Direction.right
 
 func _ready() -> void:
 	$TargetSelector.range = max(human_type.attack_range, human_type.flee_range, human_type.chase_range)
+	health = human_type.max_health
 
 func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
 	return scalar if dir == Direction.right else -scalar
@@ -105,3 +106,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = move_toward(velocity.x, x_speed, human_type.run_speed)
 
 	move_and_slide()
+	
+	if is_on_wall():
+		direction = Direction.right if direction == Direction.left else Direction.left
+	
