@@ -54,5 +54,4 @@ position = Vector2(575, 326)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1429688143]
 
 [node name="MainGUI" parent="CanvasLayer" unique_id=10804972 instance=ExtResource("9_grrlh")]
-offset_right = -1152.0
-offset_bottom = -648.0
+mouse_filter = 1

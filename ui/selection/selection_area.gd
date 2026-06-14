@@ -1,9 +1,11 @@
 class_name SelectionArea
 extends Area2D
 
-@export_group("Action")
+@export_category("Action")
+@export var group: String
+@export_category("Action")
 @export var action_target: Node
-@export_group("Highlighting")
+@export_category("Highlighting")
 @export var highlight_target: Node2D
 @export var highlight_color: Color
 

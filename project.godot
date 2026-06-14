@@ -22,6 +22,8 @@ GameState="*uid://kxl2fiept4rn"
 
 [display]
 
+window/size/initial_position_type=3
+window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

@@ -32,3 +32,32 @@ custom_minimum_size = Vector2(100, 32)
 layout_mode = 2
 text = "10000"
 label_settings = SubResource("LabelSettings_g0n8d")
+
+[node name="SelectPanel" type="PanelContainer" parent="." unique_id=884214155]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -190.0
+offset_top = -310.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SelectionContainer" type="VBoxContainer" parent="SelectPanel" unique_id=1626986473]
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="SelectPanel/SelectionContainer" unique_id=1997808499]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+select_mode = 1
+auto_width = true
+auto_height = true
+max_columns = 5
+same_column_width = true
+fixed_column_width = 32

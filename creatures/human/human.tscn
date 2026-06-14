@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://q6a1ffwlqq24" path="res://creatures/human/human.gd" id="1_4bvkd"]
 [ext_resource type="PackedScene" uid="uid://ctamdjidcqrkr" path="res://ui/selection/SelectionArea.tscn" id="2_gnv0q"]
 [ext_resource type="Resource" uid="uid://bboa3u65j1ejt" path="res://creatures/human/types/office_mook.tres" id="2_lk4ts"]
-[ext_resource type="Material" uid="uid://ciwf7hih862nx" path="res://ui/selection/shaders/enemy_selection_shader.tres" id="3_iru6h"]
 [ext_resource type="PackedScene" uid="uid://cqq8iiqfveykq" path="res://creatures/detector/target_selector.tscn" id="4_iru6h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebbsm"]
@@ -37,6 +36,7 @@ scale = Vector2(0.625, 1.2500001)
 texture = SubResource("GradientTexture2D_h2rce")
 
 [node name="SelectionArea" parent="." unique_id=2102157275 node_paths=PackedStringArray("action_target", "highlight_target") instance=ExtResource("2_gnv0q")]
+group = "human"
 action_target = NodePath("..")
 highlight_target = NodePath("../Hitbox")
 highlight_color = Color(0.64288336, 1.889132e-06, 5.2943824e-07, 1)

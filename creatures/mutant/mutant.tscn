@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bgb2wtx0h1gmt" path="res://creatures/mutant/mutant.gd" id="1_5gep2"]
 [ext_resource type="PackedScene" uid="uid://c1haiaflt5bbi" path="res://creatures/mutations/chassis.tscn" id="2_37x11"]
-[ext_resource type="Script" uid="uid://bualp06wh2glo" path="res://creatures/mutant/human_detector.gd" id="2_b41ij"]
 [ext_resource type="PackedScene" uid="uid://ctamdjidcqrkr" path="res://ui/selection/SelectionArea.tscn" id="3_mr306"]
 [ext_resource type="Script" uid="uid://d02hn7jrn1pnr" path="res://creatures/mutant/swarm_detector.gd" id="5_37x11"]
 [ext_resource type="PackedScene" uid="uid://cqq8iiqfveykq" path="res://creatures/detector/target_selector.tscn" id="5_y6s6a"]
@@ -40,6 +39,7 @@ position = Vector2(0, -3.0000002)
 scale = Vector2(0.04668883, 0.050593372)
 
 [node name="SelectionArea" parent="." unique_id=2102157275 node_paths=PackedStringArray("action_target", "highlight_target") instance=ExtResource("3_mr306")]
+group = "mutant"
 action_target = NodePath("..")
 highlight_target = NodePath("../Hitbox")
 highlight_color = Color(0, 0.73971456, 0, 1)
@@ -56,8 +56,6 @@ script = ExtResource("5_37x11")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwarmDetector" unique_id=589590378]
 shape = SubResource("CircleShape2D_ybval")
 
-
 [node name="TargetSelector" parent="." unique_id=1582399921 instance=ExtResource("5_y6s6a")]
 
-[connection signal="input_event" from="." to="HumanDetector" method="_on_mutant_input_event"]
 [connection signal="area_entered" from="SelectionArea" to="." method="_on_selection_area_area_entered"]

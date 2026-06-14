@@ -7,7 +7,7 @@ extends Resource
 @export var body_part: PackedScene
 
 func modify_attributes():
-	# TODO
+	
 	pass
 
 func get_body_part():
