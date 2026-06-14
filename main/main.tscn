@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dqw8fexj5crea" path="res://creatures/mutations/mutation_service.gd" id="4_67ri8"]
 [ext_resource type="PackedScene" uid="uid://dlom32x0f3tyr" path="res://creatures/mutant/mutant.tscn" id="4_c651c"]
 [ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="6_4dugh"]
+[ext_resource type="PackedScene" uid="uid://etva80dwgv3l" path="res://ui/main_gui.tscn" id="9_grrlh"]
 
 [sub_resource type="Resource" id="Resource_grrlh"]
 script = ExtResource("4_67ri8")
@@ -22,6 +23,7 @@ mutation_service = SubResource("Resource_grrlh")
 position = Vector2(149, 273)
 
 [node name="EntitySpawner" parent="." unique_id=658344345 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
+visible = false
 position = Vector2(533, 486)
 spawn_location = NodePath("SpawnPoint")
 spawnable = ExtResource("4_c651c")
@@ -33,18 +35,23 @@ position = Vector2(227.17554, -105.47992)
 position = Vector2(192, 62)
 
 [node name="Mutant" parent="." unique_id=88951864 instance=ExtResource("4_c651c")]
+visible = false
 position = Vector2(375, 555)
 
 [node name="Mutant4" parent="." unique_id=1967419096 instance=ExtResource("4_c651c")]
+visible = false
 position = Vector2(375, 555)
 
 [node name="Mutant2" parent="." unique_id=925934048 instance=ExtResource("4_c651c")]
+visible = false
 position = Vector2(592, 562)
 
 [node name="Human" parent="." unique_id=1906732542 instance=ExtResource("2_pjrb6")]
+visible = false
 position = Vector2(432, 382)
 
 [node name="Human2" parent="." unique_id=1573269216 instance=ExtResource("2_pjrb6")]
+visible = false
 position = Vector2(616, 381)
 
 [node name="Spawners" type="Node" parent="." unique_id=699582945]
@@ -67,3 +74,9 @@ position = Vector2(833, 12)
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=35768897]
 position = Vector2(575, 326)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1429688143]
+
+[node name="MainGUI" parent="CanvasLayer" unique_id=10804972 instance=ExtResource("9_grrlh")]
+offset_right = -1152.0
+offset_bottom = -648.0
