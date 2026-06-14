@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var mutation_service: MutationService
+@export_group("Camera")
+@export var camera_speed = 20
 
 func _process(delta):
 	if (Input.is_action_pressed("swap_arms")):
@@ -9,3 +11,10 @@ func _process(delta):
 			var action_target = selected.action_target
 			if action_target is Mutant:
 				action_target.mutate(mutation)
+	update_camera()
+				
+func update_camera():
+	var move_direction = Input.get_vector("left", "right", "up", "down")
+	if move_direction:
+		$MainCamera.position += move_direction * camera_speed
+	

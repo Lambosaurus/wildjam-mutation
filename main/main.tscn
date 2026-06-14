@@ -57,10 +57,13 @@ spawnable = ExtResource("4_c651c")
 [node name="Location" type="Node2D" parent="Spawners/MutantLevel1" unique_id=503858260]
 position = Vector2(198, 9)
 
-[node name="EntitySpawner2" parent="Spawners" unique_id=658344345 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
+[node name="EntitySpawner2" parent="Spawners" unique_id=345066504 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
 position = Vector2(72, 356)
 spawn_location = NodePath("Location")
 spawnable = ExtResource("2_pjrb6")
 
 [node name="Location" type="Node2D" parent="Spawners/EntitySpawner2" unique_id=1435144818]
 position = Vector2(833, 12)
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=35768897]
+position = Vector2(575, 326)
