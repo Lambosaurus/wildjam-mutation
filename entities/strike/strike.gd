@@ -6,9 +6,10 @@ extends Area2D
 func _process(delta: float) -> void:
 	if damage > 0:
 		for node:Node2D in get_overlapping_bodies():
-			node.apply_damage(damage)
-			damage = 0
-			break
+			if "apply_damage" in node:
+				node.apply_damage(damage)
+				damage = 0
+				break
 	duration -= delta
 	if duration < 0:
 		queue_free()

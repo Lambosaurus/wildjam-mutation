@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cqq8iiqfveykq"]
+
+[ext_resource type="Script" uid="uid://bjbqn1wdug3bm" path="res://creatures/detector/target_selector.gd" id="1_4odxk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gep2"]
+radius = 250.0
+
+[node name="TargetSelector" type="Area2D" unique_id=1093162238]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_4odxk")
+
+[node name="Area" type="CollisionShape2D" parent="." unique_id=1075129443]
+visible = false
+shape = SubResource("CircleShape2D_5gep2")
+
+[node name="Raycast" type="RayCast2D" parent="." unique_id=1070201535]
+collision_mask = 3
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

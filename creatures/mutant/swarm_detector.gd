@@ -13,9 +13,9 @@ func compute():
 		count += 1
 		
 		var delta = global_position - body.global_position
-		var dist_sq = delta.length_squared() + 1
-		repulsion.x += delta.x / dist_sq
-		repulsion.y += delta.y / dist_sq
+		var magnitude = ((delta.length_squared() + 1) ** 1.5) / 1000
+		repulsion.x += delta.x / magnitude
+		repulsion.y += delta.y / magnitude
 	
 	if count:
 		cohesion = (avg_pos / count) - global_position
