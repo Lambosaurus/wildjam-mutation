@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dlom32x0f3tyr" path="res://creatures/mutant/mutant.tscn" id="4_c651c"]
 [ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="6_4dugh"]
 [ext_resource type="PackedScene" uid="uid://etva80dwgv3l" path="res://ui/main_gui.tscn" id="9_grrlh"]
+[ext_resource type="Resource" uid="uid://pqqd66qcnrml" path="res://creatures/human/types/security_guard.tres" id="5_kfbq2"]
 
 [sub_resource type="Resource" id="Resource_grrlh"]
 script = ExtResource("4_67ri8")
@@ -53,11 +54,12 @@ position = Vector2(432, 382)
 [node name="Human2" parent="." unique_id=1573269216 instance=ExtResource("2_pjrb6")]
 visible = false
 position = Vector2(616, 381)
+human_type = ExtResource("5_kfbq2")
 
 [node name="Spawners" type="Node" parent="." unique_id=699582945]
 
 [node name="MutantLevel1" parent="Spawners" unique_id=1106100923 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
-position = Vector2(74, 514)
+position = Vector2(116, 354)
 spawn_location = NodePath("Location")
 spawnable = ExtResource("4_c651c")
 
