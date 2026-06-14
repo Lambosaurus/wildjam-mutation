@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://bboa3u65j1ejt"]
+
+[ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_310o7"]
+
+[resource]
+script = ExtResource("1_310o7")
+metadata/_custom_type_script = "uid://xg3orhtcol5l"

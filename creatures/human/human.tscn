@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://q6a1ffwlqq24" path="res://creatures/human/human.gd" id="1_4bvkd"]
 [ext_resource type="PackedScene" uid="uid://ctamdjidcqrkr" path="res://ui/selection/SelectionArea.tscn" id="2_gnv0q"]
+[ext_resource type="Resource" uid="uid://bboa3u65j1ejt" path="res://creatures/human/types/office_mook.tres" id="2_lk4ts"]
 [ext_resource type="Material" uid="uid://ciwf7hih862nx" path="res://ui/selection/shaders/enemy_selection_shader.tres" id="3_iru6h"]
 [ext_resource type="PackedScene" uid="uid://cqq8iiqfveykq" path="res://creatures/detector/target_selector.tscn" id="4_iru6h"]
 
@@ -24,6 +25,7 @@ collision_layer = 2
 platform_floor_layers = 1
 platform_wall_layers = 1
 script = ExtResource("1_4bvkd")
+human_type = ExtResource("2_lk4ts")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1169393457]
 shape = SubResource("CapsuleShape2D_ebbsm")
