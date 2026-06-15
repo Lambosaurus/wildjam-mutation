@@ -8,7 +8,9 @@
 [ext_resource type="Script" uid="uid://dqw8fexj5crea" path="res://creatures/mutations/mutation_service.gd" id="4_67ri8"]
 [ext_resource type="PackedScene" uid="uid://dlom32x0f3tyr" path="res://creatures/mutant/mutant.tscn" id="4_c651c"]
 [ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="6_4dugh"]
+[ext_resource type="PackedScene" uid="uid://cl8rxjlclso5g" path="res://building/components/transporter/elevator/elevator.tscn" id="9_bsumw"]
 [ext_resource type="PackedScene" uid="uid://etva80dwgv3l" path="res://ui/main_gui.tscn" id="9_grrlh"]
+[ext_resource type="PackedScene" uid="uid://bl5h3avge57kq" path="res://building/components/transporter/elevator/floor_stop.tscn" id="10_fwcvl"]
 
 [sub_resource type="Resource" id="Resource_grrlh"]
 script = ExtResource("4_67ri8")
@@ -47,6 +49,15 @@ spawnable = ExtResource("4_c651c")
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/MutantLevel0" unique_id=1086107178]
 position = Vector2(183, 25)
+
+[node name="Transporters" type="Node" parent="." unique_id=573249446]
+
+[node name="Elevator" parent="Transporters" unique_id=1486849745 instance=ExtResource("9_bsumw")]
+position = Vector2(14, 11)
+floor_stop = ExtResource("10_fwcvl")
+num_stops = 3
+start_floor_x = 800
+start_floor_y = 609
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=35768897]
 position = Vector2(575, 326)

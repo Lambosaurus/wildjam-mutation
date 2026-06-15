@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cl8rxjlclso5g"]
+
+[ext_resource type="Script" uid="uid://dga064fc2b2bg" path="res://building/components/transporter/elevator/elevator.gd" id="1_bsmdj"]
+
+[node name="Elevator" type="Node2D" unique_id=1486849745]
+script = ExtResource("1_bsmdj")
+
+[node name="TravelTimeCycle" type="Timer" parent="." unique_id=255726013]
