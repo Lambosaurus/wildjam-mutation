@@ -20,6 +20,7 @@ fill_to = Vector2(0, 1)
 size = Vector2(40, 80)
 
 [node name="Human" type="CharacterBody2D" unique_id=1906732542]
+scale = Vector2(0.5, 0.5)
 collision_layer = 2
 platform_floor_layers = 1
 platform_wall_layers = 1

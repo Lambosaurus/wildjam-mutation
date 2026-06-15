@@ -111,10 +111,18 @@ func mutate(mutation: Mutation):
 	# TODO: mutation.modify_attributes()
 	$Chassis.set_slot(mutation.slot, mutation.get_body_part())
 
+func update_vision_range():
+	var range = $TargetSelector.range
+	var scale = range / 100
+	$Vision.scale = Vector2(scale, scale) # Vision light is 100px
+	pass
+
 func _process(delta: float) -> void:
 	action_timeout -= delta
 	if (action_timeout < 0):
 		pick_next_action()
+		
+	update_vision_range()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

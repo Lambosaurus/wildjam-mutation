@@ -57,6 +57,10 @@ right={
 
 [layer_names]
 
+2d_render/layer_1="Building"
+2d_render/layer_2="Mutant"
+2d_render/layer_3="Human"
+2d_render/layer_6="Interior"
 2d_physics/layer_1="Terrain"
 2d_physics/layer_2="Humans"
 2d_physics/layer_3="Mutants"

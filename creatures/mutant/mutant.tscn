@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ctamdjidcqrkr" path="res://ui/selection/SelectionArea.tscn" id="3_mr306"]
 [ext_resource type="Script" uid="uid://d02hn7jrn1pnr" path="res://creatures/mutant/swarm_detector.gd" id="5_37x11"]
 [ext_resource type="PackedScene" uid="uid://cqq8iiqfveykq" path="res://creatures/detector/target_selector.tscn" id="5_y6s6a"]
+[ext_resource type="Texture2D" uid="uid://cvibe34ijekhi" path="res://creatures/mutant/light.png" id="6_y6s6a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lb6h7"]
 radius = 20.0
@@ -21,7 +22,7 @@ fill_to = Vector2(0, 1)
 radius = 250.0
 
 [node name="Mutant" type="CharacterBody2D" unique_id=88951864]
-scale = Vector2(1.8400013, 1.8400013)
+light_mask = 2
 collision_layer = 4
 script = ExtResource("1_5gep2")
 
@@ -57,5 +58,11 @@ script = ExtResource("5_37x11")
 shape = SubResource("CircleShape2D_ybval")
 
 [node name="TargetSelector" parent="." unique_id=1582399921 instance=ExtResource("5_y6s6a")]
+
+[node name="Vision" type="PointLight2D" parent="." unique_id=1379736234]
+blend_mode = 2
+range_item_cull_mask = 33
+shadow_enabled = true
+texture = ExtResource("6_y6s6a")
 
 [connection signal="area_entered" from="SelectionArea" to="." method="_on_selection_area_area_entered"]

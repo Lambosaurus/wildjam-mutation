@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://beqpfrifbxeep"]
 
 [ext_resource type="Script" uid="uid://c4knu1o0mibmy" path="res://main/main.gd" id="1_3wy1v"]
-[ext_resource type="PackedScene" uid="uid://crka7hrc1jgg0" path="res://building/building.tscn" id="1_53q0u"]
 [ext_resource type="PackedScene" uid="uid://bcckgfd8qlmhm" path="res://creatures/human/human.tscn" id="2_pjrb6"]
 [ext_resource type="Resource" uid="uid://badtf77rocatp" path="res://creatures/mutations/data/speedy_arms.tres" id="3_4dugh"]
 [ext_resource type="PackedScene" uid="uid://byescby3rnuk1" path="res://entities/entity_spawner.tscn" id="3_xwkvk"]
@@ -9,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dlom32x0f3tyr" path="res://creatures/mutant/mutant.tscn" id="4_c651c"]
 [ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="6_4dugh"]
 [ext_resource type="PackedScene" uid="uid://etva80dwgv3l" path="res://ui/main_gui.tscn" id="9_grrlh"]
+[ext_resource type="PackedScene" uid="uid://di2lvp77xng0n" path="res://building/building_tiles.tscn" id="10_0i4oc"]
 
 [sub_resource type="Resource" id="Resource_grrlh"]
 script = ExtResource("4_67ri8")
@@ -19,34 +19,34 @@ metadata/_custom_type_script = "uid://dqw8fexj5crea"
 script = ExtResource("1_3wy1v")
 mutation_service = SubResource("Resource_grrlh")
 
-[node name="Building" parent="." unique_id=310968372 instance=ExtResource("1_53q0u")]
-position = Vector2(149, 273)
-
 [node name="Spawners" type="Node" parent="." unique_id=699582945]
 
 [node name="MutantLevel1" parent="Spawners" unique_id=1106100923 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
-position = Vector2(116, 354)
+light_mask = 2
+position = Vector2(31, 355)
 spawn_location = NodePath("Location")
 spawnable = ExtResource("4_c651c")
 
 [node name="Location" type="Node2D" parent="Spawners/MutantLevel1" unique_id=503858260]
-position = Vector2(198, 9)
+position = Vector2(271, 108)
 
 [node name="HumanLevel1" parent="Spawners" unique_id=345066504 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
-position = Vector2(72, 356)
+light_mask = 2
+position = Vector2(10, 355)
 spawn_location = NodePath("Location")
 spawnable = ExtResource("2_pjrb6")
 
 [node name="Location" type="Node2D" parent="Spawners/HumanLevel1" unique_id=1435144818]
-position = Vector2(833, 12)
+position = Vector2(795, 109)
 
 [node name="MutantLevel0" parent="Spawners" unique_id=658344345 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
-position = Vector2(84, 504)
+light_mask = 2
+position = Vector2(9, 493)
 spawn_location = NodePath("SpawnPoint")
 spawnable = ExtResource("4_c651c")
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/MutantLevel0" unique_id=1086107178]
-position = Vector2(183, 25)
+position = Vector2(293, 63)
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=35768897]
 position = Vector2(575, 326)
@@ -55,3 +55,16 @@ position = Vector2(575, 326)
 
 [node name="MainGUI" parent="CanvasLayer" unique_id=10804972 instance=ExtResource("9_grrlh")]
 mouse_filter = 1
+
+[node name="EditorLight" type="DirectionalLight2D" parent="." unique_id=26265204]
+position = Vector2(602, -448)
+range_item_cull_mask = 33
+shadow_color = Color(0, 0, 0, 0.49019608)
+shadow_item_cull_mask = 0
+
+[node name="BuildingTiles" parent="." unique_id=850572857 instance=ExtResource("10_0i4oc")]
+position = Vector2(565, 370)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=907911038]
+position = Vector2(-240, 103)
+color = Color(0, 0, 0, 1)
