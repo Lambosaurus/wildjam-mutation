@@ -8,6 +8,8 @@ func _process(delta):
 	if (Input.is_action_pressed("swap_arms")):
 		var mutation = mutation_service.get_random_mutation()
 		for selected in SelectionManager.get_selected_nodes():
+			if not is_instance_valid(selected):
+				continue
 			var action_target = selected.action_target
 			if action_target is Mutant:
 				action_target.mutate(mutation)
