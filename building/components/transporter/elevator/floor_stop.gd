@@ -17,7 +17,7 @@ func _ready() -> void:
 	#door_timer.connect("timeout", _on_door_timer_timeout)
 	pass # Replace with function body.
 
-func _on_mutant_entered(body: Node2D):	
+func _on_mutant_entered(body: CharacterBody2D):
 	emit_signal("traveller_present", body, name)
 #
 #
