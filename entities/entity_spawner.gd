@@ -8,7 +8,6 @@ signal spawn_on_position(position, type)
 func _on_static_body_2d_input_event(viewport: Viewport, event: InputEvent, shape_id: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			print('spawning human at ', global_position)
 			var enemy = spawnable.instantiate()
 			spawn_location.add_child(enemy)		
 			
