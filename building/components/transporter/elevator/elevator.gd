@@ -32,6 +32,8 @@ func _handle_elevator_travel():
 		state = FloorState.DoorsOpening
 		active_floor_stops[target_floor].animator.play("open_door")
 		for body in traveller_queue:
+			if not is_instance_valid(body):
+				continue
 			body.global_position = active_floor_stops[target_floor].global_position
 			body.start_action(body.Action.walk, 5, body.Direction.left)
 		fade_travellers(1, 0.25)
@@ -72,4 +74,6 @@ func _handle_traveller_present(body: CharacterBody2D, floor_name):
 func fade_travellers(tween_target, tween_time):
 	var tween = create_tween()
 	for body in traveller_queue:
+		if not is_instance_valid(body):
+			continue
 		tween.tween_property(body, "modulate:a", tween_target, tween_time)
