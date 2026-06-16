@@ -4,6 +4,9 @@ extends Node2D
 @export_group("Camera")
 @export var camera_speed = 20
 
+func _ready():
+	$GUILayer/MainGUI.mutation_service = mutation_service
+
 func _process(delta):
 	if (Input.is_action_pressed("swap_arms")):
 		var mutation = mutation_service.get_random_mutation()

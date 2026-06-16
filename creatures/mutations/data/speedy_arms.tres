@@ -15,4 +15,6 @@ metadata/_custom_type_script = "uid://dcn3vc6xa7jor"
 script = ExtResource("1_o11gm")
 behaviour = SubResource("Resource_mtmwr")
 body_part = ExtResource("2_mtmwr")
+cost = 100
+name = "Speedy Arms"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

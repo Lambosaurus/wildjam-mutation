@@ -5,3 +5,11 @@ extends Resource
 
 func get_random_mutation():
 	return available_mutations.pick_random()
+	
+func apply_mutation_to(mutation: Mutation, mutant: Mutant):
+	if mutation.cost <= GameState.biomass:
+		GameState.biomass -= mutation.cost
+		mutant.mutate(mutation)
+		return true
+	else: return false
+	

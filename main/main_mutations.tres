@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MutationService" format=3 uid="uid://w7el4w33gto"]
+
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_gn6ag"]
+[ext_resource type="Resource" uid="uid://badtf77rocatp" path="res://creatures/mutations/data/speedy_arms.tres" id="2_oen3j"]
+[ext_resource type="Resource" uid="uid://i6dpe3jnhhdy" path="res://creatures/mutations/data/squid_legs.tres" id="3_kcmht"]
+[ext_resource type="Script" uid="uid://dqw8fexj5crea" path="res://creatures/mutations/mutation_service.gd" id="4_kmygs"]
+
+[resource]
+script = ExtResource("4_kmygs")
+available_mutations = Array[ExtResource("1_gn6ag")]([ExtResource("2_oen3j"), ExtResource("3_kcmht")])
+metadata/_custom_type_script = "uid://dqw8fexj5crea"

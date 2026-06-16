@@ -1,25 +1,18 @@
 [gd_scene format=3 uid="uid://beqpfrifbxeep"]
 
 [ext_resource type="Script" uid="uid://c4knu1o0mibmy" path="res://main/main.gd" id="1_3wy1v"]
+[ext_resource type="Resource" uid="uid://w7el4w33gto" path="res://main/main_mutations.tres" id="2_grrlh"]
 [ext_resource type="PackedScene" uid="uid://bcckgfd8qlmhm" path="res://creatures/human/human.tscn" id="2_pjrb6"]
-[ext_resource type="Resource" uid="uid://badtf77rocatp" path="res://creatures/mutations/data/speedy_arms.tres" id="3_4dugh"]
 [ext_resource type="PackedScene" uid="uid://byescby3rnuk1" path="res://entities/entity_spawner.tscn" id="3_xwkvk"]
-[ext_resource type="Script" uid="uid://dqw8fexj5crea" path="res://creatures/mutations/mutation_service.gd" id="4_67ri8"]
 [ext_resource type="PackedScene" uid="uid://dlom32x0f3tyr" path="res://creatures/mutant/mutant.tscn" id="4_c651c"]
-[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="6_4dugh"]
 [ext_resource type="PackedScene" uid="uid://cl8rxjlclso5g" path="res://building/components/transporter/elevator/elevator.tscn" id="9_bsumw"]
 [ext_resource type="PackedScene" uid="uid://etva80dwgv3l" path="res://ui/main_gui.tscn" id="9_grrlh"]
 [ext_resource type="PackedScene" uid="uid://di2lvp77xng0n" path="res://building/building_tiles.tscn" id="10_0i4oc"]
 [ext_resource type="PackedScene" uid="uid://dcejudxtfvrn8" path="res://building/components/transporter/elevator/pixel_floor_stop.tscn" id="10_bsumw"]
 
-[sub_resource type="Resource" id="Resource_grrlh"]
-script = ExtResource("4_67ri8")
-available_mutations = Array[ExtResource("6_4dugh")]([ExtResource("3_4dugh")])
-metadata/_custom_type_script = "uid://dqw8fexj5crea"
-
 [node name="Main" type="Node2D" unique_id=634852315]
 script = ExtResource("1_3wy1v")
-mutation_service = SubResource("Resource_grrlh")
+mutation_service = ExtResource("2_grrlh")
 
 [node name="BuildingTiles" parent="." unique_id=850572857 instance=ExtResource("10_0i4oc")]
 position = Vector2(565, 370)
@@ -84,10 +77,9 @@ position = Vector2(293, 63)
 [node name="MainCamera" type="Camera2D" parent="." unique_id=35768897]
 position = Vector2(575, 326)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1429688143]
+[node name="GUILayer" type="CanvasLayer" parent="." unique_id=1429688143]
 
-[node name="MainGUI" parent="CanvasLayer" unique_id=10804972 instance=ExtResource("9_grrlh")]
-visible = false
+[node name="MainGUI" parent="GUILayer" unique_id=10804972 instance=ExtResource("9_grrlh")]
 mouse_filter = 1
 
 [node name="EditorLight" type="DirectionalLight2D" parent="." unique_id=26265204]
