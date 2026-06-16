@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c7irtss7l4c5x" path="res://creatures/mutations/body_parts/simple_torso.tscn" id="3_2n2iq"]
 [ext_resource type="PackedScene" uid="uid://bb4ktb1ix8oic" path="res://creatures/mutations/body_parts/simple_arms.tscn" id="4_2n2iq"]
 [ext_resource type="PackedScene" uid="uid://jqwfoykshu7j" path="res://creatures/mutations/body_parts/simple_legs.tscn" id="5_ulkix"]
+[ext_resource type="Script" uid="uid://cvxvf8om3wyxm" path="res://creatures/mutations/slot.gd" id="5_v0i33"]
 
 [node name="Chassis" type="Node2D" unique_id=1809367835]
 script = ExtResource("1_2n2iq")
@@ -19,7 +20,9 @@ position = Vector2(-10, -60)
 [node name="SimpleArms" parent="ArmSlot" unique_id=1738447256 instance=ExtResource("4_2n2iq")]
 use_parent_material = false
 
-[node name="LegSlot" type="Node2D" parent="." unique_id=656564383]
+[node name="LegSlot" type="Node2D" parent="." unique_id=924584539]
+script = ExtResource("5_v0i33")
+metadata/_custom_type_script = "uid://cvxvf8om3wyxm"
 
 [node name="SimpleLegs" parent="LegSlot" unique_id=694026601 instance=ExtResource("5_ulkix")]
 position = Vector2(12, 100)

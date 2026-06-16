@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bgb2wtx0h1gmt" path="res://creatures/mutant/mutant.gd" id="1_5gep2"]
 [ext_resource type="PackedScene" uid="uid://c1haiaflt5bbi" path="res://creatures/mutations/chassis.tscn" id="2_37x11"]
+[ext_resource type="Script" uid="uid://dor2lxtmnyeve" path="res://creatures/mutant/mutant_type.gd" id="2_y6s6a"]
 [ext_resource type="PackedScene" uid="uid://ctamdjidcqrkr" path="res://ui/selection/SelectionArea.tscn" id="3_mr306"]
 [ext_resource type="Script" uid="uid://d02hn7jrn1pnr" path="res://creatures/mutant/swarm_detector.gd" id="5_37x11"]
 [ext_resource type="PackedScene" uid="uid://cqq8iiqfveykq" path="res://creatures/detector/target_selector.tscn" id="5_y6s6a"]
 [ext_resource type="Texture2D" uid="uid://cvibe34ijekhi" path="res://creatures/mutant/light.png" id="6_y6s6a"]
+
+[sub_resource type="Resource" id="Resource_dv2ve"]
+script = ExtResource("2_y6s6a")
+metadata/_custom_type_script = "uid://dor2lxtmnyeve"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lb6h7"]
 radius = 20.0
@@ -25,6 +30,7 @@ radius = 250.0
 light_mask = 2
 collision_layer = 4
 script = ExtResource("1_5gep2")
+mutant_type = SubResource("Resource_dv2ve")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=2017455713]
 shape = SubResource("CapsuleShape2D_lb6h7")
