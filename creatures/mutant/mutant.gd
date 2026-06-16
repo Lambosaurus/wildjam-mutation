@@ -15,25 +15,23 @@ var attributes = {
 	"agression": 0.0
 }
 
-@export var WALK_SPEED = 100.0
-@export var RUN_SPEED = 200.0
-@export var MELEE_DAMAGE = 20.0
-@export var MELEE_RANGE = 50.0
-
-@export_group("Test Data")
-@export var NewArms: PackedScene
+@export var mutant_type: MutantType
 
 const MELEE_STRIKE = preload('res://entities/strike/strike.tscn')
 
+@export_group("BOIDS Controls")
 @export var BOIDS_REPULSION = 1000.0
 @export var BOIDS_COHESION = 2.0
 @export var BOIDS_THRESH_MIN = 50.0
 @export var BOIDS_THRESH_MAX = 1000.0
 
-@export var health = 100
+@onready var health = mutant_type.max_health
 var action = Action.idle;
 var action_timeout = 0
 var direction = Direction.right
+
+func _ready() -> void:
+	$TargetSelector.range = max(mutant_type.chase_range, mutant_type.attack_range)
 
 func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
 	return scalar if dir == Direction.right else -scalar
@@ -57,9 +55,9 @@ func pick_next_action() -> void:
 	if target:
 		var candidate_direction = vector_to_direction(target.global_position.x - global_position.x)
 		var dist = global_position.distance_to(target.global_position)
-		if dist < MELEE_RANGE:
+		if dist < mutant_type.attack_range:
 			var strike = MELEE_STRIKE.instantiate()
-			strike.damage = MELEE_DAMAGE
+			strike.damage = mutant_type.attack_damage
 			add_sibling(strike)
 			strike.global_position = target.global_position
 
@@ -108,8 +106,10 @@ func start_action(act: Action, time: float, dir: Direction, target: Node2D = nul
 	$Chassis.animate(action_animation_map[action])
 
 func mutate(mutation: Mutation):
-	# TODO: mutation.modify_attributes()
-	$Chassis.set_slot(mutation.slot, mutation.get_body_part())
+	$Chassis.apply_mutation(mutation)
+	mutant_type = MutantType.new()
+	$Chassis.modify_attributes(mutant_type)
+	
 
 func update_vision_range():
 	var range = $TargetSelector.range
@@ -128,13 +128,13 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	var x_speed = 0
 	if (action == Action.walk):
-		x_speed = direction_to_vector(direction, WALK_SPEED)
+		x_speed = direction_to_vector(direction, mutant_type.walk_speed)
 	elif (action == Action.run):
-		x_speed = direction_to_vector(direction, RUN_SPEED)
+		x_speed = direction_to_vector(direction, mutant_type.run_speed)
 
-	velocity.x = move_toward(velocity.x, x_speed, RUN_SPEED)
+	velocity.x = move_toward(velocity.x, x_speed, mutant_type.run_speed)
 
 	move_and_slide()

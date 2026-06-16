@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="BehaviourModification" format=3 uid="uid://c4vcayy28i681"]
-
-[ext_resource type="Script" uid="uid://dcn3vc6xa7jor" path="res://creatures/mutations/behaviour_modification.gd" id="1_hwisd"]
-
-[resource]
-script = ExtResource("1_hwisd")
-aggression = -1000.0
-metadata/_custom_type_script = "uid://dcn3vc6xa7jor"

@@ -19,17 +19,15 @@ func set_direction(dir: Direction):
 	# Flip entire Chassis
 	scale.x *= -1
 
-func set_slot(slot: Slot.Type, body_part: BodyPart):
-	var old_part = slots_dict[slot].get_child(0)
-	slots_dict[slot].add_child(body_part)
-	old_part.apply_animation_state_to(body_part)
-	old_part.queue_free()
+func apply_mutation(mutation: Mutation):
+	slots_dict[mutation.slot].apply_mutation(mutation)
 	
-func remove_from_slot(slot: Slot.Type):
-	slots_dict[slot].get_child(0).queue_free()
-	
+func modify_attributes(mutant_type: MutantType) -> void:
+	for slot in slots_dict.values():
+		if slot.mutation:
+			slot.mutation.modify_attributes(mutant_type)
 	
 func animate(name: Animations):
-	$BodySlot.get_child(0).animate(name)
-	$ArmSlot.get_child(0).animate(name)
-	$LegSlot.get_child(0).animate(name)
+	$BodySlot.body_part.animate(name)
+	$ArmSlot.body_part.animate(name)
+	$LegSlot.body_part.animate(name)
