@@ -8,13 +8,13 @@ colors = PackedColorArray(0.6236201, 0.04251334, 0.05270806, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dyq1g"]
 gradient = SubResource("Gradient_c0nc5")
-width = 16
-height = 16
+width = 8
+height = 8
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6fdmk"]
-radius = 8.0
+radius = 4.0
 
 [node name="Giblet" type="RigidBody2D" unique_id=1650156907]
 collision_layer = 8

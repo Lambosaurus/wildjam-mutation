@@ -13,4 +13,6 @@ script = ExtResource("1_d33k5")
 behaviour = SubResource("Resource_lidxt")
 slot = 1
 body_part = ExtResource("2_fwqj6")
+cost = 150
+name = "Squidly"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

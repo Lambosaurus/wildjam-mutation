@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://etva80dwgv3l"]
 
 [ext_resource type="Script" uid="uid://cbx8a11hs7fl6" path="res://ui/main_gui.gd" id="1_2lw0j"]
+[ext_resource type="Resource" uid="uid://w7el4w33gto" path="res://main/main_mutations.tres" id="2_g0n8d"]
 [ext_resource type="Texture2D" uid="uid://plwvceke53ws" path="res://ui/sprites/biomass.png" id="2_lcwsb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g0n8d"]
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_lcwsb"]
+font_size = 32
+font_color = Color(0.91960233, 0.17063594, 0.19679102, 1)
 
 [node name="MainGUI" type="Control" unique_id=1754052925]
 layout_mode = 3
@@ -14,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2lw0j")
+mutation_service = ExtResource("2_g0n8d")
 
 [node name="BioMass" type="HBoxContainer" parent="." unique_id=1520679074]
 layout_mode = 0
@@ -50,7 +56,7 @@ grow_vertical = 0
 [node name="SelectionContainer" type="VBoxContainer" parent="SelectPanel" unique_id=1626986473]
 layout_mode = 2
 
-[node name="ItemList" type="ItemList" parent="SelectPanel/SelectionContainer" unique_id=1997808499]
+[node name="SelectedCreatures" type="ItemList" parent="SelectPanel/SelectionContainer" unique_id=1997808499]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -61,3 +67,29 @@ auto_height = true
 max_columns = 5
 same_column_width = true
 fixed_column_width = 32
+
+[node name="Mutations" type="ItemList" parent="SelectPanel/SelectionContainer" unique_id=538569208]
+layout_mode = 2
+allow_reselect = true
+auto_height = true
+
+[node name="ErrorLabel" type="Label" parent="." unique_id=1424687252]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -78.0
+offset_right = 0.5
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_lcwsb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UITimer" type="Timer" parent="ErrorLabel" unique_id=623599384]
+
+[connection signal="item_clicked" from="SelectPanel/SelectionContainer/Mutations" to="." method="_on_mutations_item_clicked"]

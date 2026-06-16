@@ -1,3 +1,3 @@
 extends Node
 
-var biomass = 0.0
+var biomass: int = 0
