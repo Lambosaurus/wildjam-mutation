@@ -13,7 +13,7 @@ metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
 [resource]
 script = ExtResource("1_o11gm")
 body_part = ExtResource("2_mtmwr")
+mutation_type = SubResource("Resource_pvj4i")
 cost = 100
 name = "Speedy Arms"
-mutation_type = SubResource("Resource_pvj4i")
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

@@ -71,4 +71,7 @@ range_item_cull_mask = 33
 shadow_enabled = true
 texture = ExtResource("6_y6s6a")
 
+[node name="ItemSelector" parent="." unique_id=1093162238 instance=ExtResource("5_y6s6a")]
+target_bit = 4
+
 [connection signal="area_entered" from="SelectionArea" to="." method="_on_selection_area_area_entered"]

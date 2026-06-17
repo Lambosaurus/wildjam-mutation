@@ -32,6 +32,7 @@ var direction = Direction.right
 
 func _ready() -> void:
 	$TargetSelector.range = max(mutant_type.chase_range, mutant_type.attack_range)
+	$ItemSelector.range = mutant_type.eat_range
 
 func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
 	return scalar if dir == Direction.right else -scalar
@@ -63,6 +64,26 @@ func pick_next_action() -> void:
 
 			return start_action(
 				Action.attack,
+				0.25,
+				candidate_direction,
+			);
+
+		return start_action(
+			Action.run,
+			0.25,
+			candidate_direction,
+		);
+		
+	var item = $ItemSelector.scan()
+	if item:
+		var candidate_direction = vector_to_direction(item.global_position.x - global_position.x)
+		var dist = global_position.distance_to(item.global_position)
+		if dist < mutant_type.attack_range:
+			if "eat" in item:
+				GameState.biomass += item.eat()
+
+			return start_action(
+				Action.idle,
 				0.25,
 				candidate_direction,
 			);
