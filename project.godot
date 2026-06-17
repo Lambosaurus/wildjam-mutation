@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="wildjam-mutation"
-run/main_scene="uid://beqpfrifbxeep"
+run/main_scene="uid://dx5rq1rerbqtm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SelectionManager="*uid://bacn8n7bv1hdo"
 GameState="*uid://kxl2fiept4rn"
+Settings="*uid://d2nf7voaa0xyu"
 
 [display]
 
@@ -26,6 +27,10 @@ window/size/initial_position_type=3
 window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom="uid://dymlxvs3t55s2"
 
 [input]
 

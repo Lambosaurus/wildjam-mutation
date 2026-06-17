@@ -1,3 +1,151 @@
 [gd_scene format=3 uid="uid://dx5rq1rerbqtm"]
 
-[node name="StartScreen" type="Node2D" unique_id=481558750]
+[ext_resource type="Script" uid="uid://boawedghikwbs" path="res://ui/start_screen.gd" id="1_50anp"]
+[ext_resource type="AudioStream" uid="uid://cnbdqpi3t5a8j" path="res://sounds/music/mutation_only_bass.mp3" id="2_nledq"]
+[ext_resource type="Script" uid="uid://bi1k76fl1ws63" path="res://sounds/game_music.gd" id="3_nledq"]
+[ext_resource type="PackedScene" uid="uid://qp7t5gowdswy" path="res://ui/sound_control.tscn" id="4_igmpp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a8ycg"]
+font_size = 48
+
+[node name="StartScreen" type="Control" unique_id=1958981103]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0023031, 1.0044096)
+script = ExtResource("1_50anp")
+
+[node name="StartMusic" type="AudioStreamPlayer" parent="." unique_id=1726121943]
+stream = ExtResource("2_nledq")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("3_nledq")
+metadata/_custom_type_script = "uid://bi1k76fl1ws63"
+
+[node name="BG" type="ColorRect" parent="." unique_id=771778501]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1334157, 0.0025134766, 0.0024999082, 1)
+
+[node name="Control" type="Control" parent="." unique_id=288603600]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=494216818]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -100.0
+offset_right = 125.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" unique_id=1303026360]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=889389348]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 2
+text = "Start"
+
+[node name="HowToPlayButton" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=454395306]
+layout_mode = 2
+text = "How To Play"
+
+[node name="ExitButton" type="Button" parent="Control/CenterContainer/VBoxContainer" unique_id=744270856]
+layout_mode = 2
+text = "Exit"
+
+[node name="Label" type="Label" parent="Control" unique_id=300647322]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -217.0
+offset_top = 75.0
+offset_right = 217.0
+offset_bottom = 142.0
+grow_horizontal = 2
+text = "Overmind Mutator"
+label_settings = SubResource("LabelSettings_a8ycg")
+
+[node name="SoundControl" parent="." unique_id=829974932 instance=ExtResource("4_igmpp")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -88.0
+offset_right = -92.0
+offset_bottom = -88.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="HelpScreen" type="Control" parent="." unique_id=2111909076]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="HelpScreen" unique_id=1940102654]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1334157, 0.0025134766, 0.0024999082, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="HelpScreen" unique_id=678632062]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpScreen/CenterContainer" unique_id=2023117723]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpScreen/CenterContainer/VBoxContainer" unique_id=852465308]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "If you are seeing this, then I havent put any help or game description yet.
+
+You are on your own"
+fit_content = true
+
+[node name="BackButton" type="Button" parent="HelpScreen/CenterContainer/VBoxContainer" unique_id=1216452292]
+layout_mode = 2
+text = "Back
+"
+
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="HelpScreen/CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

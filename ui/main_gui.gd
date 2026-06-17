@@ -9,7 +9,7 @@ func _ready():
 	
 	add_mutations_to_list()
 
-func _process(delta):
+func _process(_delta):
 	update_biomass()
 	update_selection()
 	

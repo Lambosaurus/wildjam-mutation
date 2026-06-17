@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://etva80dwgv3l" path="res://ui/main_gui.tscn" id="9_grrlh"]
 [ext_resource type="PackedScene" uid="uid://di2lvp77xng0n" path="res://building/building_tiles.tscn" id="10_0i4oc"]
 [ext_resource type="PackedScene" uid="uid://dcejudxtfvrn8" path="res://building/components/transporter/elevator/pixel_floor_stop.tscn" id="10_bsumw"]
+[ext_resource type="AudioStream" uid="uid://dewwsqoym7xe4" path="res://sounds/music/mutation_less_strings.mp3" id="10_fwcvl"]
+[ext_resource type="Script" uid="uid://bi1k76fl1ws63" path="res://sounds/game_music.gd" id="11_bsumw"]
 
 [node name="Main" type="Node2D" unique_id=634852315]
 script = ExtResource("1_3wy1v")
@@ -91,3 +93,11 @@ shadow_item_cull_mask = 0
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=907911038]
 position = Vector2(-240, 103)
 color = Color(0, 0, 0, 1)
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="." unique_id=1108747800]
+process_mode = 3
+stream = ExtResource("10_fwcvl")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("11_bsumw")
+metadata/_custom_type_script = "uid://bi1k76fl1ws63"

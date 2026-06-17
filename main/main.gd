@@ -4,18 +4,16 @@ extends Node2D
 @export_group("Camera")
 @export var camera_speed = 20
 
+var pause_menu = preload("res://ui/pause_menu.tscn")
+
 func _ready():
 	$GUILayer/MainGUI.mutation_service = mutation_service
 
 func _process(delta):
-	if (Input.is_action_pressed("swap_arms")):
-		var mutation = mutation_service.get_random_mutation()
-		for selected in SelectionManager.get_selected_nodes():
-			if not is_instance_valid(selected):
-				continue
-			var action_target = selected.action_target
-			if action_target is Mutant:
-				action_target.mutate(mutation)
+	if (Input.is_key_pressed(KEY_ESCAPE)):
+		$GUILayer.add_child(pause_menu.instantiate())
+		
+		
 	update_camera()
 				
 func update_camera():

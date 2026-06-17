@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://qp7t5gowdswy"]
+
+[ext_resource type="Script" uid="uid://b5ho307efbig4" path="res://ui/sound_control.gd" id="1_aan8n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hfm7"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_k52fa"]
+font_size = 12
+
+[node name="SoundControl" type="Control" unique_id=829974932]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aan8n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=985691573]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicBox" type="VBoxContainer" parent="HBoxContainer" unique_id=907972173]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="MusicSlider" type="VSlider" parent="HBoxContainer/MusicBox" unique_id=199985880]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+min_value = -50.0
+max_value = 10.0
+step = 0.5
+value = -10.0
+
+[node name="Label" type="Label" parent="HBoxContainer/MusicBox" unique_id=688205226]
+layout_mode = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_5hfm7")
+
+[node name="SoundBox" type="VBoxContainer" parent="HBoxContainer" unique_id=120400636]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="SoundsSlider" type="VSlider" parent="HBoxContainer/SoundBox" unique_id=45971439]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+min_value = -50.0
+max_value = 10.0
+step = 0.5
+value = -10.0
+
+[node name="Label" type="Label" parent="HBoxContainer/SoundBox" unique_id=1273267139]
+layout_mode = 2
+text = "Sounds"
+label_settings = SubResource("LabelSettings_k52fa")
+
+[connection signal="drag_ended" from="HBoxContainer/MusicBox/MusicSlider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="drag_ended" from="HBoxContainer/SoundBox/SoundsSlider" to="." method="_on_sounds_slider_drag_ended"]
