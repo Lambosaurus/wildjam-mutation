@@ -99,6 +99,7 @@ shape = SubResource("CircleShape2D_ybval")
 [node name="TargetSelector" parent="." unique_id=1582399921 instance=ExtResource("5_y6s6a")]
 
 [node name="Vision" type="PointLight2D" parent="." unique_id=1379736234]
+enabled = false
 blend_mode = 2
 range_item_cull_mask = 33
 shadow_enabled = true

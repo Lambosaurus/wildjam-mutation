@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://77rxot6k7sbc" path="res://building/components/transporter/elevator/floor_stop.gd" id="1_8pxdo"]
 [ext_resource type="Texture2D" uid="uid://bqigucw88rd67" path="res://building/tiles/tileset_elevator.png" id="2_2s41n"]
+[ext_resource type="PackedScene" uid="uid://bvyey1fdeivis" path="res://building/components/lighting/point-light.tscn" id="4_gpw8t"]
+[ext_resource type="Texture2D" uid="uid://y88epottr0vf" path="res://building/components/lighting/radial-mask.png" id="5_vngxu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gjiww"]
 atlas = ExtResource("2_2s41n")
@@ -221,3 +223,10 @@ shape = SubResource("RectangleShape2D_8pxdo")
 libraries/ = SubResource("AnimationLibrary_2s41n")
 
 [node name="DoorTimer" type="Timer" parent="." unique_id=85636460]
+
+[node name="PointLight" parent="." unique_id=1629056901 instance=ExtResource("4_gpw8t")]
+position = Vector2(-0.5000019, 4.7683716e-07)
+scale = Vector2(0.24576269, 0.60759497)
+color = Color(0.6992847, 0.52883154, 0.43323055, 1)
+energy = 1.0
+texture = ExtResource("5_vngxu")

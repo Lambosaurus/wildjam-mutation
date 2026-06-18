@@ -18,6 +18,7 @@ var target_floor: int = 0
 func _ready() -> void:
 	timer.one_shot = true
 	timer.connect("timeout", _handle_elevator_travel)
+	var tween = create_tween()
 	for idx in len(active_floor_stops):
 		var floor_stop = active_floor_stops[idx]
 		floor_stop.name = str(idx)
@@ -30,6 +31,7 @@ func _handle_elevator_travel():
 		state = FloorState.DoorsClosed
 	if state == FloorState.DoorsClosed:
 		state = FloorState.DoorsOpening
+		var tween = create_tween()
 		active_floor_stops[target_floor].animator.play("open_door")
 		for body in traveller_queue:
 			if not is_instance_valid(body):
