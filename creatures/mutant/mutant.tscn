@@ -7,6 +7,18 @@
 [ext_resource type="Script" uid="uid://d02hn7jrn1pnr" path="res://creatures/mutant/swarm_detector.gd" id="5_37x11"]
 [ext_resource type="PackedScene" uid="uid://cqq8iiqfveykq" path="res://creatures/detector/target_selector.tscn" id="5_y6s6a"]
 [ext_resource type="Texture2D" uid="uid://cvibe34ijekhi" path="res://creatures/mutant/light.png" id="6_y6s6a"]
+[ext_resource type="AudioStream" uid="uid://by477mubg5qng" path="res://sounds/creature_sounds/mon 1.mp3" id="8_ohnn2"]
+[ext_resource type="AudioStream" uid="uid://powr2sd4qxua" path="res://sounds/creature_sounds/mon 2.mp3" id="9_w5iw2"]
+[ext_resource type="AudioStream" uid="uid://clxgxha8le0gu" path="res://sounds/creature_sounds/mon 3.mp3" id="10_o10jf"]
+[ext_resource type="AudioStream" uid="uid://b7wgdievq7168" path="res://sounds/creature_sounds/mon 4.mp3" id="11_58rlf"]
+[ext_resource type="Script" uid="uid://cc7td3t0msdiy" path="res://sounds/game_sound.gd" id="12_jnn0n"]
+[ext_resource type="AudioStream" uid="uid://b7dduga5ruqkg" path="res://sounds/creature_sounds/wet 3.mp3" id="13_wb5rs"]
+[ext_resource type="AudioStream" uid="uid://cffw3k8lhyr2n" path="res://sounds/creature_sounds/wet 5.mp3" id="14_6f7ga"]
+[ext_resource type="AudioStream" uid="uid://dwhfxv8bv47vo" path="res://sounds/creature_sounds/wet 9.mp3" id="15_hoh73"]
+[ext_resource type="AudioStream" uid="uid://cfw4psna40xqm" path="res://sounds/creature_sounds/wet 11.mp3" id="16_p4ocj"]
+[ext_resource type="AudioStream" uid="uid://crwf8ew3i4ogs" path="res://sounds/creature_sounds/wet 12.mp3" id="17_c3snx"]
+[ext_resource type="AudioStream" uid="uid://uy2fedr6ddbg" path="res://sounds/creature_sounds/wet 13.mp3" id="18_pe0oo"]
+[ext_resource type="AudioStream" uid="uid://c235swyo4v5ot" path="res://sounds/creature_sounds/wet 14.mp3" id="19_mlhge"]
 
 [sub_resource type="Resource" id="Resource_dv2ve"]
 script = ExtResource("2_y6s6a")
@@ -25,6 +37,27 @@ fill_to = Vector2(0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ybval"]
 radius = 250.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_posyv"]
+random_pitch = 1.0905077
+random_volume_offset_db = 2.0
+streams_count = 4
+stream_0/stream = ExtResource("8_ohnn2")
+stream_1/stream = ExtResource("9_w5iw2")
+stream_2/stream = ExtResource("10_o10jf")
+stream_3/stream = ExtResource("11_58rlf")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_h031x"]
+random_pitch = 1.122462
+random_volume_offset_db = 1.0
+streams_count = 7
+stream_0/stream = ExtResource("13_wb5rs")
+stream_1/stream = ExtResource("14_6f7ga")
+stream_2/stream = ExtResource("15_hoh73")
+stream_3/stream = ExtResource("16_p4ocj")
+stream_4/stream = ExtResource("17_c3snx")
+stream_5/stream = ExtResource("18_pe0oo")
+stream_6/stream = ExtResource("19_mlhge")
 
 [node name="Mutant" type="CharacterBody2D" unique_id=88951864]
 light_mask = 2
@@ -73,5 +106,15 @@ texture = ExtResource("6_y6s6a")
 
 [node name="ItemSelector" parent="." unique_id=1093162238 instance=ExtResource("5_y6s6a")]
 target_bit = 4
+
+[node name="DetectionSounds" type="AudioStreamPlayer2D" parent="." unique_id=762892718]
+stream = SubResource("AudioStreamRandomizer_posyv")
+script = ExtResource("12_jnn0n")
+metadata/_custom_type_script = "uid://cc7td3t0msdiy"
+
+[node name="MutationSounds" type="AudioStreamPlayer2D" parent="." unique_id=1830402316]
+stream = SubResource("AudioStreamRandomizer_h031x")
+script = ExtResource("12_jnn0n")
+metadata/_custom_type_script = "uid://cc7td3t0msdiy"
 
 [connection signal="area_entered" from="SelectionArea" to="." method="_on_selection_area_area_entered"]

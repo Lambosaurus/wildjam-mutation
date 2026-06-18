@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://cpurbdtbjx756"]
 
 [ext_resource type="Script" uid="uid://djt10ejnypqe3" path="res://entities/strike/strike.gd" id="1_hr26k"]
+[ext_resource type="AudioStream" uid="uid://cnuxtipfb1cc1" path="res://sounds/creature_sounds/crunkle 1.mp3" id="2_yc4cj"]
+[ext_resource type="AudioStream" uid="uid://uhqk7i10mvqu" path="res://sounds/creature_sounds/crunkle 2.mp3" id="3_kyhey"]
+[ext_resource type="AudioStream" uid="uid://1bckc1o7j2wt" path="res://sounds/creature_sounds/wet 18.mp3" id="4_ny0ax"]
+[ext_resource type="Script" uid="uid://cc7td3t0msdiy" path="res://sounds/game_sound.gd" id="5_kyhey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lqdc4"]
 
@@ -11,6 +15,12 @@ colors = PackedColorArray(0.995711, 0.77393544, 0.54973173, 1, 0.9747655, 0.6292
 gradient = SubResource("Gradient_ftal8")
 width = 20
 height = 20
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ov2e1"]
+streams_count = 3
+stream_0/stream = ExtResource("2_yc4cj")
+stream_1/stream = ExtResource("3_kyhey")
+stream_2/stream = ExtResource("4_ny0ax")
 
 [node name="Strike" type="Area2D" unique_id=518104389]
 collision_layer = 0
@@ -24,3 +34,8 @@ shape = SubResource("CircleShape2D_lqdc4")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=250301045]
 z_index = 1
 texture = SubResource("GradientTexture2D_yc4cj")
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="." unique_id=1915837493]
+stream = SubResource("AudioStreamRandomizer_ov2e1")
+script = ExtResource("5_kyhey")
+metadata/_custom_type_script = "uid://cc7td3t0msdiy"

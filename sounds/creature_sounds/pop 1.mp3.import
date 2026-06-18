@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dv702f1sphbnf"
+path="res://.godot/imported/pop 1.mp3-b612c8b20f772b2f6a770336a449d52b.mp3str"
+
+[deps]
+
+source_file="res://sounds/creature_sounds/pop 1.mp3"
+dest_files=["res://.godot/imported/pop 1.mp3-b612c8b20f772b2f6a770336a449d52b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

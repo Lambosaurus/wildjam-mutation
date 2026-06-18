@@ -4,6 +4,11 @@ extends Area2D
 @export var speed: float = 600.0
 @export var velocity: Vector2
 
+@onready var sounds = $Sounds
+
+func _ready():
+	sounds.play()
+
 func set_target(target: Vector2, spread: float = 0.0) -> void:
 	var angle = (target - global_position).angle()
 	angle += randf_range(-spread, +spread)

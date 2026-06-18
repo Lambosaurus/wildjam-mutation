@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://caa5hhihlqmdh"
+path="res://.godot/imported/wet 16.mp3-70d1f6191485605a0e2f261fff35dcc4.mp3str"
+
+[deps]
+
+source_file="res://sounds/creature_sounds/wet 16.mp3"
+dest_files=["res://.godot/imported/wet 16.mp3-70d1f6191485605a0e2f261fff35dcc4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

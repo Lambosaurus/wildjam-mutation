@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhmhwmye4a6r8"
+path="res://.godot/imported/swish 6.mp3-f84ec1abf32786f7ede7c5f419cf2bdd.mp3str"
+
+[deps]
+
+source_file="res://sounds/creature_sounds/swish 6.mp3"
+dest_files=["res://.godot/imported/swish 6.mp3-f84ec1abf32786f7ede7c5f419cf2bdd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dky5w7jv7b82a"
+path="res://.godot/imported/mon 6.mp3-f1c789d94aabfabd7c66879b443d8c8a.mp3str"
+
+[deps]
+
+source_file="res://sounds/creature_sounds/mon 6.mp3"
+dest_files=["res://.godot/imported/mon 6.mp3-f1c789d94aabfabd7c66879b443d8c8a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

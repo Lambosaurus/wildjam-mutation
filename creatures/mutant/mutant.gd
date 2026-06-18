@@ -26,6 +26,9 @@ const MELEE_STRIKE = preload('res://entities/strike/strike.tscn')
 @export var BOIDS_THRESH_MAX = 1000.0
 
 @onready var health = mutant_type.max_health
+@onready var detection_sounds = $DetectionSounds
+@onready var mutation_sounds = $MutationSounds
+
 var action = Action.idle;
 var action_timeout = 0
 var direction = Direction.right
@@ -51,9 +54,15 @@ func apply_damage(damage: float) -> bool:
 	health -= damage
 	return false
 
+var new_target = true
+
 func pick_next_action() -> void:
 	var target = $TargetSelector.scan()
 	if target:
+		if new_target:
+			detection_sounds.play()
+		new_target = false
+		
 		var candidate_direction = vector_to_direction(target.global_position.x - global_position.x)
 		var dist = global_position.distance_to(target.global_position)
 		if dist < mutant_type.attack_range:
@@ -73,6 +82,8 @@ func pick_next_action() -> void:
 			0.25,
 			candidate_direction,
 		);
+	else:
+		new_target = true
 		
 	var item = $ItemSelector.scan()
 	if item:
@@ -127,6 +138,7 @@ func start_action(act: Action, time: float, dir: Direction, target: Node2D = nul
 	$Chassis.animate(action_animation_map[action])
 
 func mutate(mutation: Mutation):
+	mutation_sounds.play()
 	$Chassis.apply_mutation(mutation)
 	mutant_type = MutantType.new()
 	$Chassis.modify_attributes(mutant_type)

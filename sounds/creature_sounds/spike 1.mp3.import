@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cb3v4uspgdppw"
+path="res://.godot/imported/spike 1.mp3-8ece6a693fa1a93127d4c67fe8ea3b59.mp3str"
+
+[deps]
+
+source_file="res://sounds/creature_sounds/spike 1.mp3"
+dest_files=["res://.godot/imported/spike 1.mp3-8ece6a693fa1a93127d4c67fe8ea3b59.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

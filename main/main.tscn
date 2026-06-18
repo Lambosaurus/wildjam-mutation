@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://byescby3rnuk1" path="res://entities/entity_spawner.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://dlom32x0f3tyr" path="res://creatures/mutant/mutant.tscn" id="4_c651c"]
 [ext_resource type="PackedScene" uid="uid://cl8rxjlclso5g" path="res://building/components/transporter/elevator/elevator.tscn" id="9_bsumw"]
+[ext_resource type="Resource" uid="uid://pqqd66qcnrml" path="res://creatures/human/types/security_guard.tres" id="9_fwcvl"]
 [ext_resource type="PackedScene" uid="uid://etva80dwgv3l" path="res://ui/main_gui.tscn" id="9_grrlh"]
 [ext_resource type="PackedScene" uid="uid://di2lvp77xng0n" path="res://building/building_tiles.tscn" id="10_0i4oc"]
 [ext_resource type="PackedScene" uid="uid://dcejudxtfvrn8" path="res://building/components/transporter/elevator/pixel_floor_stop.tscn" id="10_bsumw"]
@@ -76,10 +77,53 @@ spawnable = ExtResource("4_c651c")
 [node name="SpawnPoint" type="Node2D" parent="Spawners/MutantLevel0" unique_id=1086107178]
 position = Vector2(293, 63)
 
+[node name="Humans" type="Node" parent="." unique_id=1846980081]
+
+[node name="Soldier" parent="Humans" unique_id=1906732542 instance=ExtResource("2_pjrb6")]
+position = Vector2(288, 370)
+human_type = ExtResource("9_fwcvl")
+
+[node name="Soldier2" parent="Humans" unique_id=1070708771 instance=ExtResource("2_pjrb6")]
+position = Vector2(288, 370)
+human_type = ExtResource("9_fwcvl")
+
+[node name="Soldier3" parent="Humans" unique_id=1220084831 instance=ExtResource("2_pjrb6")]
+position = Vector2(288, 370)
+human_type = ExtResource("9_fwcvl")
+
+[node name="Soldier4" parent="Humans" unique_id=1526823981 instance=ExtResource("2_pjrb6")]
+position = Vector2(288, 370)
+human_type = ExtResource("9_fwcvl")
+
+[node name="Soldier5" parent="Humans" unique_id=1144017800 instance=ExtResource("2_pjrb6")]
+position = Vector2(288, 370)
+human_type = ExtResource("9_fwcvl")
+
+[node name="Soldier6" parent="Humans" unique_id=2013715139 instance=ExtResource("2_pjrb6")]
+position = Vector2(749, 567)
+human_type = ExtResource("9_fwcvl")
+
+[node name="Soldier7" parent="Humans" unique_id=334522673 instance=ExtResource("2_pjrb6")]
+position = Vector2(749, 567)
+human_type = ExtResource("9_fwcvl")
+
+[node name="Soldier8" parent="Humans" unique_id=1133089705 instance=ExtResource("2_pjrb6")]
+position = Vector2(749, 567)
+human_type = ExtResource("9_fwcvl")
+
+[node name="Soldier9" parent="Humans" unique_id=1353841223 instance=ExtResource("2_pjrb6")]
+position = Vector2(749, 567)
+human_type = ExtResource("9_fwcvl")
+
+[node name="Soldier10" parent="Humans" unique_id=1361462706 instance=ExtResource("2_pjrb6")]
+position = Vector2(749, 567)
+human_type = ExtResource("9_fwcvl")
+
 [node name="MainCamera" type="Camera2D" parent="." unique_id=35768897]
 position = Vector2(575, 326)
 
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=1429688143]
+visible = false
 
 [node name="MainGUI" parent="GUILayer" unique_id=10804972 instance=ExtResource("9_grrlh")]
 mouse_filter = 1
