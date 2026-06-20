@@ -4,3 +4,5 @@
 
 [node name="SelectionArea" type="Area2D" unique_id=2102157275]
 script = ExtResource("1_u5gpo")
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

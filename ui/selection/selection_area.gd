@@ -30,3 +30,6 @@ func highlight(on: bool = true):
 		_highlight_node.target = highlight_target
 		_highlight_node.color = highlight_color
 		add_child(_highlight_node)
+
+func _on_tree_exiting() -> void:
+	SelectionManager.deselect_node(self)

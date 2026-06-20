@@ -30,11 +30,14 @@ func select_node(node: SelectionArea):
 	node_selected.emit(node)
 	
 func deselect_node(node: SelectionArea):
-	selected_nodes_dict.erase(node)
 	if node.get_selectable_node():
 		node.highlight(false)
-	node_deselected.emit(node)
-	if not any_selected():  _current_group = null
+		
+	if selected_nodes_dict.erase(node):
+		node_deselected.emit(node)
+		
+	if not any_selected():
+		_current_group = null
 
 func get_selected_nodes():
 	return selected_nodes_dict.keys()
