@@ -2,7 +2,11 @@ extends Area2D
 
 @export var damage: float = 20.0
 @export var speed: float = 600.0
-@export var velocity: Vector2
+@export var velocity: Vector2:
+	set(value):
+		$Sprite.rotation = value.angle()
+		velocity = value
+		
 
 @onready var sounds = $Sounds
 
