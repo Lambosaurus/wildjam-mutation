@@ -8,10 +8,10 @@ radius = 250.0
 [node name="TargetSelector" type="Area2D" unique_id=1093162238]
 collision_layer = 0
 collision_mask = 2
+monitorable = false
 script = ExtResource("1_4odxk")
 
 [node name="Area" type="CollisionShape2D" parent="." unique_id=1075129443]
-visible = false
 shape = SubResource("CircleShape2D_5gep2")
 
 [node name="Raycast" type="RayCast2D" parent="." unique_id=1070201535]

@@ -13,6 +13,9 @@ extends Area2D
 		
 @export var target: Node2D
 
+func _ready():
+	$Area.shape = CircleShape2D.new()
+
 func scan() -> Node2D:
 	if is_instance_valid(target) and overlaps_body(target) and can_see(target):
 		# Do not change targets if we can still see the old one
