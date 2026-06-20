@@ -2,7 +2,7 @@ extends Node
 
 const MAX_THREAT = 100
 
-var biomass: int = 0
+var biomass: int = 1000
 var threat_level: int = 0
 enum GameState {Play, BossPhase, Win, Loss} 
 var current_state = GameState.Play

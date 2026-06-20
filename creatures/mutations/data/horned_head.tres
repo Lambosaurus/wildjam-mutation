@@ -6,8 +6,8 @@
 
 [sub_resource type="Resource" id="Resource_mmund"]
 script = ExtResource("2_qa1ac")
-speed_bonus = -50.0
-damage_bonus = 200.0
+speed_bonus = 0.75
+damage_bonus = 2.0
 metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
 
 [resource]
