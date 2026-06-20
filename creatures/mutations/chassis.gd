@@ -32,3 +32,4 @@ func animate(name: Animations):
 	$BodySlot.body_part.animate(name)
 	$ArmSlot.body_part.animate(name)
 	$LegSlot.body_part.animate(name)
+	$HeadSlot.body_part.animate(name)

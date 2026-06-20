@@ -352,6 +352,7 @@ metadata/_custom_type_script = "uid://dpt7uiq8oss28"
 libraries/ = SubResource("AnimationLibrary_bjmei")
 
 [node name="RightLeg" type="Polygon2D" parent="." unique_id=1410234377]
+visible = false
 position = Vector2(17, 7)
 texture = ExtResource("2_ur3m1")
 skeleton = NodePath("..")
@@ -361,6 +362,7 @@ polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1
 bones = ["Pelvis", PackedFloat32Array(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1), "Pelvis/RThigh", PackedFloat32Array(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1), "Pelvis/RThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0), "Pelvis/RThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="LeftLeg" type="Polygon2D" parent="." unique_id=1257960220]
+visible = false
 position = Vector2(1, 7)
 texture = ExtResource("2_ur3m1")
 skeleton = NodePath("..")
@@ -381,6 +383,7 @@ rest = Transform2D(1, 0, 0, 1, 9, 0)
 [node name="Leg" type="Bone2D" parent="Pelvis/RThigh" unique_id=1358134331]
 position = Vector2(-2, 20)
 rotation = -0.2602095
+scale = Vector2(0.9999998, 0.9999998)
 rest = Transform2D(1, 0, 0, 1, -2, 20)
 
 [node name="Shin" type="Bone2D" parent="Pelvis/RThigh/Leg" unique_id=1364799557]

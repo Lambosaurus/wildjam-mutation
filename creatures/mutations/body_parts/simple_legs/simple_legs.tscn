@@ -22,7 +22,7 @@ polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1
 bones = ["Pelvis", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Pelvis/RThigh", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0), "Pelvis/RThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0), "Pelvis/RThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="LeftLeg" type="Polygon2D" parent="." unique_id=105522697]
-position = Vector2(1, 7)
+position = Vector2(5, 7)
 texture = ExtResource("3_r8rbi")
 skeleton = NodePath("../Legs")
 polygon = PackedVector2Array(-20.5, -12, -20.5, -10.400002, -20.900002, -10, -22.5, -10, -22.5, 14.300003, -16.5, 25.300003, -16.5, 27.5, -13.5, 29.5, -13.5, 30.699997, -12.299999, 31.199997, -9.099998, 28, -7.5, 28, -7.5, 23.599998, -9.5, 21.599998, -9.5, 15.699997, -13, 11, -12.5, 7.0999985, -12.5, -0.40000153, -10.5, -1.4000015, -10.5, -8.5, -13.5, -10.599998, -13.5, -12)

@@ -2,8 +2,8 @@ class_name MutantType
 extends Resource
 
 @export var max_health: float = 100.0
-@export var walk_speed: float = 100.0
-@export var run_speed: float = 200.0
+@export var walk_speed: float = 50.0
+@export var run_speed: float = 75.0
 
 @export var chase_range: float = 500.0
 

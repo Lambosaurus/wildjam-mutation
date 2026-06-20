@@ -141,7 +141,7 @@ position = Vector2(12, 0)
 rest = Transform2D(1, 0, 0, 1, 12, 0)
 
 [node name="Arm" type="Bone2D" parent="Core/ShoulderR" unique_id=758649855]
-position = Vector2(-3.1360123, 19.878769)
+position = Vector2(-3.9474788, 19.299314)
 rest = Transform2D(1, 0, 0, 1, -6, 18)
 
 [node name="Fore" type="Bone2D" parent="Core/ShoulderR/Arm" unique_id=1071864264]
@@ -153,7 +153,7 @@ position = Vector2(-8, 1)
 rest = Transform2D(1, 0, 0, 1, -8, 1)
 
 [node name="Arm" type="Bone2D" parent="Core/ShoulderL" unique_id=1770523382]
-position = Vector2(-15.352114, 10.968712)
+position = Vector2(-14.484959, 11.481134)
 rest = Transform2D(1, 0, 0, 1, -3, 18)
 
 [node name="Fore" type="Bone2D" parent="Core/ShoulderL/Arm" unique_id=1887298257]

@@ -31,3 +31,4 @@ script = ExtResource("5_v0i33")
 metadata/_custom_type_script = "uid://cvxvf8om3wyxm"
 
 [node name="SimpleLegs" parent="LegSlot" unique_id=198314320 instance=ExtResource("6_ulkix")]
+position = Vector2(-3, 0)
