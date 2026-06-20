@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://ch0d03r2qugcc"]
+
+[ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_hv2kx"]
+[ext_resource type="SpriteFrames" uid="uid://bk2ky4nuvjssy" path="res://creatures/human/sprites/Scientists_1/sprites.tres" id="2_hv2kx"]
+
+[resource]
+script = ExtResource("1_hv2kx")
+name = "Scientist"
+max_health = 125.0
+walk_speed = 75.0
+run_speed = 150.0
+giblet_count = 6
+threat_value = 0
+sprites = ExtResource("2_hv2kx")
+flee_range = 150.0
+metadata/_custom_type_script = "uid://xg3orhtcol5l"

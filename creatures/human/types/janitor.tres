@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://c3ld6knvk15ub"]
+
+[ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_slsy6"]
+[ext_resource type="SpriteFrames" uid="uid://l0mng6yd6bch" path="res://creatures/human/sprites/City_men_1/sprites.tres" id="2_8tu1j"]
+
+[resource]
+script = ExtResource("1_slsy6")
+name = "Janitor"
+giblet_count = 4
+sprites = ExtResource("2_8tu1j")
+melee_range = 50.0
+melee_damage = 35.0
+metadata/_custom_type_script = "uid://xg3orhtcol5l"

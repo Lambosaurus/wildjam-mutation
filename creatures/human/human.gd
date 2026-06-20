@@ -6,6 +6,9 @@ enum Direction { left, right }
 @export var human_type: HumanType;
 const BULLET = preload('res://entities/bullet/bullet.tscn')
 const GIBLET = preload('res://entities/giblet/giblet.tscn')
+const SPLATTER =  preload('res://entities/pop/pop.tscn')
+
+const POLL_DURATION = 0.05
 
 const ANIMATIONS: Dictionary = {
 	Action.idle: "idle",
@@ -18,9 +21,10 @@ var health = 0;
 var action = Action.idle;
 var action_timeout = 0
 var direction = Direction.right
+var poll_timeout = POLL_DURATION
 
 func _ready() -> void:
-	$TargetSelector.range = max(human_type.attack_range, human_type.flee_range, human_type.chase_range)
+	$TargetSelector.range = max(human_type.shoot_range, human_type.flee_range, human_type.melee_range, human_type.chase_range)
 	$Spritesheet.sprite_frames = human_type.sprites
 	health = human_type.max_health
 
@@ -30,7 +34,7 @@ func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
 func vector_to_direction(x: float) -> Direction:
 	return Direction.right if x > 0 else Direction.left
 
-func pick_next_action() -> void:
+func pick_next_action(is_idle: bool = false) -> void:
 	var target = $TargetSelector.scan()
 	if target:
 		var target_position = target.global_position
@@ -42,20 +46,24 @@ func pick_next_action() -> void:
 				vector_to_direction(global_position.x - target_position.x)
 				)
 		
-		if distance <= human_type.attack_range:
-			spawn_attacks(target_position)
+		if distance <= human_type.shoot_range:
+			spawn_bullets(target_position)
 			return 	start_action(
 				Action.attack,
-				human_type.attack_duration,
+				human_type.shoot_duration,
 				vector_to_direction(target_position.x - global_position.x)
 			)
 			
 		if distance <= human_type.chase_range:
 			return 	start_action(
 				Action.run,
-				0.1,
+				POLL_DURATION,
 				vector_to_direction(target_position.x - global_position.x)
 			)
+	
+	# If already idle, dont disrupt the existing idle action	
+	if is_idle:
+		return
 	
 	# Idle behavior
 	return start_action(
@@ -64,7 +72,7 @@ func pick_next_action() -> void:
 		randi_range(Direction.left, Direction.right) as Direction
 	)
 
-func spawn_attacks(target: Vector2):
+func spawn_bullets(target: Vector2):
 	for i in range(human_type.bullet_count):
 		var bullet = BULLET.instantiate()
 		bullet.damage = human_type.bullet_damage
@@ -76,6 +84,7 @@ func start_action(act: Action, time: float, dir: Direction) -> void:
 	action = act
 	action_timeout = time
 	direction = dir
+	poll_timeout = POLL_DURATION
 	var spritesheet = $Spritesheet
 	spritesheet.flip_h = dir == Direction.left
 	spritesheet.play(ANIMATIONS[act])
@@ -88,6 +97,11 @@ func kill() -> void:
 		add_sibling(gib)
 		gib.position = position
 	GameState.update_threat_level(human_type.threat_value)
+	
+	var splatter = SPLATTER.instantiate()
+	splatter.position = position
+	add_sibling(splatter)
+	
 	queue_free()
 
 func apply_damage(damage: float) -> bool:
@@ -99,8 +113,13 @@ func apply_damage(damage: float) -> bool:
 
 func _process(delta: float) -> void:
 	action_timeout -= delta
-	if (action_timeout < 0):
+	poll_timeout -= delta
+	if action_timeout < 0:
 		pick_next_action()
+	elif poll_timeout < 0:
+		if action in [Action.idle, Action.walk]:
+			pick_next_action(true)
+		poll_timeout = POLL_DURATION
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

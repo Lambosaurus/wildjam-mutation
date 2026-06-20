@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://bwissqiav15ti"]
+
+[ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_3rlg1"]
+[ext_resource type="SpriteFrames" uid="uid://bat68fwt04dp7" path="res://creatures/human/sprites/Gangsters_3/sprites.tres" id="2_36jdv"]
+
+[resource]
+script = ExtResource("1_3rlg1")
+name = "Office Manager"
+max_health = 125.0
+giblet_count = 6
+sprites = ExtResource("2_36jdv")
+chase_range = 400.0
+flee_range = 75.0
+shoot_range = 300.0
+shoot_duration = 1.0
+bullet_damage = 35.0
+metadata/_custom_type_script = "uid://xg3orhtcol5l"

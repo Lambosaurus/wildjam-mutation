@@ -1,12 +1,15 @@
 extends Area2D
 
 @export var damage: float = 0.0
-@export var duration: float = 0.2
-
 @onready var sounds = $Sounds
+@export var flip_h: bool:
+	set(value):
+		flip_h = value
+		$Animation.flip_h = value
 
 func _ready():
 	sounds.play()
+	$Animation.play()
 
 func _process(delta: float) -> void:
 	if damage > 0:
@@ -15,6 +18,6 @@ func _process(delta: float) -> void:
 				node.apply_damage(damage)
 				damage = 0
 				break
-	duration -= delta
-	if duration < 0:
-		queue_free()
+
+func _on_animation_animation_finished() -> void:
+	queue_free()

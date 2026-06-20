@@ -88,6 +88,7 @@ highlight_color = Color(0, 0.73971456, 0, 1)
 shape = SubResource("CapsuleShape2D_lb6h7")
 
 [node name="SwarmDetector" type="Area2D" parent="." unique_id=1274852789]
+visible = false
 collision_layer = 0
 collision_mask = 4
 monitorable = false
@@ -97,6 +98,7 @@ script = ExtResource("5_37x11")
 shape = SubResource("CircleShape2D_ybval")
 
 [node name="TargetSelector" parent="." unique_id=1582399921 instance=ExtResource("5_y6s6a")]
+visible = false
 
 [node name="Vision" type="PointLight2D" parent="." unique_id=1379736234]
 enabled = false
@@ -106,6 +108,7 @@ shadow_enabled = true
 texture = ExtResource("6_y6s6a")
 
 [node name="ItemSelector" parent="." unique_id=1093162238 instance=ExtResource("5_y6s6a")]
+visible = false
 target_bit = 4
 
 [node name="DetectionSounds" type="AudioStreamPlayer2D" parent="." unique_id=762892718]

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://cirk3igetj714"]
+
+[ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_4k5br"]
+[ext_resource type="SpriteFrames" uid="uid://c10g8kip48txw" path="res://creatures/human/sprites/Gangsters_1/sprites.tres" id="2_4k5br"]
+
+[resource]
+script = ExtResource("1_4k5br")
+name = "Boss"
+max_health = 500.0
+walk_speed = 50.0
+run_speed = 100.0
+giblet_count = 25
+sprites = ExtResource("2_4k5br")
+flee_range = 0.0
+shoot_range = 400.0
+shoot_duration = 0.15
+bullet_damage = 35.0
+bullet_spread = 0.3
+metadata/_custom_type_script = "uid://xg3orhtcol5l"

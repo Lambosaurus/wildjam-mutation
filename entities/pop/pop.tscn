@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bdv1lgf7b6td3"]
+
+[ext_resource type="Texture2D" uid="uid://chu2e7etl5f2o" path="res://entities/pop/pop.png" id="1_feqos"]
+[ext_resource type="Script" uid="uid://ch3a0egwm51i5" path="res://entities/pop/pop.gd" id="2_e17tm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e17tm"]
+atlas = ExtResource("1_feqos")
+region = Rect2(432, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frsq8"]
+atlas = ExtResource("1_feqos")
+region = Rect2(504, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pehtv"]
+atlas = ExtResource("1_feqos")
+region = Rect2(576, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di5xk"]
+atlas = ExtResource("1_feqos")
+region = Rect2(648, 0, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fnvgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e17tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frsq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pehtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di5xk")
+}],
+"loop": false,
+"name": &"pop",
+"speed": 20.0
+}]
+
+[node name="Pop" type="AnimatedSprite2D" unique_id=970659008]
+modulate = Color(0.80126345, 4.1151793e-06, 8.663535e-07, 1)
+sprite_frames = SubResource("SpriteFrames_fnvgy")
+animation = &"pop"
+script = ExtResource("2_e17tm")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://dovwmu4yuxbbb"]
+
+[ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_jf6i0"]
+[ext_resource type="SpriteFrames" uid="uid://c0ba74ufqi6jf" path="res://creatures/human/sprites/City_men_3/sprites.tres" id="2_ob20x"]
+
+[resource]
+script = ExtResource("1_jf6i0")
+name = "Office Chad"
+max_health = 150.0
+walk_speed = 75.0
+run_speed = 150.0
+giblet_count = 7
+sprites = ExtResource("2_ob20x")
+flee_range = 100.0
+melee_range = 50.0
+melee_damage = 25.0
+metadata/_custom_type_script = "uid://xg3orhtcol5l"

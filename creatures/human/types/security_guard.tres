@@ -1,17 +1,17 @@
-[gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://pqqd66qcnrml"]
+[gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://irdrkl0ue4od"]
 
-[ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_bwvw4"]
-[ext_resource type="SpriteFrames" uid="uid://4btnhdq74w2u" path="res://creatures/human/sprites/Capitan/sprites.tres" id="2_yplcw"]
+[ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_yplcw"]
+[ext_resource type="SpriteFrames" uid="uid://du5l16dimm74f" path="res://creatures/human/sprites/Cop_3/sprites.tres" id="2_n2uqf"]
 
 [resource]
-script = ExtResource("1_bwvw4")
-max_health = 200.0
-chase_range = 800.0
-flee_range = 0.0
-attack_range = 800.0
-bullet_damage = 10.0
-bullet_count = 6
-bullet_spread = 0.2
-attack_duration = 1.0
-sprites = ExtResource("2_yplcw")
+script = ExtResource("1_yplcw")
+name = "Security Guard"
+max_health = 125.0
+walk_speed = 150.0
+run_speed = 300.0
+giblet_count = 7
+sprites = ExtResource("2_n2uqf")
+chase_range = 500.0
+flee_range = 75.0
+shoot_range = 350.0
 metadata/_custom_type_script = "uid://xg3orhtcol5l"
