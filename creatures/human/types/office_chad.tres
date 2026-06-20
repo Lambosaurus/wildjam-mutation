@@ -11,6 +11,7 @@ walk_speed = 75.0
 run_speed = 150.0
 giblet_count = 7
 sprites = ExtResource("2_ob20x")
+flee_range = 100.0
 melee_range = 50.0
 melee_damage = 25.0
 metadata/_custom_type_script = "uid://xg3orhtcol5l"

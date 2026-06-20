@@ -7,5 +7,5 @@
 script = ExtResource("1_s73uf")
 name = "Office Worker"
 sprites = ExtResource("2_healn")
-flee_range = 300.0
+flee_range = 150.0
 metadata/_custom_type_script = "uid://xg3orhtcol5l"

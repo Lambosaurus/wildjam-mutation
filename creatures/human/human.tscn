@@ -39,6 +39,7 @@ highlight_color = Color(0.64288336, 1.889132e-06, 5.2943824e-07, 1)
 shape = SubResource("RectangleShape2D_gnv0q")
 
 [node name="TargetSelector" parent="." unique_id=1093162238 instance=ExtResource("4_iru6h")]
+visible = false
 target_bit = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1666293401]

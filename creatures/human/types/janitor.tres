@@ -8,7 +8,6 @@ script = ExtResource("1_slsy6")
 name = "Janitor"
 giblet_count = 4
 sprites = ExtResource("2_8tu1j")
-flee_range = 300.0
 melee_range = 50.0
 melee_damage = 35.0
 metadata/_custom_type_script = "uid://xg3orhtcol5l"

@@ -11,11 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://di2lvp77xng0n" path="res://building/building_tiles.tscn" id="10_0i4oc"]
 [ext_resource type="PackedScene" uid="uid://dcejudxtfvrn8" path="res://building/components/transporter/elevator/pixel_floor_stop.tscn" id="10_bsumw"]
 [ext_resource type="AudioStream" uid="uid://dtmocdv8smevh" path="res://sounds/music/mutation_more_beaty.mp3" id="10_fwcvl"]
+[ext_resource type="Resource" uid="uid://bwissqiav15ti" path="res://creatures/human/types/office_manager.tres" id="10_n3o0a"]
 [ext_resource type="Script" uid="uid://bi1k76fl1ws63" path="res://sounds/game_music.gd" id="11_bsumw"]
 [ext_resource type="PackedScene" uid="uid://bvyey1fdeivis" path="res://building/components/lighting/point-light.tscn" id="13_na0o7"]
 [ext_resource type="Texture2D" uid="uid://dkf32vbobi1wy" path="res://building/components/lighting/trapezoid-mask.png" id="14_73k8k"]
 [ext_resource type="Texture2D" uid="uid://y88epottr0vf" path="res://building/components/lighting/radial-mask.png" id="15_5xyti"]
-[ext_resource type="Resource" uid="uid://b1lon1018wttr" path="res://creatures/human/types/swat_offender.tres" id="16_n3o0a"]
 
 [node name="Main" type="Node2D" unique_id=634852315]
 script = ExtResource("1_3wy1v")
@@ -88,8 +88,8 @@ position = Vector2(288, 370)
 human_type = ExtResource("9_5xyti")
 
 [node name="Human" parent="Humans" unique_id=1468003654 instance=ExtResource("2_pjrb6")]
-position = Vector2(749, 470)
-human_type = ExtResource("16_n3o0a")
+position = Vector2(761, 474)
+human_type = ExtResource("10_n3o0a")
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=35768897]
 position = Vector2(575, 326)
