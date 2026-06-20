@@ -23,7 +23,6 @@ func vector_to_direction(x: float) -> Direction:
 	return Direction.right if x > 0 else Direction.left
 
 func pick_next_action() -> void:
-	
 	var target = $TargetSelector.scan()
 	if target:
 		var target_position = target.global_position
@@ -77,7 +76,7 @@ func kill() -> void:
 		var gib = GIBLET.instantiate()
 		add_sibling(gib)
 		gib.position = position
-	
+	GameState.update_threat_level(human_type.threat_value)
 	queue_free()
 
 func apply_damage(damage: float) -> bool:

@@ -15,6 +15,7 @@ extends Resource
 @export var attack_duration: float = 0.5
 
 @export var giblet_count: int = 5
+@export var threat_value: int = 1
 
 func spawn_attacks(target: Vector2) -> void:
 	pass

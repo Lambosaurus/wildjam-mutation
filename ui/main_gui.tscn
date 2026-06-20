@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cbx8a11hs7fl6" path="res://ui/main_gui.gd" id="1_2lw0j"]
 [ext_resource type="Resource" uid="uid://w7el4w33gto" path="res://main/main_mutations.tres" id="2_g0n8d"]
 [ext_resource type="Texture2D" uid="uid://plwvceke53ws" path="res://ui/sprites/biomass.png" id="2_lcwsb"]
+[ext_resource type="FontFile" uid="uid://dg1qq7053eat2" path="res://ui/fonts/5ceta_mono.ttf" id="4_s8jya"]
+[ext_resource type="FontFile" uid="uid://bhk2x372cyclc" path="res://ui/fonts/Borg9.ttf" id="5_jwyhy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g0n8d"]
 font_size = 32
@@ -10,6 +12,13 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_lcwsb"]
 font_size = 32
 font_color = Color(0.91960233, 0.17063594, 0.19679102, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v0wui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g0n8d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0wui"]
+bg_color = Color(0.8862745, 0.37254903, 0.44313726, 0.84705883)
 
 [node name="MainGUI" type="Control" unique_id=1754052925]
 layout_mode = 3
@@ -36,6 +45,7 @@ texture = ExtResource("2_lcwsb")
 [node name="Amount" type="Label" parent="BioMass" unique_id=1902310021]
 custom_minimum_size = Vector2(100, 32)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_s8jya")
 text = "10000"
 label_settings = SubResource("LabelSettings_g0n8d")
 
@@ -91,5 +101,34 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UITimer" type="Timer" parent="ErrorLabel" unique_id=623599384]
+
+[node name="ThreatLevel" type="VBoxContainer" parent="." unique_id=1727032104]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+offset_left = 19.0
+offset_top = 106.0
+offset_right = 242.0
+offset_bottom = 175.0
+grow_horizontal = 0
+
+[node name="ThreatLabel" type="Label" parent="ThreatLevel" unique_id=1715140817]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_jwyhy")
+theme_override_font_sizes/font_size = 62
+text = "Threat Level"
+label_settings = SubResource("LabelSettings_v0wui")
+
+[node name="ProgressBar" type="ProgressBar" parent="ThreatLevel" unique_id=571917116]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("4_s8jya")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/background = SubResource("StyleBoxEmpty_g0n8d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v0wui")
+step = 1.0
+value = 50.0
+show_percentage = false
 
 [connection signal="item_clicked" from="SelectPanel/SelectionContainer/Mutations" to="." method="_on_mutations_item_clicked"]

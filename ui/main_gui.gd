@@ -6,12 +6,13 @@ func _ready():
 	SelectionManager.connect("node_selected", add_selected)
 	SelectionManager.connect("node_deselected", remove_selected)
 	$ErrorLabel/UITimer.connect("timeout", clear_error)
-	
+	$ThreatLevel/ProgressBar.show_percentage = false
 	add_mutations_to_list()
 
 func _process(_delta):
 	update_biomass()
 	update_selection()
+	update_threat_level()
 	
 func add_mutations_to_list():
 	var mutations = mutation_service.available_mutations
@@ -21,6 +22,11 @@ func add_mutations_to_list():
 	
 func update_biomass():
 	$BioMass/Amount.text = str(GameState.biomass)
+
+func update_threat_level():
+	if GameState.threat_level > 0:
+		$ThreatLevel/ProgressBar.show_percentage = true
+	$ThreatLevel/ProgressBar.value = GameState.threat_level
 
 func remove_selected(node: SelectionArea):
 	if node.action_target is Mutant:

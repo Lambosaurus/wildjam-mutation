@@ -8,11 +8,9 @@ var energy_target = self.energy
 var rng = RandomNumberGenerator.new()
 var blink_rate: float = 0
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if (blink):
-		print('blink active')
 		blink_timer.connect("timeout", _on_blink_timeout)
 		calc_energy_target()
 	pass # Replace with function body.
@@ -25,7 +23,6 @@ func calc_blink_intensity():
 			return {"lower": 0.05, "upper": 0.15}
 		BlinkFrequency.High:
 			return {"lower": 0.01, "upper": 0.02}
-	
 	
 func calc_energy_target():
 	var light_tween = create_tween()
