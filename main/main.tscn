@@ -29,6 +29,7 @@ position = Vector2(565, 370)
 [node name="Elevator" parent="Transporters" unique_id=1486849745 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
 position = Vector2(814, 76)
 active_floor_stops = [NodePath("PixelFloorStop"), NodePath("PixelFloorStop2"), NodePath("PixelFloorStop3"), NodePath("PixelFloorStop4")]
+travel_time = 1
 
 [node name="PixelFloorStop" parent="Transporters/Elevator" unique_id=1544292327 instance=ExtResource("10_bsumw")]
 position = Vector2(-9, 494)
@@ -41,13 +42,16 @@ position = Vector2(-9, 302)
 
 [node name="PixelFloorStop4" parent="Transporters/Elevator" unique_id=584333959 instance=ExtResource("10_bsumw")]
 position = Vector2(-9, 207)
+travel_enabled = false
 
 [node name="Elevator2" parent="Transporters" unique_id=491983639 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
 position = Vector2(1628, 152)
 active_floor_stops = [NodePath("PixelFloorStop6"), NodePath("PixelFloorStop5")]
+travel_time = 1
 
 [node name="PixelFloorStop6" parent="Transporters/Elevator2" unique_id=633424822 instance=ExtResource("10_bsumw")]
 position = Vector2(-1320, 34)
+travel_enabled = false
 
 [node name="PixelFloorStop5" parent="Transporters/Elevator2" unique_id=127738327 instance=ExtResource("10_bsumw")]
 position = Vector2(-1319, 130)
@@ -74,12 +78,12 @@ position = Vector2(795, 109)
 
 [node name="MutantLevel0" parent="Spawners" unique_id=658344345 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
 light_mask = 2
-position = Vector2(9, 493)
+position = Vector2(10, 493)
 spawn_location = NodePath("SpawnPoint")
 spawnable = ExtResource("4_c651c")
 
 [node name="SpawnPoint" type="Node2D" parent="Spawners/MutantLevel0" unique_id=1086107178]
-position = Vector2(293, 63)
+position = Vector2(557, 63)
 
 [node name="Humans" type="Node" parent="." unique_id=1846980081]
 

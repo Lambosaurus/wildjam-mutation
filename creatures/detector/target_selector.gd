@@ -28,7 +28,7 @@ func scan() -> Node2D:
 		if dist_sq < best_dist_sq and can_see(node):
 			best_dist_sq = dist_sq
 			best_node = node
-			
+	
 	target = best_node
 	return target
 
