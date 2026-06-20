@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://bboa3u65j1ejt"]
 
 [ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_310o7"]
+[ext_resource type="SpriteFrames" uid="uid://c0ba74ufqi6jf" path="res://creatures/human/sprites/City_men_3/sprites.tres" id="2_uvpxo"]
 
 [resource]
 script = ExtResource("1_310o7")
+sprites = ExtResource("2_uvpxo")
 metadata/_custom_type_script = "uid://xg3orhtcol5l"

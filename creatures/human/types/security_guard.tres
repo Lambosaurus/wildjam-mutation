@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://pqqd66qcnrml"]
 
 [ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_bwvw4"]
+[ext_resource type="SpriteFrames" uid="uid://4btnhdq74w2u" path="res://creatures/human/sprites/Capitan/sprites.tres" id="2_yplcw"]
 
 [resource]
 script = ExtResource("1_bwvw4")
@@ -12,4 +13,5 @@ bullet_damage = 10.0
 bullet_count = 6
 bullet_spread = 0.2
 attack_duration = 1.0
+sprites = ExtResource("2_yplcw")
 metadata/_custom_type_script = "uid://xg3orhtcol5l"
