@@ -91,6 +91,10 @@ human_type = ExtResource("9_5xyti")
 position = Vector2(761, 474)
 human_type = ExtResource("10_n3o0a")
 
+[node name="Human2" parent="Humans" unique_id=679666306 instance=ExtResource("2_pjrb6")]
+position = Vector2(624, 469)
+human_type = ExtResource("10_n3o0a")
+
 [node name="MainCamera" type="Camera2D" parent="." unique_id=35768897]
 position = Vector2(575, 326)
 

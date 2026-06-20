@@ -18,6 +18,7 @@ var attributes = {
 @export var mutant_type: MutantType
 
 const MELEE_STRIKE = preload('res://entities/strike/strike.tscn')
+const SPLATTER = preload('res://entities/pop/pop.tscn')
 
 @export_group("BOIDS Controls")
 @export var BOIDS_REPULSION = 1000.0
@@ -45,6 +46,12 @@ func vector_to_direction(x: float) -> Direction:
 
 func kill() -> void:
 	health = 0.0
+	
+	var splatter = SPLATTER.instantiate()
+	splatter.position = position
+	splatter.modulate = Color()
+	add_sibling(splatter)
+	
 	queue_free()
 
 func apply_damage(damage: float) -> bool:

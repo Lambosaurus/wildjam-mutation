@@ -6,6 +6,7 @@ enum Direction { left, right }
 @export var human_type: HumanType;
 const BULLET = preload('res://entities/bullet/bullet.tscn')
 const GIBLET = preload('res://entities/giblet/giblet.tscn')
+const SPLATTER =  preload('res://entities/pop/pop.tscn')
 
 const POLL_DURATION = 0.05
 
@@ -96,6 +97,11 @@ func kill() -> void:
 		add_sibling(gib)
 		gib.position = position
 	GameState.update_threat_level(human_type.threat_value)
+	
+	var splatter = SPLATTER.instantiate()
+	splatter.position = position
+	add_sibling(splatter)
+	
 	queue_free()
 
 func apply_damage(damage: float) -> bool:

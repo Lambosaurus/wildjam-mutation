@@ -81,7 +81,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i6834")
 }],
-"loop": true,
+"loop": false,
 "name": &"slash",
 "speed": 20.0
 }]
@@ -105,3 +105,5 @@ metadata/_custom_type_script = "uid://cc7td3t0msdiy"
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_45uac")
 animation = &"slash"
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]

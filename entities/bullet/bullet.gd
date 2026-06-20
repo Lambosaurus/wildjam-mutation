@@ -6,7 +6,8 @@ extends Area2D
 	set(value):
 		$Sprite.rotation = value.angle()
 		velocity = value
-		
+
+const POP = preload("res://entities/pop/pop.tscn")
 
 @onready var sounds = $Sounds
 
@@ -21,6 +22,13 @@ func set_target(target: Vector2, spread: float = 0.0) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if "apply_damage" in body:
 		body.apply_damage(damage)
+		
+	var pop = POP.instantiate()
+	pop.position = position
+	pop.modulate = Color("FFB000")
+	pop.scale *= 0.4
+	add_sibling(pop)
+		
 	queue_free()
 
 func _process(delta: float) -> void:
