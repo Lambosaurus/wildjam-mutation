@@ -27,40 +27,69 @@ position = Vector2(565, 370)
 [node name="Transporters" type="Node" parent="." unique_id=573249446]
 
 [node name="Elevator" parent="Transporters" unique_id=1486849745 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
-position = Vector2(814, 76)
-active_floor_stops = [NodePath("PixelFloorStop"), NodePath("PixelFloorStop2"), NodePath("PixelFloorStop3"), NodePath("PixelFloorStop4")]
-travel_time = 1
+position = Vector2(845, -21)
+active_floor_stops = [NodePath("PixelFloorStop"), NodePath("PixelFloorStop2"), NodePath("PixelFloorStop3"), NodePath("PixelFloorStop4"), NodePath("PixelFloorStop5")]
 
 [node name="PixelFloorStop" parent="Transporters/Elevator" unique_id=1544292327 instance=ExtResource("10_bsumw")]
-position = Vector2(-9, 494)
+position = Vector2(-9, 495)
 
 [node name="PixelFloorStop2" parent="Transporters/Elevator" unique_id=1212054322 instance=ExtResource("10_bsumw")]
 position = Vector2(-9, 399)
 
 [node name="PixelFloorStop3" parent="Transporters/Elevator" unique_id=1437522690 instance=ExtResource("10_bsumw")]
-position = Vector2(-9, 302)
+position = Vector2(-9, 303)
 
 [node name="PixelFloorStop4" parent="Transporters/Elevator" unique_id=584333959 instance=ExtResource("10_bsumw")]
+position = Vector2(-9, 207)
+
+[node name="PixelFloorStop5" parent="Transporters/Elevator" unique_id=1132868291 instance=ExtResource("10_bsumw")]
+position = Vector2(-9, 113)
+
+
+[node name="Elevator3" parent="Transporters" unique_id=288718594 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
+position = Vector2(574, 268)
+active_floor_stops = [NodePath("PixelFloorStop"), NodePath("PixelFloorStop2"), NodePath("PixelFloorStop3"), NodePath("PixelFloorStop4")]
+
+[node name="PixelFloorStop" parent="Transporters/Elevator3" unique_id=1212278078 instance=ExtResource("10_bsumw")]
+position = Vector2(-9, 494)
+
+[node name="PixelFloorStop2" parent="Transporters/Elevator3" unique_id=1557214138 instance=ExtResource("10_bsumw")]
+position = Vector2(-9, 399)
+
+[node name="PixelFloorStop3" parent="Transporters/Elevator3" unique_id=1451617305 instance=ExtResource("10_bsumw")]
+position = Vector2(-9, 302)
+
+[node name="PixelFloorStop4" parent="Transporters/Elevator3" unique_id=93177635 instance=ExtResource("10_bsumw")]
 position = Vector2(-9, 207)
 travel_enabled = false
 
 [node name="Elevator2" parent="Transporters" unique_id=491983639 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
-position = Vector2(1628, 152)
+position = Vector2(1879, -40)
 active_floor_stops = [NodePath("PixelFloorStop6"), NodePath("PixelFloorStop5")]
 travel_time = 1
 
 [node name="PixelFloorStop6" parent="Transporters/Elevator2" unique_id=633424822 instance=ExtResource("10_bsumw")]
-position = Vector2(-1320, 34)
+position = Vector2(-1323, 34)
 travel_enabled = false
 
 [node name="PixelFloorStop5" parent="Transporters/Elevator2" unique_id=127738327 instance=ExtResource("10_bsumw")]
-position = Vector2(-1319, 130)
+position = Vector2(-1324, 130)
+
+[node name="Elevator4" parent="Transporters" unique_id=436440057 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
+position = Vector2(1612, -132)
+active_floor_stops = [NodePath("PixelFloorStop6"), NodePath("PixelFloorStop5")]
+
+[node name="PixelFloorStop6" parent="Transporters/Elevator4" unique_id=774658696 instance=ExtResource("10_bsumw")]
+position = Vector2(-1319, 31)
+
+[node name="PixelFloorStop5" parent="Transporters/Elevator4" unique_id=316634137 instance=ExtResource("10_bsumw")]
+position = Vector2(-1320, 126)
 
 [node name="Spawners" type="Node" parent="." unique_id=699582945]
 
 [node name="MutantLevel1" parent="Spawners" unique_id=1106100923 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
 light_mask = 2
-position = Vector2(31, 355)
+position = Vector2(40, 444)
 spawn_location = NodePath("Location")
 spawnable = ExtResource("4_c651c")
 
@@ -69,7 +98,7 @@ position = Vector2(271, 108)
 
 [node name="HumanLevel1" parent="Spawners" unique_id=345066504 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
 light_mask = 2
-position = Vector2(10, 355)
+position = Vector2(13, 444)
 spawn_location = NodePath("Location")
 spawnable = ExtResource("2_pjrb6")
 
@@ -78,7 +107,7 @@ position = Vector2(795, 109)
 
 [node name="MutantLevel0" parent="Spawners" unique_id=658344345 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
 light_mask = 2
-position = Vector2(10, 493)
+position = Vector2(12, 685)
 spawn_location = NodePath("SpawnPoint")
 spawnable = ExtResource("4_c651c")
 
@@ -129,104 +158,317 @@ range_item_cull_mask = 33
 shadow_color = Color(0, 0, 0, 0.49019608)
 shadow_item_cull_mask = 0
 
-[node name="Floor0" type="Node" parent="AmbientLighting" unique_id=366175854]
+[node name="Basement" type="Node" parent="AmbientLighting" unique_id=1269734403]
 
-[node name="Flouro1" parent="AmbientLighting/Floor0" unique_id=1629056901 instance=ExtResource("13_na0o7")]
-position = Vector2(415, 556.125)
-scale = Vector2(1.1023619, 1.2576919)
+[node name="Flouro1" parent="AmbientLighting/Basement" unique_id=1629056901 instance=ExtResource("13_na0o7")]
+position = Vector2(412, 555)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro2" parent="AmbientLighting/Basement" unique_id=116180282 instance=ExtResource("13_na0o7")]
+position = Vector2(719, 554)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro3" parent="AmbientLighting/Basement" unique_id=358703207 instance=ExtResource("13_na0o7")]
+position = Vector2(413, 746)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro4" parent="AmbientLighting/Basement" unique_id=1931630286 instance=ExtResource("13_na0o7")]
+position = Vector2(716, 651)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro5" parent="AmbientLighting/Basement" unique_id=1597980750 instance=ExtResource("13_na0o7")]
+position = Vector2(414, 647)
+scale = Vector2(0.97637784, 1.2576919)
 color = Color(0.8721745, 0.9140407, 0.9797401, 1)
 energy = 0.8
 texture = ExtResource("14_73k8k")
 blink = true
 
-[node name="Flouro2" parent="AmbientLighting/Floor0" unique_id=1377409007 instance=ExtResource("13_na0o7")]
-position = Vector2(714, 556.125)
-scale = Vector2(1.1023619, 1.2576925)
-color = Color(0.8721745, 0.9140407, 0.9797401, 1)
-energy = 0.8
-texture = ExtResource("14_73k8k")
-
-[node name="Floor1" type="Node" parent="AmbientLighting" unique_id=1916783808]
-
-[node name="Flouro1" parent="AmbientLighting/Floor1" unique_id=2035548837 instance=ExtResource("13_na0o7")]
-position = Vector2(415, 460.12503)
-scale = Vector2(1.1023619, 1.2576919)
-color = Color(0.8721745, 0.9140407, 0.9797401, 1)
-energy = 0.8
-texture = ExtResource("14_73k8k")
-
-[node name="Flouro2" parent="AmbientLighting/Floor1" unique_id=2057539608 instance=ExtResource("13_na0o7")]
-position = Vector2(714, 460.125)
-scale = Vector2(1.1023619, 1.2576925)
-color = Color(0.8721745, 0.9140407, 0.9797401, 1)
-energy = 0.8
-texture = ExtResource("14_73k8k")
-
-[node name="Computer" parent="AmbientLighting/Floor1" unique_id=2036668955 instance=ExtResource("13_na0o7")]
-position = Vector2(784, 186.00002)
+[node name="Computer" parent="AmbientLighting/Basement" unique_id=500558508 instance=ExtResource("13_na0o7")]
+position = Vector2(718, 476)
 scale = Vector2(0.42588404, 0.2990505)
 color = Color(0.3208929, 0.4350957, 0.9244205, 1)
 texture = ExtResource("15_5xyti")
 blink = true
 blink_frequency = 2
 
-[node name="Floor2" type="Node" parent="AmbientLighting" unique_id=1099431827]
+[node name="Floor0" type="Node" parent="AmbientLighting" unique_id=366175854]
 
-[node name="Flouro1" parent="AmbientLighting/Floor2" unique_id=1921842620 instance=ExtResource("13_na0o7")]
-position = Vector2(415, 364.125)
-scale = Vector2(1.1023619, 1.2576919)
+[node name="Flouro1" parent="AmbientLighting/Floor0" unique_id=1774720329 instance=ExtResource("13_na0o7")]
+position = Vector2(350, 459.00003)
+scale = Vector2(0.97637784, 1.2576919)
 color = Color(0.8721745, 0.9140407, 0.9797401, 1)
 energy = 0.8
 texture = ExtResource("14_73k8k")
 
-[node name="Flouro2" parent="AmbientLighting/Floor2" unique_id=2082628862 instance=ExtResource("13_na0o7")]
-position = Vector2(714, 364.12503)
-scale = Vector2(1.1023619, 1.2576925)
+[node name="Flouro2" parent="AmbientLighting/Floor0" unique_id=1831558436 instance=ExtResource("13_na0o7")]
+position = Vector2(495, 457.00003)
+scale = Vector2(0.97637784, 1.2576919)
 color = Color(0.8721745, 0.9140407, 0.9797401, 1)
 energy = 0.8
 texture = ExtResource("14_73k8k")
 
-[node name="Floor3" type="Node" parent="AmbientLighting" unique_id=188043490]
-
-[node name="Flouro1" parent="AmbientLighting/Floor3" unique_id=794900244 instance=ExtResource("13_na0o7")]
-position = Vector2(415, 268.125)
-scale = Vector2(1.1023619, 1.2576919)
+[node name="Flouro3" parent="AmbientLighting/Floor0" unique_id=1032816325 instance=ExtResource("13_na0o7")]
+position = Vector2(636, 458.00003)
+scale = Vector2(0.97637784, 1.2576919)
 color = Color(0.8721745, 0.9140407, 0.9797401, 1)
 energy = 0.8
 texture = ExtResource("14_73k8k")
 
-[node name="Flouro2" parent="AmbientLighting/Floor3" unique_id=108768872 instance=ExtResource("13_na0o7")]
-position = Vector2(714, 268.12506)
-scale = Vector2(1.1023619, 1.2576925)
+[node name="Flouro4" parent="AmbientLighting/Floor0" unique_id=957512690 instance=ExtResource("13_na0o7")]
+position = Vector2(780.00006, 457.00003)
+scale = Vector2(0.97637784, 1.2576919)
 color = Color(0.8721745, 0.9140407, 0.9797401, 1)
 energy = 0.8
 texture = ExtResource("14_73k8k")
 
-[node name="Floor4" type="Node" parent="AmbientLighting" unique_id=2013129611]
+[node name="Computer" parent="AmbientLighting/Floor0" unique_id=2036668955 instance=ExtResource("13_na0o7")]
+position = Vector2(718, 476)
+scale = Vector2(0.42588404, 0.2990505)
+color = Color(0.3208929, 0.4350957, 0.9244205, 1)
+texture = ExtResource("15_5xyti")
+blink = true
+blink_frequency = 2
 
-[node name="Flouro1" parent="AmbientLighting/Floor4" unique_id=486922586 instance=ExtResource("13_na0o7")]
-position = Vector2(415, 172.125)
-scale = Vector2(1.1023619, 1.2576919)
+[node name="Floor1" type="Node" parent="AmbientLighting" unique_id=1270701920]
+
+[node name="Flouro1" parent="AmbientLighting/Floor1" unique_id=795120077 instance=ExtResource("13_na0o7")]
+position = Vector2(345, 363.87497)
+scale = Vector2(0.97637784, 1.2576919)
 color = Color(0.8721745, 0.9140407, 0.9797401, 1)
 energy = 0.8
 texture = ExtResource("14_73k8k")
 
-[node name="Flouro2" parent="AmbientLighting/Floor4" unique_id=142175962 instance=ExtResource("13_na0o7")]
-position = Vector2(714, 172.12508)
-scale = Vector2(1.1023619, 1.2576925)
+[node name="Flouro2" parent="AmbientLighting/Floor1" unique_id=75774852 instance=ExtResource("13_na0o7")]
+position = Vector2(490, 361)
+scale = Vector2(0.97637784, 1.2576919)
 color = Color(0.8721745, 0.9140407, 0.9797401, 1)
-energy = 1.0
+energy = 0.8
+texture = ExtResource("14_73k8k")
+blink = true
+
+[node name="Flouro3" parent="AmbientLighting/Floor1" unique_id=21068282 instance=ExtResource("13_na0o7")]
+position = Vector2(631, 362.87497)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
 texture = ExtResource("14_73k8k")
 
-[node name="Computer" parent="AmbientLighting/Floor4" unique_id=745984558 instance=ExtResource("13_na0o7")]
-position = Vector2(304, 481)
-scale = Vector2(0.26131546, 0.5051423)
+[node name="Flouro4" parent="AmbientLighting/Floor1" unique_id=40962425 instance=ExtResource("13_na0o7")]
+position = Vector2(775.00006, 361.87497)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Computer" parent="AmbientLighting/Floor1" unique_id=1815355124 instance=ExtResource("13_na0o7")]
+position = Vector2(382, 378.00003)
+scale = Vector2(0.42588404, 0.2990505)
+color = Color(0.3208929, 0.4350957, 0.9244205, 1)
+texture = ExtResource("15_5xyti")
+blink = true
+blink_frequency = 2
+
+[node name="Floor2" type="Node" parent="AmbientLighting" unique_id=402289963]
+
+[node name="Flouro1" parent="AmbientLighting/Floor2" unique_id=1311144164 instance=ExtResource("13_na0o7")]
+position = Vector2(349.99997, 267.75)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro2" parent="AmbientLighting/Floor2" unique_id=1649638821 instance=ExtResource("13_na0o7")]
+position = Vector2(494.99997, 264.875)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro3" parent="AmbientLighting/Floor2" unique_id=1678439553 instance=ExtResource("13_na0o7")]
+position = Vector2(636, 266.75)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro4" parent="AmbientLighting/Floor2" unique_id=363455493 instance=ExtResource("13_na0o7")]
+position = Vector2(780.00006, 265.75)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Floor3" type="Node" parent="AmbientLighting" unique_id=2001925451]
+
+[node name="Flouro1" parent="AmbientLighting/Floor3" unique_id=1512180373 instance=ExtResource("13_na0o7")]
+position = Vector2(346, 172.75)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro2" parent="AmbientLighting/Floor3" unique_id=2018699102 instance=ExtResource("13_na0o7")]
+position = Vector2(491, 169.875)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro3" parent="AmbientLighting/Floor3" unique_id=804571299 instance=ExtResource("13_na0o7")]
+position = Vector2(632, 171.75)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro4" parent="AmbientLighting/Floor3" unique_id=1670590197 instance=ExtResource("13_na0o7")]
+position = Vector2(776.00006, 170.75)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Computer2" parent="AmbientLighting/Floor3" unique_id=836100632 instance=ExtResource("13_na0o7")]
+position = Vector2(608, 186.00003)
+scale = Vector2(0.42588404, 0.2990505)
+color = Color(0.3208929, 0.4350957, 0.9244205, 1)
+texture = ExtResource("15_5xyti")
+blink = true
+blink_frequency = 2
+
+[node name="Computer3" parent="AmbientLighting/Floor3" unique_id=1309574801 instance=ExtResource("13_na0o7")]
+position = Vector2(464, 187)
+scale = Vector2(0.42588404, 0.2990505)
+color = Color(0.3208929, 0.4350957, 0.9244205, 1)
+texture = ExtResource("15_5xyti")
+blink = true
+blink_frequency = 2
+
+[node name="Computer4" parent="AmbientLighting/Floor3" unique_id=1879010464 instance=ExtResource("13_na0o7")]
+position = Vector2(398.99997, 187)
+scale = Vector2(0.42588404, 0.2990505)
+color = Color(0.3208929, 0.4350957, 0.9244205, 1)
+texture = ExtResource("15_5xyti")
+blink = true
+blink_frequency = 2
+
+[node name="Floor4" type="Node" parent="AmbientLighting" unique_id=2032662700]
+
+[node name="Flouro3" parent="AmbientLighting/Floor4" unique_id=475259127 instance=ExtResource("13_na0o7")]
+position = Vector2(636, 71.75)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro4" parent="AmbientLighting/Floor4" unique_id=1100905038 instance=ExtResource("13_na0o7")]
+position = Vector2(780.00006, 70.75)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Floor5" type="Node" parent="AmbientLighting" unique_id=2117046015]
+
+[node name="Flouro1" parent="AmbientLighting/Floor5" unique_id=720346968 instance=ExtResource("13_na0o7")]
+position = Vector2(347.99997, -19.249985)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro2" parent="AmbientLighting/Floor5" unique_id=471552749 instance=ExtResource("13_na0o7")]
+position = Vector2(492.99997, -22.124985)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro3" parent="AmbientLighting/Floor5" unique_id=1647854379 instance=ExtResource("13_na0o7")]
+position = Vector2(634, -20.249985)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+blink = true
+blink_frequency = 1
+
+[node name="Flouro4" parent="AmbientLighting/Floor5" unique_id=498831361 instance=ExtResource("13_na0o7")]
+position = Vector2(778.00006, -21.249985)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Computer5" parent="AmbientLighting/Floor5" unique_id=1197055462 instance=ExtResource("13_na0o7")]
+position = Vector2(656, -6)
+scale = Vector2(0.42588404, 0.2990505)
+color = Color(0.3208929, 0.4350957, 0.9244205, 1)
+texture = ExtResource("15_5xyti")
+blink = true
+blink_frequency = 1
+
+[node name="Computer6" parent="AmbientLighting/Floor5" unique_id=945108730 instance=ExtResource("13_na0o7")]
+position = Vector2(847, -3.0000005)
+scale = Vector2(0.42588404, 0.2990505)
+color = Color(0.3208929, 0.4350957, 0.9244205, 1)
+texture = ExtResource("15_5xyti")
+blink = true
+blink_frequency = 2
+
+[node name="Floor6" type="Node" parent="AmbientLighting" unique_id=855891981]
+
+[node name="Flouro1" parent="AmbientLighting/Floor6" unique_id=198942834 instance=ExtResource("13_na0o7")]
+position = Vector2(348.99997, -115.25)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro2" parent="AmbientLighting/Floor6" unique_id=1729930314 instance=ExtResource("13_na0o7")]
+position = Vector2(493.99997, -118.125)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro3" parent="AmbientLighting/Floor6" unique_id=748766365 instance=ExtResource("13_na0o7")]
+position = Vector2(635, -116.25)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Flouro4" parent="AmbientLighting/Floor6" unique_id=1447843686 instance=ExtResource("13_na0o7")]
+position = Vector2(779.00006, -117.25)
+scale = Vector2(0.97637784, 1.2576919)
+color = Color(0.8721745, 0.9140407, 0.9797401, 1)
+energy = 0.8
+texture = ExtResource("14_73k8k")
+
+[node name="Computer7" parent="AmbientLighting/Floor6" unique_id=1870332030 instance=ExtResource("13_na0o7")]
+position = Vector2(783, -102)
+scale = Vector2(0.42588404, 0.2990505)
 color = Color(0.3208929, 0.4350957, 0.9244205, 1)
 texture = ExtResource("15_5xyti")
 blink = true
 blink_frequency = 2
 
 [node name="EditorLight" type="DirectionalLight2D" parent="AmbientLighting" unique_id=26265204]
+visible = false
 position = Vector2(602, -448)
 editor_only = true
 energy = 0.5

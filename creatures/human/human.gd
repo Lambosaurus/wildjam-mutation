@@ -40,6 +40,7 @@ func pick_next_action(is_idle: bool = false) -> void:
 		var target_position = target.global_position
 		var distance = global_position.distance_to(target_position)
 		if distance <= human_type.flee_range:
+			$Voice.speak_dialog("fear")
 			return start_action(
 				Action.run,
 				randf_range(0.5, 1.0),
@@ -141,3 +142,9 @@ func _physics_process(delta: float) -> void:
 		var spritesheet = $Spritesheet
 		spritesheet.flip_h = direction == Direction.left
 	
+
+
+func _on_chat_zone_area_entered(area):
+	if action == Action.idle and $ChatZone/Cooldown.is_stopped() and randf() > 0.5:
+		$Voice.speak_dialog("chat")
+		$ChatZone/Cooldown.start()

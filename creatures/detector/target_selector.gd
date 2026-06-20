@@ -1,3 +1,4 @@
+class_name TargetSelector
 extends Area2D
 
 @export var range: float = 250:

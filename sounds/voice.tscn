@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://blj2j76s3023c"]
+
+[ext_resource type="Script" uid="uid://ckgbvklbhogq3" path="res://sounds/voice.gd" id="1_haw4o"]
+
+[node name="Voice" type="AudioStreamPlayer2D" unique_id=396080467]
+script = ExtResource("1_haw4o")
+metadata/_custom_type_script = "uid://cc7td3t0msdiy"

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://du3qrrngntygl"]
+
+[ext_resource type="Script" uid="uid://661db4qkgg5i" path="res://sounds/voice_bubble.gd" id="1_uhnd1"]
+[ext_resource type="FontFile" uid="uid://dg1qq7053eat2" path="res://ui/fonts/5ceta_mono.ttf" id="2_up6xy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2tw3c"]
+font = ExtResource("2_up6xy")
+font_size = 6
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+stacked_outline_count = 1
+
+[node name="VoiceBubble" type="Control" unique_id=719606856]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_uhnd1")
+
+[node name="DialogContainer" type="CenterContainer" parent="." unique_id=248000529]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -43.5
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dialog" type="Label" parent="DialogContainer" unique_id=1471725800]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Some text goes in here"
+label_settings = SubResource("LabelSettings_2tw3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StopTimer" type="Timer" parent="." unique_id=259168556]
+one_shot = true
+
+[node name="WriteTimer" type="Timer" parent="." unique_id=279333081]
+
+[connection signal="text_complete" from="." to="." method="_on_text_complete"]
+[connection signal="timeout" from="StopTimer" to="." method="_on_stop_timer_timeout"]
+[connection signal="timeout" from="WriteTimer" to="." method="_on_write_timer_timeout"]

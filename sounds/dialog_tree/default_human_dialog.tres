@@ -1,0 +1,210 @@
+[gd_resource type="Resource" script_class="DialogTree" format=3 uid="uid://ye6s0sba5k2o"]
+
+[ext_resource type="Script" uid="uid://b8pnktwqr4wnb" path="res://sounds/speech_group.gd" id="1_pkxe5"]
+[ext_resource type="Script" uid="uid://bs2lmby8suipk" path="res://sounds/speech.gd" id="2_anr03"]
+[ext_resource type="Script" uid="uid://1w60ptpi2mxt" path="res://sounds/dialog_tree.gd" id="2_yfclm"]
+[ext_resource type="AudioStream" uid="uid://85b0f63k6xf2" path="res://sounds/human_sounds/fear_aaahahahhhhhghghg.mp3" id="3_clenu"]
+[ext_resource type="AudioStream" uid="uid://bwx8mhe2px615" path="res://sounds/human_sounds/badoba.mp3" id="3_makg3"]
+[ext_resource type="AudioStream" uid="uid://cqropddawrblr" path="res://sounds/human_sounds/ba_botordash_da.mp3" id="4_2tvq5"]
+[ext_resource type="AudioStream" uid="uid://rf37dorrxedd" path="res://sounds/human_sounds/fear_ahahahha.mp3" id="4_xkw5j"]
+[ext_resource type="AudioStream" uid="uid://iwhemob7c7d" path="res://sounds/human_sounds/fear_berdadaa.mp3" id="5_fp1y8"]
+[ext_resource type="AudioStream" uid="uid://y5nswi52cil1" path="res://sounds/human_sounds/bigus_bingus_da.mp3" id="5_gf1mx"]
+[ext_resource type="AudioStream" uid="uid://bubul6tancvmq" path="res://sounds/human_sounds/bogodun_2x.mp3" id="6_lwkkh"]
+[ext_resource type="AudioStream" uid="uid://bb0a22s7xoha0" path="res://sounds/human_sounds/fear_bordodaaah.mp3" id="6_x8gny"]
+[ext_resource type="AudioStream" uid="uid://dhq6e1xjn7qwg" path="res://sounds/human_sounds/bederdu_baba_birlium.mp3" id="7_8rsew"]
+[ext_resource type="AudioStream" uid="uid://qp0fyge8s6ut" path="res://sounds/human_sounds/fear_doi_herodadao.mp3" id="7_ep6f7"]
+[ext_resource type="AudioStream" uid="uid://cnj8yoqsln4kj" path="res://sounds/human_sounds/bibus_borom_badum.mp3" id="8_gyeid"]
+[ext_resource type="AudioStream" uid="uid://dmb7og8aw0arn" path="res://sounds/human_sounds/fear_eee_saa.mp3" id="8_x8gny"]
+[ext_resource type="AudioStream" uid="uid://bx1o132qaey1g" path="res://sounds/human_sounds/boik_boik_bandada.mp3" id="9_83jn7"]
+[ext_resource type="AudioStream" uid="uid://edyuk30flohf" path="res://sounds/human_sounds/fear_haaaiuioooo.mp3" id="9_ep6f7"]
+[ext_resource type="AudioStream" uid="uid://c48p235j6wo23" path="res://sounds/human_sounds/fear_haaa_dodo_dasito.mp3" id="10_l6jee"]
+[ext_resource type="AudioStream" uid="uid://yvomn6qvprni" path="res://sounds/human_sounds/shimana_sobito.mp3" id="10_owyqi"]
+[ext_resource type="AudioStream" uid="uid://cjvq6y4ii1q1q" path="res://sounds/human_sounds/fear_huh_dasou.mp3" id="17_xo8nt"]
+[ext_resource type="AudioStream" uid="uid://bjm7lhww6bxe6" path="res://sounds/human_sounds/scream_1.mp3" id="18_83jn7"]
+[ext_resource type="AudioStream" uid="uid://bfopx8b40jxt6" path="res://sounds/human_sounds/scream_2.mp3" id="19_owyqi"]
+[ext_resource type="AudioStream" uid="uid://dm36ja6270gnq" path="res://sounds/human_sounds/fear_pirru_patoda.mp3" id="20_0kr53"]
+[ext_resource type="AudioStream" uid="uid://bwbotyvp1hm33" path="res://sounds/human_sounds/scream_3.mp3" id="20_xo8nt"]
+[ext_resource type="AudioStream" uid="uid://cr155q0lu4np" path="res://sounds/human_sounds/scream_4.mp3" id="21_0kr53"]
+[ext_resource type="AudioStream" uid="uid://db0l4bekm2jvb" path="res://sounds/human_sounds/fear_siii_doddodo.mp3" id="21_wd38f"]
+[ext_resource type="AudioStream" uid="uid://vgouqynmfcpy" path="res://sounds/human_sounds/scream_5.mp3" id="22_wd38f"]
+[ext_resource type="AudioStream" uid="uid://xlcbo0fdynnf" path="res://sounds/human_sounds/scream_6.mp3" id="23_xnll1"]
+
+[sub_resource type="Resource" id="Resource_1jmd3"]
+script = ExtResource("2_anr03")
+clip = ExtResource("3_makg3")
+dialog = "Did you hear? Terry got a waffle party"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_xnll1"]
+script = ExtResource("2_anr03")
+clip = ExtResource("4_2tvq5")
+dialog = "And then he said, maybe I am your sandwich"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_06ope"]
+script = ExtResource("2_anr03")
+clip = ExtResource("5_gf1mx")
+dialog = "If the boss doesn't show up in 15 minutes, we are legally allowed to leave"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_5uujc"]
+script = ExtResource("2_anr03")
+clip = ExtResource("6_lwkkh")
+dialog = "Both? Both!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_1cnj2"]
+script = ExtResource("2_anr03")
+clip = ExtResource("7_8rsew")
+dialog = "Promote synergy"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_1wkdh"]
+script = ExtResource("2_anr03")
+clip = ExtResource("8_gyeid")
+dialog = "Did you try turning it off and on again?"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_domwq"]
+script = ExtResource("2_anr03")
+clip = ExtResource("9_83jn7")
+dialog = "Lets shelf this and circle back around..."
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_0jarj"]
+script = ExtResource("2_anr03")
+clip = ExtResource("10_owyqi")
+dialog = "Printers broken again..."
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_kw76m"]
+script = ExtResource("1_pkxe5")
+speeches = Array[ExtResource("2_anr03")]([SubResource("Resource_1jmd3"), SubResource("Resource_xnll1"), SubResource("Resource_06ope"), SubResource("Resource_5uujc"), SubResource("Resource_1cnj2"), SubResource("Resource_1wkdh"), SubResource("Resource_domwq"), SubResource("Resource_0jarj")])
+metadata/_custom_type_script = "uid://b8pnktwqr4wnb"
+
+[sub_resource type="Resource" id="Resource_l6jee"]
+script = ExtResource("2_anr03")
+clip = ExtResource("3_clenu")
+dialog = "Ahhhhhh..."
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_e0fb1"]
+script = ExtResource("2_anr03")
+clip = ExtResource("4_xkw5j")
+dialog = "Ahhhhhhh..."
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_gjk5i"]
+script = ExtResource("2_anr03")
+clip = ExtResource("5_fp1y8")
+dialog = "Monster!!!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_se584"]
+script = ExtResource("2_anr03")
+clip = ExtResource("6_x8gny")
+dialog = "Its going to eat me!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_hjvw7"]
+script = ExtResource("2_anr03")
+clip = ExtResource("7_ep6f7")
+dialog = "Help! Theres a monster!!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_i8ln2"]
+script = ExtResource("2_anr03")
+clip = ExtResource("8_x8gny")
+dialog = "Eeeeek!! Get away!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_2q8l8"]
+script = ExtResource("2_anr03")
+clip = ExtResource("17_xo8nt")
+dialog = "Huh!? A thing!!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_26r33"]
+script = ExtResource("2_anr03")
+clip = ExtResource("18_83jn7")
+dialog = "Baaaahhhhhh!!!!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_4abbf"]
+script = ExtResource("2_anr03")
+clip = ExtResource("19_owyqi")
+dialog = "Mamaaaa!!!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_183tx"]
+script = ExtResource("2_anr03")
+clip = ExtResource("20_xo8nt")
+dialog = "Oohhhhhhh!!!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_a3tqd"]
+script = ExtResource("2_anr03")
+clip = ExtResource("21_0kr53")
+dialog = "Aaaghhhhh!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_c80pd"]
+script = ExtResource("2_anr03")
+clip = ExtResource("22_wd38f")
+dialog = "Eeeeeeeee!!!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_fwqxt"]
+script = ExtResource("2_anr03")
+clip = ExtResource("23_xnll1")
+dialog = "Arrghhhhh!!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_pqx4v"]
+script = ExtResource("1_pkxe5")
+speeches = Array[ExtResource("2_anr03")]([SubResource("Resource_l6jee"), SubResource("Resource_e0fb1"), SubResource("Resource_gjk5i"), SubResource("Resource_se584"), SubResource("Resource_hjvw7"), SubResource("Resource_i8ln2"), SubResource("Resource_2q8l8"), SubResource("Resource_26r33"), SubResource("Resource_4abbf"), SubResource("Resource_183tx"), SubResource("Resource_a3tqd"), SubResource("Resource_c80pd"), SubResource("Resource_fwqxt")])
+metadata/_custom_type_script = "uid://b8pnktwqr4wnb"
+
+[sub_resource type="Resource" id="Resource_y7lkh"]
+script = ExtResource("2_anr03")
+clip = ExtResource("7_ep6f7")
+dialog = "Help! Theres a monster!!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_makg3"]
+script = ExtResource("2_anr03")
+clip = ExtResource("9_ep6f7")
+dialog = "Help us~~~"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_2tvq5"]
+script = ExtResource("2_anr03")
+clip = ExtResource("10_l6jee")
+dialog = "Help! Its coming to eat us all"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_dsc5t"]
+script = ExtResource("2_anr03")
+clip = ExtResource("20_0kr53")
+dialog = "Please!! I dont want to die!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_5ckfs"]
+script = ExtResource("2_anr03")
+clip = ExtResource("21_wd38f")
+dialog = "Alert! Send the guard!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_amhn7"]
+script = ExtResource("1_pkxe5")
+speeches = Array[ExtResource("2_anr03")]([SubResource("Resource_y7lkh"), SubResource("Resource_makg3"), SubResource("Resource_2tvq5"), SubResource("Resource_dsc5t"), SubResource("Resource_5ckfs")])
+metadata/_custom_type_script = "uid://b8pnktwqr4wnb"
+
+[resource]
+script = ExtResource("2_yfclm")
+dialogs = Dictionary[String, ExtResource("1_pkxe5")]({
+"call": SubResource("Resource_amhn7"),
+"chat": SubResource("Resource_kw76m"),
+"fear": SubResource("Resource_pqx4v")
+})
+metadata/_custom_type_script = "uid://1w60ptpi2mxt"
