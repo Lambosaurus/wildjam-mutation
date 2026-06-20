@@ -27,6 +27,7 @@ func _ready() -> void:
 	$TargetSelector.range = max(human_type.shoot_range, human_type.flee_range, human_type.melee_range, human_type.chase_range)
 	$Spritesheet.sprite_frames = human_type.sprites
 	health = human_type.max_health
+	$Voice.speak_dialog("chat")
 
 func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
 	return scalar if dir == Direction.right else -scalar
@@ -40,6 +41,7 @@ func pick_next_action(is_idle: bool = false) -> void:
 		var target_position = target.global_position
 		var distance = global_position.distance_to(target_position)
 		if distance <= human_type.flee_range:
+			$Voice.speak_dialog("fear")
 			return start_action(
 				Action.run,
 				randf_range(0.5, 1.0),

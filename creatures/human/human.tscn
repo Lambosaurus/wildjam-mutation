@@ -5,12 +5,19 @@
 [ext_resource type="Resource" uid="uid://c8edw5y3x1epi" path="res://creatures/human/types/office_worker.tres" id="2_lk4ts"]
 [ext_resource type="SpriteFrames" uid="uid://lckr88buyegt" path="res://creatures/human/sprites/Gangsters_2/sprites.tres" id="3_lk4ts"]
 [ext_resource type="PackedScene" uid="uid://cqq8iiqfveykq" path="res://creatures/detector/target_selector.tscn" id="4_iru6h"]
+[ext_resource type="PackedScene" uid="uid://blj2j76s3023c" path="res://sounds/voice.tscn" id="6_odqdi"]
+[ext_resource type="Script" uid="uid://dnl2y04pttg2n" path="res://sounds/voice_types/random_voice_type.gd" id="7_ldy3i"]
+[ext_resource type="Resource" uid="uid://ye6s0sba5k2o" path="res://sounds/dialog_tree/default_human_dialog.tres" id="8_81tg8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebbsm"]
 height = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnv0q"]
 size = Vector2(20, 40)
+
+[sub_resource type="Resource" id="Resource_er4ts"]
+script = ExtResource("7_ldy3i")
+metadata/_custom_type_script = "uid://dnl2y04pttg2n"
 
 [node name="Human" type="CharacterBody2D" unique_id=1906732542]
 collision_layer = 2
@@ -43,3 +50,13 @@ visible = false
 target_bit = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1666293401]
+
+[node name="Voice" parent="." unique_id=396080467 node_paths=PackedStringArray("voice_spawn") instance=ExtResource("6_odqdi")]
+voice_spawn = NodePath("VoiceSpawn")
+voice_type = SubResource("Resource_er4ts")
+dialog_tree = ExtResource("8_81tg8")
+
+[node name="VoiceSpawn" type="Node2D" parent="Voice" unique_id=93199917]
+position = Vector2(0, -33)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
