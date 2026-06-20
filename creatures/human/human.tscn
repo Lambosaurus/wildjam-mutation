@@ -3,18 +3,12 @@
 [ext_resource type="Script" uid="uid://q6a1ffwlqq24" path="res://creatures/human/human.gd" id="1_4bvkd"]
 [ext_resource type="PackedScene" uid="uid://ctamdjidcqrkr" path="res://ui/selection/SelectionArea.tscn" id="2_gnv0q"]
 [ext_resource type="Resource" uid="uid://bboa3u65j1ejt" path="res://creatures/human/types/office_mook.tres" id="2_lk4ts"]
+[ext_resource type="SpriteFrames" uid="uid://lckr88buyegt" path="res://creatures/human/sprites/Gangsters_2/sprites.tres" id="3_lk4ts"]
 [ext_resource type="PackedScene" uid="uid://cqq8iiqfveykq" path="res://creatures/detector/target_selector.tscn" id="4_iru6h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebbsm"]
 radius = 20.0
 height = 80.0
-
-[sub_resource type="Gradient" id="Gradient_4bvkd"]
-colors = PackedColorArray(0.90207684, 0.5434376, 0.3220967, 1, 0.52690995, 0.6471087, 0.957956, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_h2rce"]
-gradient = SubResource("Gradient_4bvkd")
-fill_to = Vector2(0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnv0q"]
 size = Vector2(40, 80)
@@ -30,11 +24,12 @@ human_type = ExtResource("2_lk4ts")
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1169393457]
 shape = SubResource("CapsuleShape2D_ebbsm")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1420493283]
+[node name="Spritesheet" type="AnimatedSprite2D" parent="." unique_id=2112778691]
 use_parent_material = true
-position = Vector2(-4.7683716e-07, 2.4437904e-06)
-scale = Vector2(0.625, 1.2500001)
-texture = SubResource("GradientTexture2D_h2rce")
+position = Vector2(4.999998, -31.99999)
+scale = Vector2(1.171875, 1.1250001)
+sprite_frames = ExtResource("3_lk4ts")
+animation = &"idle"
 
 [node name="SelectionArea" parent="." unique_id=2102157275 node_paths=PackedStringArray("action_target", "highlight_target") instance=ExtResource("2_gnv0q")]
 group = "human"
@@ -48,3 +43,5 @@ shape = SubResource("RectangleShape2D_gnv0q")
 [node name="TargetSelector" parent="." unique_id=1582399921 instance=ExtResource("4_iru6h")]
 range = 500.0
 target_bit = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1666293401]

@@ -7,6 +7,13 @@ enum Direction { left, right }
 const BULLET = preload('res://entities/bullet/bullet.tscn')
 const GIBLET = preload('res://entities/giblet/giblet.tscn')
 
+const ANIMATIONS: Dictionary = {
+	Action.idle: "idle",
+	Action.walk: "walk",
+	Action.run: "run",
+	Action.attack: "attack",
+}
+
 var health = 0;
 var action = Action.idle;
 var action_timeout = 0
@@ -14,6 +21,7 @@ var direction = Direction.right
 
 func _ready() -> void:
 	$TargetSelector.range = max(human_type.attack_range, human_type.flee_range, human_type.chase_range)
+	$Spritesheet.sprite_frames = human_type.sprites
 	health = human_type.max_health
 
 func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
@@ -69,6 +77,9 @@ func start_action(act: Action, time: float, dir: Direction) -> void:
 	action = act
 	action_timeout = time
 	direction = dir
+	var spritesheet = $Spritesheet
+	spritesheet.flip_h = dir == Direction.left
+	spritesheet.play(ANIMATIONS[act])
 	
 func kill() -> void:
 	health = 0.0
@@ -109,4 +120,6 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_wall():
 		direction = Direction.right if direction == Direction.left else Direction.left
+		var spritesheet = $Spritesheet
+		spritesheet.flip_h = direction == Direction.left
 	

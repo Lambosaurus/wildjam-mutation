@@ -16,5 +16,7 @@ extends Resource
 
 @export var giblet_count: int = 5
 
+@export var sprites: SpriteFrames
+
 func spawn_attacks(target: Vector2) -> void:
 	pass
