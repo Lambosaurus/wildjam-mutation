@@ -3,6 +3,7 @@ extends Node2D
 @export var mutation_service: MutationService
 @export_group("Camera")
 @export var camera_speed = 20
+@export var threat_level = 0
 
 var pause_menu = preload("res://ui/pause_menu.tscn")
 
@@ -12,8 +13,7 @@ func _ready():
 func _process(delta):
 	if (Input.is_key_pressed(KEY_ESCAPE)):
 		$GUILayer.add_child(pause_menu.instantiate())
-		
-		
+	
 	update_camera()
 				
 func update_camera():

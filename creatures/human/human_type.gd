@@ -7,6 +7,7 @@ extends Resource
 @export var walk_speed: float = 100.0
 @export var run_speed: float = 200.0
 @export var giblet_count: int = 5
+@export var threat_value: int = 1
 @export var sprites: SpriteFrames
 
 @export_category("Behaviors")
