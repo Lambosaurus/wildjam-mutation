@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://c0mcp0i450rl7"]
+
+[ext_resource type="Script" uid="uid://dpt7uiq8oss28" path="res://creatures/mutations/body_parts/animated_skeleton.gd" id="1_wktwk"]
+
+[sub_resource type="Animation" id="Animation_ax28a"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_7k7mv"]
+resource_name = "attack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arms/Core/ShoulderR:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99, 1.3333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.032731056, 1.8646213, -0.6201149]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arms/Core/ShoulderL:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.99, 1.3333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.043893337, 1.9703199, -0.39182174]
+}
+
+[sub_resource type="Animation" id="Animation_wr4uj"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arms/Core/ShoulderR/Arm:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.79, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3.1360123, 19.878769), Vector2(-8.832694, 15.810867)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arms/Core/ShoulderL/Arm:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.79, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-15.352114, 10.968712), Vector2(-9.2644825, 14.566036)]
+}
+
+[sub_resource type="Animation" id="Animation_7os6j"]
+resource_name = "run"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arms/Core/ShoulderL:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39000002, 0.74),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.40238976, 0.916376, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arms/Core/ShoulderR:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.39000002, 0.74),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.7454822, -0.7328371, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fnml7"]
+resource_name = "walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arms/Core/ShoulderL:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.48),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.916376, -0.40238976]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arms/Core/ShoulderR:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.48),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.7328371, 0.7454822]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rlbbt"]
+_data = {
+&"RESET": SubResource("Animation_ax28a"),
+&"attack": SubResource("Animation_7k7mv"),
+&"idle": SubResource("Animation_wr4uj"),
+&"run": SubResource("Animation_7os6j"),
+&"walk": SubResource("Animation_fnml7")
+}
+
+[node name="Arms" type="Skeleton2D" unique_id=1207965058 node_paths=PackedStringArray("animation")]
+script = ExtResource("1_wktwk")
+animation = NodePath("ArmsAnimations")
+
+[node name="Core" type="Bone2D" parent="." unique_id=360363674]
+position = Vector2(-10, -1)
+rest = Transform2D(1, 0, 0, 1, -10, -1)
+
+[node name="ShoulderR" type="Bone2D" parent="Core" unique_id=660425468]
+position = Vector2(12, 0)
+rest = Transform2D(1, 0, 0, 1, 12, 0)
+
+[node name="Arm" type="Bone2D" parent="Core/ShoulderR" unique_id=758649855]
+position = Vector2(-3.1360123, 19.878769)
+rest = Transform2D(1, 0, 0, 1, -6, 18)
+
+[node name="Fore" type="Bone2D" parent="Core/ShoulderR/Arm" unique_id=1071864264]
+position = Vector2(-15, 7)
+rest = Transform2D(1, 0, 0, 1, -15, 7)
+
+[node name="ShoulderL" type="Bone2D" parent="Core" unique_id=1057044507]
+position = Vector2(-8, 1)
+rest = Transform2D(1, 0, 0, 1, -8, 1)
+
+[node name="Arm" type="Bone2D" parent="Core/ShoulderL" unique_id=1770523382]
+position = Vector2(-15.352114, 10.968712)
+rest = Transform2D(1, 0, 0, 1, -3, 18)
+
+[node name="Fore" type="Bone2D" parent="Core/ShoulderL/Arm" unique_id=1887298257]
+position = Vector2(-15, 7)
+rest = Transform2D(1, 0, 0, 1, -15, 7)
+
+[node name="ArmsAnimations" type="AnimationPlayer" parent="." unique_id=1006169744]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_rlbbt")

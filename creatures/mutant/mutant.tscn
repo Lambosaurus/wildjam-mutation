@@ -76,7 +76,7 @@ texture = SubResource("GradientTexture2D_lb6h7")
 
 [node name="Chassis" parent="." unique_id=1999792877 instance=ExtResource("2_37x11")]
 position = Vector2(0, -3.0000002)
-scale = Vector2(0.04668883, 0.050593372)
+scale = Vector2(0.5, 0.5)
 
 [node name="SelectionArea" parent="." unique_id=2102157275 node_paths=PackedStringArray("action_target", "highlight_target") instance=ExtResource("3_mr306")]
 group = "mutant"

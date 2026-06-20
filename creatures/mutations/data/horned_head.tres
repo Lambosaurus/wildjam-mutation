@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://fyqs6760rnmu"]
+
+[ext_resource type="PackedScene" uid="uid://boivkcwsgn4li" path="res://creatures/mutations/body_parts/horns_head/horn_head.tscn" id="1_ku7nd"]
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_njxx7"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_qa1ac"]
+
+[sub_resource type="Resource" id="Resource_mmund"]
+script = ExtResource("2_qa1ac")
+speed_bonus = -50.0
+damage_bonus = 200.0
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_njxx7")
+slot = 3
+body_part = ExtResource("1_ku7nd")
+mutation_type = SubResource("Resource_mmund")
+cost = 200
+name = "Horned Head"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"

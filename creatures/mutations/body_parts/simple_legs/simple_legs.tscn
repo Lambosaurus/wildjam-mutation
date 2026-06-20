@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cixa1hhfqwv7y"]
+
+[ext_resource type="Script" uid="uid://bvb4unmbfmir" path="res://creatures/mutations/body_part.gd" id="1_xyiy2"]
+[ext_resource type="PackedScene" uid="uid://duwwp1h24hrri" path="res://creatures/mutations/body_parts/legs.tscn" id="2_xyiy2"]
+[ext_resource type="Texture2D" uid="uid://c1n0wy34abxsb" path="res://creatures/mutations/body_parts/simple_legs/Leg Base.png" id="3_r8rbi"]
+
+[node name="SimpleLegs" type="Node2D" unique_id=552145109 node_paths=PackedStringArray("skeleton")]
+script = ExtResource("1_xyiy2")
+skeleton = NodePath("Legs")
+metadata/_custom_type_script = "uid://bvb4unmbfmir"
+
+[node name="Legs" parent="." unique_id=79999291 instance=ExtResource("2_xyiy2")]
+visible = false
+
+[node name="RightLeg" type="Polygon2D" parent="." unique_id=1592513201]
+position = Vector2(17, 7)
+texture = ExtResource("3_r8rbi")
+skeleton = NodePath("../Legs")
+polygon = PackedVector2Array(-20.5, -12, -20.5, -10.400002, -20.900002, -10, -22.5, -10, -22.5, 14.300003, -16.5, 25.300003, -16.5, 27.5, -13.5, 29.5, -13.5, 30.699997, -12.299999, 31.199997, -9.099998, 28, -7.5, 28, -7.5, 23.599998, -9.5, 21.599998, -9.5, 15.699997, -13, 11, -12.5, 7.0999985, -12.5, -0.40000153, -10.5, -1.4000015, -10.5, -8.5, -13.5, -10.599998, -13.5, -12)
+uv = PackedVector2Array(35, 38, 35, 39.6, 34.6, 40, 33, 40, 33, 64.3, 39, 75.3, 39, 77.5, 42, 79.5, 42, 80.7, 43.2, 81.2, 46.4, 78, 48, 78, 48, 73.6, 46, 71.6, 46, 65.7, 42.5, 61, 43, 57.1, 43, 49.6, 45, 48.6, 45, 41.5, 42, 39.4, 42, 38)
+polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21)]
+bones = ["Pelvis", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Pelvis/RThigh", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0), "Pelvis/RThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0), "Pelvis/RThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="LeftLeg" type="Polygon2D" parent="." unique_id=105522697]
+position = Vector2(1, 7)
+texture = ExtResource("3_r8rbi")
+skeleton = NodePath("../Legs")
+polygon = PackedVector2Array(-20.5, -12, -20.5, -10.400002, -20.900002, -10, -22.5, -10, -22.5, 14.300003, -16.5, 25.300003, -16.5, 27.5, -13.5, 29.5, -13.5, 30.699997, -12.299999, 31.199997, -9.099998, 28, -7.5, 28, -7.5, 23.599998, -9.5, 21.599998, -9.5, 15.699997, -13, 11, -12.5, 7.0999985, -12.5, -0.40000153, -10.5, -1.4000015, -10.5, -8.5, -13.5, -10.599998, -13.5, -12)
+uv = PackedVector2Array(35, 38, 35, 39.6, 34.6, 40, 33, 40, 33, 64.3, 39, 75.3, 39, 77.5, 42, 79.5, 42, 80.7, 43.2, 81.2, 46.4, 78, 48, 78, 48, 73.6, 46, 71.6, 46, 65.7, 42.5, 61, 43, 57.1, 43, 49.6, 45, 48.6, 45, 41.5, 42, 39.4, 42, 38)
+polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21)]
+bones = ["Pelvis", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Pelvis/RThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/RThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/RThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0), "Pelvis/LThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]

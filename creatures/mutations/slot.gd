@@ -2,7 +2,7 @@ class_name Slot
 
 extends Node2D
 
-enum Type {ARMS, LEGS, BODY}
+enum Type {ARMS, LEGS, BODY, HEAD}
 
 @onready var body_part: BodyPart = get_child(0)
 var mutation: Mutation

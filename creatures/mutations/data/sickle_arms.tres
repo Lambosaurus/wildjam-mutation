@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://q6772ll5r6yy"]
+
+[ext_resource type="PackedScene" uid="uid://biy1fe4oq7rs0" path="res://creatures/mutations/body_parts/sickle_arms/sickle_arms.tscn" id="1_kbfud"]
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_qb0iy"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_epntb"]
+
+[sub_resource type="Resource" id="Resource_aace7"]
+script = ExtResource("2_epntb")
+speed_bonus = 100.0
+damage_bonus = 200.0
+attack_rate_bonus = 100.0
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_qb0iy")
+body_part = ExtResource("1_kbfud")
+mutation_type = SubResource("Resource_aace7")
+cost = 250
+name = "Sickle Arms"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"

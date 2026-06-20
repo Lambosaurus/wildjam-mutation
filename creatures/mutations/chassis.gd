@@ -9,7 +9,8 @@ var direction = Direction.left
 @onready var slots_dict: Dictionary[Slot.Type, Slot] = {
 	Slot.Type.ARMS: $ArmSlot,
 	Slot.Type.LEGS: $LegSlot,
-	Slot.Type.BODY: $BodySlot
+	Slot.Type.BODY: $BodySlot,
+	Slot.Type.HEAD: $HeadSlot
 }
 
 func set_direction(dir: Direction):
