@@ -10,14 +10,14 @@ extends Control
 		$DialogContainer/Dialog.label_settings.font_color = value
 		
 @export var duration: float
-@export var speed: float = 10: # Characters per second
+@export var speed: float = 24: # Characters per second
 	set(value):
-		_speed_in_ms = value / 1000
+		_speed_in_ms = 1/value
 
 @onready var stop_timer = $StopTimer
 @onready var write_timer = $WriteTimer
 
-var _speed_in_ms: float = 0.001
+var _speed_in_ms: float = (1.0 / 24.0)
 var _text_buffer: String
 
 signal text_complete

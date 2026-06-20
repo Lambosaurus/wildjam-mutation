@@ -27,7 +27,6 @@ func _ready() -> void:
 	$TargetSelector.range = max(human_type.shoot_range, human_type.flee_range, human_type.melee_range, human_type.chase_range)
 	$Spritesheet.sprite_frames = human_type.sprites
 	health = human_type.max_health
-	$Voice.speak_dialog("chat")
 
 func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
 	return scalar if dir == Direction.right else -scalar
@@ -143,3 +142,9 @@ func _physics_process(delta: float) -> void:
 		var spritesheet = $Spritesheet
 		spritesheet.flip_h = direction == Direction.left
 	
+
+
+func _on_chat_zone_area_entered(area):
+	if action == Action.idle and $ChatZone/Cooldown.is_stopped() and randf() > 0.5:
+		$Voice.speak_dialog("chat")
+		$ChatZone/Cooldown.start()

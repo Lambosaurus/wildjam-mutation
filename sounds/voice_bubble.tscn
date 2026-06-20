@@ -6,9 +6,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_2tw3c"]
 font = ExtResource("2_up6xy")
 font_size = 6
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
 shadow_size = 2
-shadow_color = Color(0, 0, 0, 0.5019608)
-shadow_offset = Vector2(2, 2)
+shadow_color = Color(0, 0, 0, 1)
 stacked_outline_count = 1
 
 [node name="VoiceBubble" type="Control" unique_id=719606856]

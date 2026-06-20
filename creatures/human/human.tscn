@@ -19,6 +19,9 @@ size = Vector2(20, 40)
 script = ExtResource("7_ldy3i")
 metadata/_custom_type_script = "uid://dnl2y04pttg2n"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81tg8"]
+size = Vector2(65, 20)
+
 [node name="Human" type="CharacterBody2D" unique_id=1906732542]
 collision_layer = 2
 platform_floor_layers = 1
@@ -59,4 +62,17 @@ dialog_tree = ExtResource("8_81tg8")
 [node name="VoiceSpawn" type="Node2D" parent="Voice" unique_id=93199917]
 position = Vector2(0, -33)
 
+[node name="ChatZone" type="Area2D" parent="." unique_id=1846828423]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatZone" unique_id=817762364]
+position = Vector2(22.5, 0)
+shape = SubResource("RectangleShape2D_81tg8")
+
+[node name="Cooldown" type="Timer" parent="ChatZone" unique_id=263966483]
+wait_time = 15.0
+one_shot = true
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="area_entered" from="ChatZone" to="." method="_on_chat_zone_area_entered"]
