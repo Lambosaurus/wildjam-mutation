@@ -68,6 +68,7 @@ func pick_next_action() -> void:
 		if dist < mutant_type.attack_range:
 			var strike = MELEE_STRIKE.instantiate()
 			strike.damage = mutant_type.attack_damage
+			strike.flip_h = candidate_direction == Direction.left
 			add_sibling(strike)
 			strike.global_position = target.global_position
 

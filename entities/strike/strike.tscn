@@ -5,16 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://uhqk7i10mvqu" path="res://sounds/creature_sounds/crunkle 2.mp3" id="3_kyhey"]
 [ext_resource type="AudioStream" uid="uid://1bckc1o7j2wt" path="res://sounds/creature_sounds/wet 18.mp3" id="4_ny0ax"]
 [ext_resource type="Script" uid="uid://cc7td3t0msdiy" path="res://sounds/game_sound.gd" id="5_kyhey"]
+[ext_resource type="Texture2D" uid="uid://7k67tasf73nc" path="res://entities/strike/pixel_art_sword_slash_sprites.png" id="6_ny0ax"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lqdc4"]
-
-[sub_resource type="Gradient" id="Gradient_ftal8"]
-colors = PackedColorArray(0.995711, 0.77393544, 0.54973173, 1, 0.9747655, 0.62925726, 0.6832121, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_yc4cj"]
-gradient = SubResource("Gradient_ftal8")
-width = 20
-height = 20
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ov2e1"]
 streams_count = 3
@@ -22,7 +15,79 @@ stream_0/stream = ExtResource("2_yc4cj")
 stream_1/stream = ExtResource("3_kyhey")
 stream_2/stream = ExtResource("4_ny0ax")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov2e1"]
+atlas = ExtResource("6_ny0ax")
+region = Rect2(0, 0, 64, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5u2tb"]
+atlas = ExtResource("6_ny0ax")
+region = Rect2(64, 0, 64, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqr0t"]
+atlas = ExtResource("6_ny0ax")
+region = Rect2(128, 0, 64, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o53i"]
+atlas = ExtResource("6_ny0ax")
+region = Rect2(0, 47, 64, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyrey"]
+atlas = ExtResource("6_ny0ax")
+region = Rect2(64, 47, 64, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3yfk"]
+atlas = ExtResource("6_ny0ax")
+region = Rect2(128, 47, 64, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi832"]
+atlas = ExtResource("6_ny0ax")
+region = Rect2(0, 94, 64, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt1py"]
+atlas = ExtResource("6_ny0ax")
+region = Rect2(64, 94, 64, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6834"]
+atlas = ExtResource("6_ny0ax")
+region = Rect2(128, 94, 64, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45uac"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov2e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5u2tb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqr0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o53i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyrey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3yfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi832")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt1py")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6834")
+}],
+"loop": true,
+"name": &"slash",
+"speed": 20.0
+}]
+
 [node name="Strike" type="Area2D" unique_id=518104389]
+z_index = 2
 collision_layer = 0
 collision_mask = 2
 monitorable = false
@@ -31,11 +96,12 @@ script = ExtResource("1_hr26k")
 [node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=1921176565]
 shape = SubResource("CircleShape2D_lqdc4")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=250301045]
-z_index = 1
-texture = SubResource("GradientTexture2D_yc4cj")
-
 [node name="Sounds" type="AudioStreamPlayer2D" parent="." unique_id=1915837493]
 stream = SubResource("AudioStreamRandomizer_ov2e1")
 script = ExtResource("5_kyhey")
 metadata/_custom_type_script = "uid://cc7td3t0msdiy"
+
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1830702680]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_45uac")
+animation = &"slash"
