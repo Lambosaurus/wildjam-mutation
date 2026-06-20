@@ -7,14 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cqq8iiqfveykq" path="res://creatures/detector/target_selector.tscn" id="4_iru6h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebbsm"]
-radius = 20.0
-height = 80.0
+height = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnv0q"]
-size = Vector2(40, 80)
+size = Vector2(20, 40)
 
 [node name="Human" type="CharacterBody2D" unique_id=1906732542]
-scale = Vector2(0.5, 0.5)
 collision_layer = 2
 platform_floor_layers = 1
 platform_wall_layers = 1
@@ -26,8 +24,8 @@ shape = SubResource("CapsuleShape2D_ebbsm")
 
 [node name="Spritesheet" type="AnimatedSprite2D" parent="." unique_id=2112778691]
 use_parent_material = true
-position = Vector2(4.999998, -31.99999)
-scale = Vector2(1.171875, 1.1250001)
+position = Vector2(1.9999998, -16.5)
+scale = Vector2(0.5625, 0.5546875)
 sprite_frames = ExtResource("3_lk4ts")
 animation = &"idle"
 
@@ -40,8 +38,7 @@ highlight_color = Color(0.64288336, 1.889132e-06, 5.2943824e-07, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionArea" unique_id=1445429957]
 shape = SubResource("RectangleShape2D_gnv0q")
 
-[node name="TargetSelector" parent="." unique_id=1582399921 instance=ExtResource("4_iru6h")]
-range = 500.0
+[node name="TargetSelector" parent="." unique_id=1093162238 instance=ExtResource("4_iru6h")]
 target_bit = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1666293401]

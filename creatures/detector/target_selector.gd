@@ -24,7 +24,7 @@ func scan() -> Node2D:
 	var best_node = null
 	var best_dist_sq = 1e9
 	for node:Node2D in get_overlapping_bodies():
-		var dist_sq = position.distance_squared_to(node.position)
+		var dist_sq = global_position.distance_squared_to(node.global_position)
 		if dist_sq < best_dist_sq and can_see(node):
 			best_dist_sq = dist_sq
 			best_node = node
@@ -36,5 +36,5 @@ func can_see(target: Node2D) -> bool:
 	var ray = $Raycast
 	ray.target_position = target.global_position - ray.global_position
 	ray.force_raycast_update()
-	var hit = ray.get_collider() == target
-	return hit
+	var collider = ray.get_collider()
+	return collider == target
