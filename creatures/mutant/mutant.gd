@@ -99,6 +99,7 @@ func pick_next_action() -> void:
 		var dist = global_position.distance_to(item.global_position)
 		if dist < mutant_type.attack_range:
 			if "eat" in item:
+				$SlurpSounds.play()
 				GameState.biomass += item.eat()
 
 			return start_action(
