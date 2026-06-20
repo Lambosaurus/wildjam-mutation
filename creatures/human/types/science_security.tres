@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://cbqgyv5qcb13"]
+
+[ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_fb4cg"]
+[ext_resource type="SpriteFrames" uid="uid://gbhx2y2kkhih" path="res://creatures/human/sprites/Scientists_2/sprites.tres" id="2_fb4cg"]
+
+[resource]
+script = ExtResource("1_fb4cg")
+name = "Science Security"
+max_health = 150.0
+walk_speed = 75.0
+run_speed = 150.0
+giblet_count = 8
+sprites = ExtResource("2_fb4cg")
+flee_range = 100.0
+shoot_range = 500.0
+shoot_duration = 0.25
+bullet_damage = 10.0
+bullet_spread = 0.2
+metadata/_custom_type_script = "uid://xg3orhtcol5l"

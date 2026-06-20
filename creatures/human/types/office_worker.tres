@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://c8edw5y3x1epi"]
+
+[ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_s73uf"]
+[ext_resource type="SpriteFrames" uid="uid://lckr88buyegt" path="res://creatures/human/sprites/Gangsters_2/sprites.tres" id="2_healn"]
+
+[resource]
+script = ExtResource("1_s73uf")
+name = "Office Worker"
+sprites = ExtResource("2_healn")
+flee_range = 300.0
+metadata/_custom_type_script = "uid://xg3orhtcol5l"

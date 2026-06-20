@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="HumanType" format=3 uid="uid://b1lon1018wttr"]
+
+[ext_resource type="Script" uid="uid://xg3orhtcol5l" path="res://creatures/human/human_type.gd" id="1_xjf83"]
+[ext_resource type="SpriteFrames" uid="uid://dfs1vwj488hyw" path="res://creatures/human/sprites/SWAT_3/sprites.tres" id="2_xjf83"]
+
+[resource]
+script = ExtResource("1_xjf83")
+name = "SWAT Offender"
+max_health = 200.0
+walk_speed = 75.0
+run_speed = 150.0
+giblet_count = 10
+sprites = ExtResource("2_xjf83")
+chase_range = 800.0
+flee_range = 0.0
+shoot_range = 500.0
+shoot_duration = 1.0
+bullet_damage = 10.0
+bullet_count = 10
+bullet_spread = 0.3
+metadata/_custom_type_script = "uid://xg3orhtcol5l"

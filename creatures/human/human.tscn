@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://q6a1ffwlqq24" path="res://creatures/human/human.gd" id="1_4bvkd"]
 [ext_resource type="PackedScene" uid="uid://ctamdjidcqrkr" path="res://ui/selection/SelectionArea.tscn" id="2_gnv0q"]
-[ext_resource type="Resource" uid="uid://bboa3u65j1ejt" path="res://creatures/human/types/office_mook.tres" id="2_lk4ts"]
+[ext_resource type="Resource" uid="uid://c8edw5y3x1epi" path="res://creatures/human/types/office_worker.tres" id="2_lk4ts"]
 [ext_resource type="SpriteFrames" uid="uid://lckr88buyegt" path="res://creatures/human/sprites/Gangsters_2/sprites.tres" id="3_lk4ts"]
 [ext_resource type="PackedScene" uid="uid://cqq8iiqfveykq" path="res://creatures/detector/target_selector.tscn" id="4_iru6h"]
 

@@ -20,7 +20,7 @@ var action_timeout = 0
 var direction = Direction.right
 
 func _ready() -> void:
-	$TargetSelector.range = max(human_type.attack_range, human_type.flee_range, human_type.chase_range)
+	$TargetSelector.range = max(human_type.shoot_range, human_type.flee_range, human_type.melee_range, human_type.chase_range)
 	$Spritesheet.sprite_frames = human_type.sprites
 	health = human_type.max_health
 
@@ -43,11 +43,11 @@ func pick_next_action() -> void:
 				vector_to_direction(global_position.x - target_position.x)
 				)
 		
-		if distance <= human_type.attack_range:
-			spawn_attacks(target_position)
+		if distance <= human_type.shoot_range:
+			spawn_bullets(target_position)
 			return 	start_action(
 				Action.attack,
-				human_type.attack_duration,
+				human_type.shoot_duration,
 				vector_to_direction(target_position.x - global_position.x)
 			)
 			
@@ -65,7 +65,7 @@ func pick_next_action() -> void:
 		randi_range(Direction.left, Direction.right) as Direction
 	)
 
-func spawn_attacks(target: Vector2):
+func spawn_bullets(target: Vector2):
 	for i in range(human_type.bullet_count):
 		var bullet = BULLET.instantiate()
 		bullet.damage = human_type.bullet_damage
