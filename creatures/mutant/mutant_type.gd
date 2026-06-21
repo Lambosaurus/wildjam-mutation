@@ -12,4 +12,13 @@ extends Resource
 @export var attack_duration: float = 0.5
 
 @export var eat_range: float = 100.0
+@export var eat_efficiency: float = 1.0
 @export var elevator_range: float = 250
+@export var elevator_attraction: float = 1.0
+
+@export var spawn_on_kill: int = 0
+@export var spawn_on_timeout: int = 0
+@export var spawn_timeout: float = 3.0
+
+@export var swarm_attraction: float = 1.0
+@export var swarm_leader: float = 0.0
