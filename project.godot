@@ -23,6 +23,8 @@ Settings="*uid://d2nf7voaa0xyu"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/initial_position_type=3
 window/size/borderless=true
 window/stretch/mode="canvas_items"
@@ -91,3 +93,4 @@ swap_arms={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
