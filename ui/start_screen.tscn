@@ -163,6 +163,7 @@ text = "[b]Controls:[/b]
 Camera Movement - WASD or Middle mouse + drag
 Camera Zoom - Scroll wheel
 Select [b]THING[/b] - Click
+Deselect all [b]THING[/b]s - Right click 
 Apply Mutation - Click
 Pause - Space
 Menu - Esc
@@ -171,6 +172,7 @@ Menu - Esc
 - Your first [b]THING[/b] will have no way of walking, try giving it legs, or spawning from it.
 - If your [b]THING[/b]s arent behaving as you want, try some different mutations, some may change their behavior.
 - Try out different combinations of mutations to see what works best!
+- Don't forget to deselect your units!
 
 "
 fit_content = true
