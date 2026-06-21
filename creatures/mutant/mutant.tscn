@@ -143,4 +143,7 @@ stream = SubResource("AudioStreamRandomizer_mlhge")
 script = ExtResource("12_jnn0n")
 metadata/_custom_type_script = "uid://cc7td3t0msdiy"
 
+[node name="ElevatorTimer" type="Timer" parent="." unique_id=1932061711]
+wait_time = 5.0
+
 [connection signal="area_entered" from="SelectionArea" to="." method="_on_selection_area_area_entered"]

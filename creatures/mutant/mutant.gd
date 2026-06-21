@@ -31,12 +31,12 @@ const NEW_MUTANT = preload('res://creatures/mutant/mutant.tscn')
 @onready var mutation_sounds = $MutationSounds
 var explode_timeout: float = 3.0
 
-
 var action = Action.idle;
 var action_timeout = 0
 var direction = Direction.right
 
 var elevator_attraction: Vector2 = Vector2(0.0, 0.0)
+
 
 func _ready() -> void:
 	
@@ -173,8 +173,14 @@ func start_boids_action() -> void:
 		vector_to_direction(force.x)
 	)
 
+func elevated():
+	$ElevatorTimer.start()
+
+func will_elevate_direction(elevator_direction: Elevator.Direction):
+	return elevator_direction == Elevator.Direction.UP
+
 func can_elevator():
-	if action == Action.idle or action == Action.walk:
+	if $ElevatorTimer.is_stopped() and action == Action.idle or action == Action.walk:
 		start_action(
 			Action.idle,
 			100,

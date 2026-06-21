@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://boawedghikwbs" path="res://ui/start_screen.gd" id="1_50anp"]
 [ext_resource type="AudioStream" uid="uid://cnbdqpi3t5a8j" path="res://sounds/music/mutation_only_bass.mp3" id="2_nledq"]
 [ext_resource type="Script" uid="uid://bi1k76fl1ws63" path="res://sounds/game_music.gd" id="3_nledq"]
+[ext_resource type="FontFile" uid="uid://bhk2x372cyclc" path="res://ui/fonts/Borg9.ttf" id="4_a8ycg"]
 [ext_resource type="PackedScene" uid="uid://qp7t5gowdswy" path="res://ui/sound_control.tscn" id="4_igmpp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a8ycg"]
+font = ExtResource("4_a8ycg")
 font_size = 48
 
 [node name="StartScreen" type="Control" unique_id=1958981103]
@@ -80,13 +82,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -217.0
-offset_top = 75.0
-offset_right = 217.0
-offset_bottom = 142.0
+offset_left = -216.82721
+offset_top = 74.67073
+offset_right = 217.17279
+offset_bottom = 141.67073
 grow_horizontal = 2
-text = "Overmind Mutator"
+text = "Threat Level"
 label_settings = SubResource("LabelSettings_a8ycg")
+horizontal_alignment = 1
 
 [node name="SoundControl" parent="." unique_id=829974932 instance=ExtResource("4_igmpp")]
 layout_mode = 1
@@ -131,13 +134,45 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="HelpScreen/CenterContainer" unique_id=2023117723]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HelpScreen/CenterContainer/VBoxContainer" unique_id=852465308]
+[node name="HBoxContainer" type="HBoxContainer" parent="HelpScreen/CenterContainer/VBoxContainer" unique_id=1263890867]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpScreen/CenterContainer/VBoxContainer/HBoxContainer" unique_id=852465308]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_vertical = 4
-text = "If you are seeing this, then I havent put any help or game description yet.
+bbcode_enabled = true
+text = "Welcome to Threat Level!
 
-You are on your own"
+In this game you play as an experiment created in an underground lab.
+Now you have escaped your confines and are ready to kill your creators.
+
+[b]The goal:[/b] Make it to the top of the building and take out the Boss
+
+To do this you must spawn and mutate your way, stealing the human's precious [b]BIOMASS[/b] to fuel your [b]THING[/b]s.
+
+"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="HelpScreen/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1486940279]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[b]Controls:[/b]
+Camera Movement - WASD or Middle mouse + drag
+Camera Zoom - Scroll wheel
+Select [b]THING[/b] - Click
+Apply Mutation - Click
+Pause - Space
+Menu - Esc
+
+[b]Tips:[/b]
+- Your first [b]THING[/b] will have no way of walking, try giving it legs, or spawning from it.
+- If your [b]THING[/b]s arent behaving as you want, try some different mutations, some may change their behavior.
+- Try out different combinations of mutations to see what works best!
+
+"
 fit_content = true
 
 [node name="BackButton" type="Button" parent="HelpScreen/CenterContainer/VBoxContainer" unique_id=1216452292]

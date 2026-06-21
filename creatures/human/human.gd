@@ -34,8 +34,15 @@ func _ready() -> void:
 	$Spritesheet.sprite_frames = human_type.sprites
 	health = human_type.max_health
 	
+
+func elevated():
+	$ElevatorTimer.start()
+	
+func will_elevate_direction(_dir):
+	return true
+	
 func can_elevator():
-	if action == Action.idle:
+	if $ElevatorTimer.is_stopped() and action == Action.idle:
 		start_action(
 			Action.idle,
 			20,

@@ -1,3 +1,4 @@
+class_name Elevator
 extends Node2D
 
 @export var elevator_interior: Node2D
@@ -45,20 +46,24 @@ func fade_traveller(traveller, tween_target, tween_time):
 
 func handle_new_travellers():
 	var current_stop = current_floor_stop()
-	traveller_queue = current_stop.get_travellers()
-	for traveller in traveller_queue:
-		if current_direction == Direction.DOWN and traveller is Mutant: continue
+	current_floor_stop().close()
+	
+	next_floor()
+	
+	for traveller in current_stop.get_travellers():
+		if not traveller.will_elevate_direction(current_direction): continue
+		traveller_queue.append(traveller)
+		traveller.visible = false
 
 		var tween = fade_traveller(traveller, 0, 0.25)
 		if elevator_interior: tween.finished.connect(teleport_traveler_to_elevator_interior.bind(traveller))
 
-	current_floor_stop().close()
 	travel_timer.start(travel_time)
 
 func eject_travellers():
-	next_floor()
 	for traveller in traveller_queue:
 		move_traveller_to_new_floor(traveller)
+		traveller.visible = true
 
 	traveller_queue = []
 	current_floor_stop().open()
@@ -86,6 +91,7 @@ func move_traveller_to_new_floor(traveller):
 	var stop = current_floor_stop()
 	traveller.global_position = stop.global_position
 	fade_traveller(traveller, 1, 0.25)
+	traveller.elevated()
 	traveller.start_action(traveller.Action.idle, 0, traveller.Direction.left)
 
 func current_floor_stop():

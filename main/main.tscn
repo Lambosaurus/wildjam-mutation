@@ -25,10 +25,9 @@
 [ext_resource type="Resource" uid="uid://cirk3igetj714" path="res://creatures/human/types/boss.tres" id="17_d8vpj"]
 [ext_resource type="Script" uid="uid://bk7xfb1qrwxek" path="res://main/main_camera.gd" id="19_n53tw"]
 
-[node name="Main" type="Node2D" unique_id=634852315 node_paths=PackedStringArray("swat_spawn_point")]
+[node name="Main" type="Node2D" unique_id=634852315]
 script = ExtResource("1_3wy1v")
 mutation_service = ExtResource("2_grrlh")
-swat_spawn_point = NodePath("")
 
 [node name="BuildingTiles" parent="." unique_id=850572857 instance=ExtResource("10_0i4oc")]
 position = Vector2(565, 370)
@@ -37,6 +36,7 @@ position = Vector2(565, 370)
 
 [node name="Elevator1" parent="Transporters" unique_id=1486849745 node_paths=PackedStringArray("elevator_interior") instance=ExtResource("9_bsumw")]
 elevator_interior = NodePath("ElevatorInterior")
+travel_time = 2
 
 [node name="PixelFloorStop1" parent="Transporters/Elevator1" unique_id=1544292327 instance=ExtResource("10_bsumw")]
 position = Vector2(564, 762)
@@ -57,6 +57,7 @@ position = Vector2(1297, 750)
 [node name="Elevator2" parent="Transporters" unique_id=1482443233 node_paths=PackedStringArray("elevator_interior") instance=ExtResource("9_bsumw")]
 position = Vector2(842, 469)
 elevator_interior = NodePath("ElevatorInterior")
+travel_time = 2
 
 [node name="PixelFloorStop1" parent="Transporters/Elevator2" unique_id=1911629142 instance=ExtResource("10_bsumw")]
 position = Vector2(1, 5)
@@ -80,6 +81,7 @@ position = Vector2(439, 4)
 [node name="Elevator3" parent="Transporters" unique_id=1097855600 node_paths=PackedStringArray("elevator_interior") instance=ExtResource("9_bsumw")]
 position = Vector2(557, 77)
 elevator_interior = NodePath("ElevatorInterior")
+travel_time = 2
 
 [node name="PixelFloorStop1" parent="Transporters/Elevator3" unique_id=841728474 instance=ExtResource("10_bsumw")]
 position = Vector2(1, 13)
@@ -94,6 +96,7 @@ position = Vector2(732, 15)
 [node name="Elevator4" parent="Transporters" unique_id=783300361 node_paths=PackedStringArray("elevator_interior") instance=ExtResource("9_bsumw")]
 position = Vector2(278, -14)
 elevator_interior = NodePath("ElevatorInterior")
+travel_time = 2
 
 [node name="PixelFloorStop1" parent="Transporters/Elevator4" unique_id=1206296462 instance=ExtResource("10_bsumw")]
 position = Vector2(1, 8)

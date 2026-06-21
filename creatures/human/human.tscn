@@ -77,5 +77,8 @@ shape = SubResource("RectangleShape2D_81tg8")
 wait_time = 15.0
 one_shot = true
 
+[node name="ElevatorTimer" type="Timer" parent="." unique_id=1852089130]
+wait_time = 5.0
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="area_entered" from="ChatZone" to="." method="_on_chat_zone_area_entered"]
