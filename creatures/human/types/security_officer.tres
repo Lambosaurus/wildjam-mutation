@@ -10,6 +10,7 @@ max_health = 150.0
 walk_speed = 125.0
 run_speed = 250.0
 giblet_count = 7
+wander_chance = 0.1
 sprites = ExtResource("2_yhg8q")
 chase_range = 450.0
 flee_range = 75.0

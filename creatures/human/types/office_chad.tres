@@ -10,6 +10,7 @@ max_health = 150.0
 walk_speed = 75.0
 run_speed = 150.0
 giblet_count = 7
+wander_chance = 0.25
 sprites = ExtResource("2_ob20x")
 flee_range = 100.0
 melee_range = 50.0

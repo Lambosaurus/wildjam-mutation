@@ -8,6 +8,7 @@ script = ExtResource("1_3rlg1")
 name = "Office Manager"
 max_health = 125.0
 giblet_count = 6
+wander_chance = 0.25
 sprites = ExtResource("2_36jdv")
 chase_range = 400.0
 flee_range = 75.0

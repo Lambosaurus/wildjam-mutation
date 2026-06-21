@@ -11,6 +11,7 @@ walk_speed = 75.0
 run_speed = 150.0
 giblet_count = 6
 threat_value = 0
+wander_chance = 0.1
 sprites = ExtResource("2_hv2kx")
 flee_range = 150.0
 metadata/_custom_type_script = "uid://xg3orhtcol5l"
