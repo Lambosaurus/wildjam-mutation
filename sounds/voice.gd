@@ -11,6 +11,9 @@ const VoiceBubbleConstructor = preload("res://sounds/voice_bubble.tscn")
 var currently_speeking = false
 var current_voice_bubble: VoiceBubble
 
+func _ready():
+	pitch_scale = voice_type.get_pitch()
+
 func speak_dialog(key: String, force = false):
 	if currently_speeking and not force: return
 	var speech = dialog_tree.get_any_speech(key)
@@ -31,6 +34,5 @@ func show_spoken_dialog(dialog: String):
 	voice_spawn.add_child(current_voice_bubble)
 	
 func play_clip(clip: AudioStream):
-	pitch_scale = voice_type.pitch
 	stream = clip
 	play()
