@@ -21,7 +21,7 @@ const NEW_MUTANT = preload('res://creatures/mutant/mutant.tscn')
 
 @export_group("BOIDS Controls")
 @export var BOIDS_REPULSION = 500.0
-@export var BOIDS_COHESION = 1.0
+@export var BOIDS_COHESION = 3.0
 @export var BOIDS_THRESH_MIN = 200.0
 @export var BOIDS_THRESH_MAX = 1000.0
 

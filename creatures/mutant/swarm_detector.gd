@@ -13,5 +13,5 @@ func compute():
 			cohesion += swarm_leader * delta
 		
 		var magnitude = (delta.length_squared() + 1) ** 1.5 / 1000
-		repulsion.x += delta.x / magnitude
-		repulsion.y += delta.y / magnitude
+		repulsion.x -= delta.x / magnitude
+		repulsion.y -= delta.y / magnitude
