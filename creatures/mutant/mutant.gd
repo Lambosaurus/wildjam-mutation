@@ -133,7 +133,7 @@ func pick_next_action() -> void:
 	# Go for elevator if no items or targets
 	var elevator = $ElevatorSelector.scan()
 	if elevator:
-		elevator_attraction = (target.global_position - global_position).normalized()
+		elevator_attraction = (elevator.global_position - global_position).normalized()
 	else:
 		elevator_attraction = Vector2(0,0)
 

@@ -16,6 +16,7 @@ extends Area2D
 	set(value):
 		$Raycast.collide_with_bodies = value
 		$Raycast.collide_with_areas = !value
+		use_body_collider = value
 		
 #@export var target: Node2D
 
