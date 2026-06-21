@@ -13,12 +13,11 @@ signal traveller_present(body: CharacterBody2D, name: String)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animator.connect("animation_finished", _on_animation_finished)
-	
-	if !travel_enabled:
+	if not travel_enabled:
+		$PixelFloorArea2D.queue_free()
 		return
 	collider.connect("body_entered", _on_mutant_entered)
 	#door_timer.connect("timeout", _on_door_timer_timeout)
-	pass # Replace with function body.
 
 func _on_mutant_entered(body: CharacterBody2D):
 	emit_signal("traveller_present", body, name)
