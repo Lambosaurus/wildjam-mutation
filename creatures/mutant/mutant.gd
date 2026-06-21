@@ -20,6 +20,8 @@ var attributes = {
 const MELEE_STRIKE = preload('res://entities/strike/strike.tscn')
 const SPLATTER = preload('res://entities/pop/pop.tscn')
 
+@export var initial_mutations: Array[Mutation]
+
 @export_group("BOIDS Controls")
 @export var BOIDS_REPULSION = 1000.0
 @export var BOIDS_ATTRACTION = 1500.0
@@ -38,7 +40,13 @@ var direction = Direction.right
 var elevator_attraction: Vector2 = Vector2(0.0, 0.0)
 
 func _ready() -> void:
+	
 	update_properties()
+	
+	if initial_mutations:
+		for mutation in initial_mutations:
+			mutate(mutation)
+
 
 func update_properties() -> void:
 	$TargetSelector.range = max(mutant_type.chase_range, mutant_type.attack_range)
