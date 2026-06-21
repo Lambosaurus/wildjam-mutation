@@ -19,7 +19,6 @@
 [ext_resource type="Resource" uid="uid://bwissqiav15ti" path="res://creatures/human/types/office_manager.tres" id="13_re7it"]
 [ext_resource type="Texture2D" uid="uid://dkf32vbobi1wy" path="res://building/components/lighting/trapezoid-mask.png" id="14_73k8k"]
 [ext_resource type="Texture2D" uid="uid://y88epottr0vf" path="res://building/components/lighting/radial-mask.png" id="15_5xyti"]
-[ext_resource type="Resource" uid="uid://irdrkl0ue4od" path="res://creatures/human/types/security_guard.tres" id="15_n53tw"]
 [ext_resource type="Resource" uid="uid://irdrkl0ue4od" path="res://creatures/human/types/security_officer.tres" id="15_re7it"]
 [ext_resource type="Resource" uid="uid://droqwktc0jqvp" path="res://creatures/human/types/security_enforcer.tres" id="16_d00gp"]
 [ext_resource type="Resource" uid="uid://cirk3igetj714" path="res://creatures/human/types/boss.tres" id="17_d8vpj"]
@@ -34,8 +33,9 @@ position = Vector2(565, 370)
 
 [node name="Transporters" type="Node" parent="." unique_id=573249446]
 
-[node name="Elevator" parent="Transporters" unique_id=1486849745 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
+[node name="Elevator" parent="Transporters" unique_id=1486849745 node_paths=PackedStringArray("elevator_interior", "active_floor_stops") instance=ExtResource("9_bsumw")]
 position = Vector2(845, -21)
+elevator_interior = NodePath("ElevatorInterior")
 active_floor_stops = [NodePath("PixelFloorStop"), NodePath("PixelFloorStop2"), NodePath("PixelFloorStop3"), NodePath("PixelFloorStop4"), NodePath("PixelFloorStop5")]
 travel_time = 2
 
@@ -55,8 +55,13 @@ position = Vector2(-9, 207)
 position = Vector2(-9, 113)
 travel_enabled = false
 
-[node name="Elevator3" parent="Transporters" unique_id=288718594 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
+[node name="ElevatorInterior" type="Node2D" parent="Transporters/Elevator" unique_id=1811925304]
+visible = false
+position = Vector2(-1096, 623)
+
+[node name="Elevator3" parent="Transporters" unique_id=288718594 node_paths=PackedStringArray("elevator_interior", "active_floor_stops") instance=ExtResource("9_bsumw")]
 position = Vector2(574, 268)
+elevator_interior = NodePath("ElevatorInterior2")
 active_floor_stops = [NodePath("PixelFloorStop"), NodePath("PixelFloorStop2"), NodePath("PixelFloorStop3"), NodePath("PixelFloorStop4")]
 travel_time = 2
 
@@ -73,8 +78,13 @@ position = Vector2(-9, 302)
 position = Vector2(-9, 207)
 travel_enabled = false
 
-[node name="Elevator2" parent="Transporters" unique_id=491983639 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
+[node name="ElevatorInterior2" type="Node2D" parent="Transporters/Elevator3" unique_id=1468777264]
+visible = false
+position = Vector2(473, -5)
+
+[node name="Elevator2" parent="Transporters" unique_id=491983639 node_paths=PackedStringArray("elevator_interior", "active_floor_stops") instance=ExtResource("9_bsumw")]
 position = Vector2(1879, -40)
+elevator_interior = NodePath("ElevatorInterior3")
 active_floor_stops = [NodePath("PixelFloorStop6"), NodePath("PixelFloorStop5")]
 travel_time = 2
 
@@ -85,8 +95,13 @@ travel_enabled = false
 [node name="PixelFloorStop5" parent="Transporters/Elevator2" unique_id=127738327 instance=ExtResource("10_bsumw")]
 position = Vector2(-1324, 130)
 
-[node name="Elevator4" parent="Transporters" unique_id=436440057 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
+[node name="ElevatorInterior3" type="Node2D" parent="Transporters/Elevator2" unique_id=1043234613]
+visible = false
+position = Vector2(-2021, 97)
+
+[node name="Elevator4" parent="Transporters" unique_id=436440057 node_paths=PackedStringArray("elevator_interior", "active_floor_stops") instance=ExtResource("9_bsumw")]
 position = Vector2(1612, -132)
+elevator_interior = NodePath("ElevatorInterior4")
 active_floor_stops = [NodePath("PixelFloorStop6"), NodePath("PixelFloorStop5")]
 travel_time = 2
 
@@ -96,6 +111,10 @@ travel_enabled = false
 
 [node name="PixelFloorStop5" parent="Transporters/Elevator4" unique_id=316634137 instance=ExtResource("10_bsumw")]
 position = Vector2(-1320, 126)
+
+[node name="ElevatorInterior4" type="Node2D" parent="Transporters/Elevator4" unique_id=1372711861]
+visible = false
+position = Vector2(-1760, 35)
 
 [node name="Spawners" type="Node" parent="." unique_id=699582945]
 
@@ -264,19 +283,19 @@ human_type = ExtResource("13_re7it")
 
 [node name="SecurityGuard1" parent="Humans" unique_id=169823721 instance=ExtResource("2_pjrb6")]
 position = Vector2(798, 191)
-human_type = ExtResource("15_n53tw")
+human_type = ExtResource("15_re7it")
 
 [node name="SecurityGuard2" parent="Humans" unique_id=1162931582 instance=ExtResource("2_pjrb6")]
 position = Vector2(400, 94)
-human_type = ExtResource("15_n53tw")
+human_type = ExtResource("15_re7it")
 
 [node name="SecurityGuard3" parent="Humans" unique_id=957899927 instance=ExtResource("2_pjrb6")]
 position = Vector2(514, -4)
-human_type = ExtResource("15_n53tw")
+human_type = ExtResource("15_re7it")
 
 [node name="SecurityGuard4" parent="Humans" unique_id=1567028176 instance=ExtResource("2_pjrb6")]
 position = Vector2(353, -2)
-human_type = ExtResource("15_n53tw")
+human_type = ExtResource("15_re7it")
 
 [node name="SecurityOfficer" parent="Humans" unique_id=1797211939 instance=ExtResource("2_pjrb6")]
 position = Vector2(345, 94)
