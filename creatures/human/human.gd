@@ -145,6 +145,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_chat_zone_area_entered(area):
-	if action == Action.idle and $ChatZone/Cooldown.is_stopped() and randf() > 0.5:
+	if action == Action.idle and $ChatZone/Cooldown.is_stopped() and randf() > 0.25:
 		$Voice.speak_dialog("chat")
 		$ChatZone/Cooldown.start()

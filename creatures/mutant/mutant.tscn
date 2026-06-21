@@ -91,6 +91,8 @@ position = Vector2(0, -3.0000002)
 scale = Vector2(0.5, 0.5)
 
 [node name="SelectionArea" parent="." unique_id=2102157275 node_paths=PackedStringArray("action_target", "highlight_target") instance=ExtResource("3_mr306")]
+collision_layer = 0
+collision_mask = 0
 group = "mutant"
 action_target = NodePath("..")
 highlight_target = NodePath("../Hitbox")
