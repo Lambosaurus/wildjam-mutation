@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bcckgfd8qlmhm" path="res://creatures/human/human.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://byescby3rnuk1" path="res://entities/entity_spawner.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://dlom32x0f3tyr" path="res://creatures/mutant/mutant.tscn" id="4_c651c"]
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="7_oagth"]
+[ext_resource type="Resource" uid="uid://cxftaxj083bso" path="res://creatures/mutations/data/implanted_legs.tres" id="8_n53tw"]
 [ext_resource type="Resource" uid="uid://ch0d03r2qugcc" path="res://creatures/human/types/scientist.tres" id="9_5xyti"]
 [ext_resource type="PackedScene" uid="uid://cl8rxjlclso5g" path="res://building/components/transporter/elevator/elevator.tscn" id="9_bsumw"]
 [ext_resource type="PackedScene" uid="uid://etva80dwgv3l" path="res://ui/main_gui.tscn" id="9_grrlh"]
@@ -115,6 +117,10 @@ position = Vector2(-1320, 126)
 [node name="ElevatorInterior4" type="Node2D" parent="Transporters/Elevator4" unique_id=1372711861]
 visible = false
 position = Vector2(-1760, 35)
+
+[node name="Mutant" parent="." unique_id=88951864 instance=ExtResource("4_c651c")]
+position = Vector2(399, 764)
+initial_mutations = Array[ExtResource("7_oagth")]([ExtResource("8_n53tw")])
 
 [node name="Spawners" type="Node" parent="." unique_id=699582945]
 
