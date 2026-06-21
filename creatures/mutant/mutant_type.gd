@@ -12,3 +12,4 @@ extends Resource
 @export var attack_duration: float = 0.5
 
 @export var eat_range: float = 100.0
+@export var elevator_range: float = 250

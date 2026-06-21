@@ -114,6 +114,11 @@ shape = SubResource("CircleShape2D_ybval")
 [node name="TargetSelector" parent="." unique_id=1582399921 instance=ExtResource("5_y6s6a")]
 visible = false
 
+[node name="ElevatorSelector" parent="." unique_id=1093162238 instance=ExtResource("5_y6s6a")]
+visible = false
+target_bit = 5
+use_body_collider = false
+
 [node name="Vision" type="PointLight2D" parent="." unique_id=1379736234]
 enabled = false
 blend_mode = 2
@@ -121,7 +126,7 @@ range_item_cull_mask = 33
 shadow_enabled = true
 texture = ExtResource("6_y6s6a")
 
-[node name="ItemSelector" parent="." unique_id=1093162238 instance=ExtResource("5_y6s6a")]
+[node name="ItemSelector" parent="." unique_id=1544262677 instance=ExtResource("5_y6s6a")]
 visible = false
 target_bit = 4
 
