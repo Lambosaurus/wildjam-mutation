@@ -39,7 +39,7 @@ func _handle_elevator_travel():
 			if not is_instance_valid(body):
 				continue
 			body.global_position = active_floor_stops[target_floor].global_position
-			body.start_action(body.Action.walk, 5, body.Direction.left)
+			body.start_action(body.Action.idle, 0, body.Direction.left)
 		fade_travellers(1, 0.25)
 		
 	if state == FloorState.DoorsOpen:
@@ -54,7 +54,7 @@ func _handle_animation_finished(name):
 		timer.start(wait_time)
 		
 	if state == FloorState.DoorsClosing:
-		fade_travellers(0, 1.0)
+		fade_travellers(0.1, 1.0)
 		timer.start(travel_time)
 		target_floor += 1
 		state = FloorState.Travelling
@@ -82,7 +82,7 @@ func fade_travellers(tween_target, tween_time):
 	var tween = create_tween()
 	
 	for body in traveller_queue:
-		tween.finished.connect(teleport_traveler_to_elevator_interior.bind(body))
 		if not is_instance_valid(body):
 			continue
+		tween.finished.connect(teleport_traveler_to_elevator_interior.bind(body))
 		tween.tween_property(body, "modulate:a", tween_target, tween_time)
