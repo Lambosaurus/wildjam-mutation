@@ -5,17 +5,24 @@
 [ext_resource type="PackedScene" uid="uid://bcckgfd8qlmhm" path="res://creatures/human/human.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://byescby3rnuk1" path="res://entities/entity_spawner.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://dlom32x0f3tyr" path="res://creatures/mutant/mutant.tscn" id="4_c651c"]
-[ext_resource type="Resource" uid="uid://cirk3igetj714" path="res://creatures/human/types/boss.tres" id="9_5xyti"]
+[ext_resource type="Resource" uid="uid://ch0d03r2qugcc" path="res://creatures/human/types/scientist.tres" id="9_5xyti"]
 [ext_resource type="PackedScene" uid="uid://cl8rxjlclso5g" path="res://building/components/transporter/elevator/elevator.tscn" id="9_bsumw"]
 [ext_resource type="PackedScene" uid="uid://etva80dwgv3l" path="res://ui/main_gui.tscn" id="9_grrlh"]
 [ext_resource type="PackedScene" uid="uid://di2lvp77xng0n" path="res://building/building_tiles.tscn" id="10_0i4oc"]
 [ext_resource type="PackedScene" uid="uid://dcejudxtfvrn8" path="res://building/components/transporter/elevator/pixel_floor_stop.tscn" id="10_bsumw"]
 [ext_resource type="AudioStream" uid="uid://dtmocdv8smevh" path="res://sounds/music/mutation_more_beaty.mp3" id="10_fwcvl"]
-[ext_resource type="Resource" uid="uid://bwissqiav15ti" path="res://creatures/human/types/office_manager.tres" id="10_n3o0a"]
+[ext_resource type="Resource" uid="uid://cbqgyv5qcb13" path="res://creatures/human/types/science_security.tres" id="10_n3o0a"]
+[ext_resource type="Resource" uid="uid://c3ld6knvk15ub" path="res://creatures/human/types/janitor.tres" id="11_4hmqs"]
 [ext_resource type="Script" uid="uid://bi1k76fl1ws63" path="res://sounds/game_music.gd" id="11_bsumw"]
+[ext_resource type="Resource" uid="uid://dovwmu4yuxbbb" path="res://creatures/human/types/office_chad.tres" id="12_piupu"]
 [ext_resource type="PackedScene" uid="uid://bvyey1fdeivis" path="res://building/components/lighting/point-light.tscn" id="13_na0o7"]
+[ext_resource type="Resource" uid="uid://bwissqiav15ti" path="res://creatures/human/types/office_manager.tres" id="13_re7it"]
 [ext_resource type="Texture2D" uid="uid://dkf32vbobi1wy" path="res://building/components/lighting/trapezoid-mask.png" id="14_73k8k"]
+[ext_resource type="Resource" uid="uid://irdrkl0ue4od" path="res://creatures/human/types/security_guard.tres" id="14_oagth"]
 [ext_resource type="Texture2D" uid="uid://y88epottr0vf" path="res://building/components/lighting/radial-mask.png" id="15_5xyti"]
+[ext_resource type="Resource" uid="uid://irdrkl0ue4od" path="res://creatures/human/types/security_officer.tres" id="15_n53tw"]
+[ext_resource type="Resource" uid="uid://droqwktc0jqvp" path="res://creatures/human/types/security_enforcer.tres" id="16_d00gp"]
+[ext_resource type="Resource" uid="uid://cirk3igetj714" path="res://creatures/human/types/boss.tres" id="17_d8vpj"]
 
 [node name="Main" type="Node2D" unique_id=634852315]
 script = ExtResource("1_3wy1v")
@@ -112,17 +119,172 @@ position = Vector2(293, 63)
 
 [node name="Humans" type="Node" parent="." unique_id=1846980081]
 
-[node name="Soldier" parent="Humans" unique_id=1906732542 instance=ExtResource("2_pjrb6")]
-position = Vector2(288, 370)
+[node name="Scientist1" parent="Humans" unique_id=1906732542 instance=ExtResource("2_pjrb6")]
+position = Vector2(650, 762)
 human_type = ExtResource("9_5xyti")
 
-[node name="Human" parent="Humans" unique_id=1468003654 instance=ExtResource("2_pjrb6")]
-position = Vector2(761, 474)
+[node name="Scientist2" parent="Humans" unique_id=997680633 instance=ExtResource("2_pjrb6")]
+position = Vector2(745, 762)
+human_type = ExtResource("9_5xyti")
+
+[node name="Scientist3" parent="Humans" unique_id=859404073 instance=ExtResource("2_pjrb6")]
+position = Vector2(492, 667)
+human_type = ExtResource("9_5xyti")
+
+[node name="Scientist4" parent="Humans" unique_id=1223822998 instance=ExtResource("2_pjrb6")]
+position = Vector2(336, 667)
+human_type = ExtResource("9_5xyti")
+
+[node name="Scientist5" parent="Humans" unique_id=56314525 instance=ExtResource("2_pjrb6")]
+position = Vector2(371, 667)
+human_type = ExtResource("9_5xyti")
+
+[node name="Scientist6" parent="Humans" unique_id=2142793177 instance=ExtResource("2_pjrb6")]
+position = Vector2(408, 670)
+human_type = ExtResource("9_5xyti")
+
+[node name="ScienceSecurity1" parent="Humans" unique_id=1337202362 instance=ExtResource("2_pjrb6")]
+position = Vector2(743, 669)
 human_type = ExtResource("10_n3o0a")
 
-[node name="Human2" parent="Humans" unique_id=679666306 instance=ExtResource("2_pjrb6")]
-position = Vector2(624, 469)
+[node name="ScienceSecurity2" parent="Humans" unique_id=1610720784 instance=ExtResource("2_pjrb6")]
+position = Vector2(605, 573)
 human_type = ExtResource("10_n3o0a")
+
+[node name="ScienceSecurity3" parent="Humans" unique_id=1509468745 instance=ExtResource("2_pjrb6")]
+position = Vector2(376, 574)
+human_type = ExtResource("10_n3o0a")
+
+[node name="Janitor1" parent="Humans" unique_id=352570271 instance=ExtResource("2_pjrb6")]
+position = Vector2(719, 574)
+human_type = ExtResource("11_4hmqs")
+
+[node name="Janitor2" parent="Humans" unique_id=1435097533 instance=ExtResource("2_pjrb6")]
+position = Vector2(453, 478)
+human_type = ExtResource("11_4hmqs")
+
+[node name="Janitor3" parent="Humans" unique_id=1918622395 instance=ExtResource("2_pjrb6")]
+position = Vector2(459, 574)
+human_type = ExtResource("11_4hmqs")
+
+[node name="OfficeChad1" parent="Humans" unique_id=1422775147 instance=ExtResource("2_pjrb6")]
+position = Vector2(625, 478)
+human_type = ExtResource("12_piupu")
+
+[node name="OfficeChad2" parent="Humans" unique_id=372615246 instance=ExtResource("2_pjrb6")]
+position = Vector2(610, 287)
+human_type = ExtResource("12_piupu")
+
+[node name="OfficeChad3" parent="Humans" unique_id=412985585 instance=ExtResource("2_pjrb6")]
+position = Vector2(585, 288)
+human_type = ExtResource("12_piupu")
+
+[node name="OfficeWorker1" parent="Humans" unique_id=813968083 instance=ExtResource("2_pjrb6")]
+position = Vector2(498, 381)
+
+[node name="OfficeWorker2" parent="Humans" unique_id=1824342449 instance=ExtResource("2_pjrb6")]
+position = Vector2(442, 381)
+
+[node name="OfficeWorker3" parent="Humans" unique_id=1501895803 instance=ExtResource("2_pjrb6")]
+position = Vector2(382, 380)
+
+[node name="OfficeWorker4" parent="Humans" unique_id=201961595 instance=ExtResource("2_pjrb6")]
+position = Vector2(659, 382)
+
+[node name="OfficeWorker5" parent="Humans" unique_id=1981789727 instance=ExtResource("2_pjrb6")]
+position = Vector2(346, 288)
+
+[node name="OfficeWorker6" parent="Humans" unique_id=1143471113 instance=ExtResource("2_pjrb6")]
+position = Vector2(429, 285)
+
+[node name="OfficeWorker7" parent="Humans" unique_id=709454803 instance=ExtResource("2_pjrb6")]
+position = Vector2(481, 190)
+
+[node name="OfficeWorker8" parent="Humans" unique_id=1246461261 instance=ExtResource("2_pjrb6")]
+position = Vector2(553, 189)
+
+[node name="OfficeWorker9" parent="Humans" unique_id=174934227 instance=ExtResource("2_pjrb6")]
+position = Vector2(637, 190)
+
+[node name="OfficeWorker10" parent="Humans" unique_id=1395023821 instance=ExtResource("2_pjrb6")]
+position = Vector2(658, 191)
+
+[node name="OfficeWorker12" parent="Humans" unique_id=393866893 instance=ExtResource("2_pjrb6")]
+position = Vector2(711, -1)
+
+[node name="OfficeWorker13" parent="Humans" unique_id=485904255 instance=ExtResource("2_pjrb6")]
+position = Vector2(660, -2)
+
+[node name="OfficeWorker11" parent="Humans" unique_id=722859894 instance=ExtResource("2_pjrb6")]
+position = Vector2(701, 190)
+
+[node name="OfficeManager1" parent="Humans" unique_id=1652746652 instance=ExtResource("2_pjrb6")]
+position = Vector2(325, 382)
+human_type = ExtResource("13_re7it")
+
+[node name="OfficeManager2" parent="Humans" unique_id=516915234 instance=ExtResource("2_pjrb6")]
+position = Vector2(728, 384)
+human_type = ExtResource("13_re7it")
+
+[node name="OfficeManager3" parent="Humans" unique_id=410433211 instance=ExtResource("2_pjrb6")]
+position = Vector2(476, 285)
+human_type = ExtResource("13_re7it")
+
+[node name="OfficeManager4" parent="Humans" unique_id=1192186283 instance=ExtResource("2_pjrb6")]
+position = Vector2(644, 287)
+human_type = ExtResource("13_re7it")
+
+[node name="OfficeManager5" parent="Humans" unique_id=1746499449 instance=ExtResource("2_pjrb6")]
+position = Vector2(399, 190)
+human_type = ExtResource("13_re7it")
+
+[node name="OfficeManager6" parent="Humans" unique_id=1585744733 instance=ExtResource("2_pjrb6")]
+position = Vector2(654, 93)
+human_type = ExtResource("13_re7it")
+
+[node name="OfficeManager7" parent="Humans" unique_id=631585525 instance=ExtResource("2_pjrb6")]
+position = Vector2(733, 94)
+human_type = ExtResource("13_re7it")
+
+[node name="OfficeManager8" parent="Humans" unique_id=1368834386 instance=ExtResource("2_pjrb6")]
+position = Vector2(768, -2)
+human_type = ExtResource("13_re7it")
+
+[node name="SecurityGuard1" parent="Humans" unique_id=169823721 instance=ExtResource("2_pjrb6")]
+position = Vector2(798, 191)
+human_type = ExtResource("14_oagth")
+
+[node name="SecurityGuard2" parent="Humans" unique_id=1162931582 instance=ExtResource("2_pjrb6")]
+position = Vector2(400, 94)
+human_type = ExtResource("14_oagth")
+
+[node name="SecurityGuard3" parent="Humans" unique_id=957899927 instance=ExtResource("2_pjrb6")]
+position = Vector2(514, -4)
+human_type = ExtResource("14_oagth")
+
+[node name="SecurityGuard4" parent="Humans" unique_id=1567028176 instance=ExtResource("2_pjrb6")]
+position = Vector2(353, -2)
+human_type = ExtResource("14_oagth")
+
+[node name="SecurityOfficer" parent="Humans" unique_id=1797211939 instance=ExtResource("2_pjrb6")]
+position = Vector2(345, 94)
+human_type = ExtResource("15_n53tw")
+
+[node name="SecurityEnforcer1" parent="Humans" unique_id=1269893838 instance=ExtResource("2_pjrb6")]
+position = Vector2(504, 94)
+human_type = ExtResource("16_d00gp")
+
+[node name="SecurityEnforcer2" parent="Humans" unique_id=974856738 instance=ExtResource("2_pjrb6")]
+position = Vector2(433, -3)
+human_type = ExtResource("16_d00gp")
+
+[node name="SecurityEnforcer3" parent="Humans" unique_id=818813783 instance=ExtResource("2_pjrb6")]
+position = Vector2(546, -3)
+human_type = ExtResource("16_d00gp")
+
+[node name="Boss1" parent="Humans" unique_id=688291755 instance=ExtResource("2_pjrb6")]
+position = Vector2(769, -98)
+human_type = ExtResource("17_d8vpj")
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=35768897]
 position = Vector2(575, 326)
