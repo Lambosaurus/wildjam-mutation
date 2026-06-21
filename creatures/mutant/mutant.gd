@@ -27,7 +27,7 @@ const SPLATTER = preload('res://entities/pop/pop.tscn')
 @export var BOIDS_THRESH_MIN = 50.0
 @export var BOIDS_THRESH_MAX = 1000.0
 
-@onready var health = mutant_type.max_health
+@export var health = 100
 @onready var detection_sounds = $DetectionSounds
 @onready var mutation_sounds = $MutationSounds
 
@@ -38,8 +38,13 @@ var direction = Direction.right
 var elevator_attraction: Vector2 = Vector2(0.0, 0.0)
 
 func _ready() -> void:
+	update_properties()
+
+func update_properties() -> void:
 	$TargetSelector.range = max(mutant_type.chase_range, mutant_type.attack_range)
 	$ItemSelector.range = mutant_type.eat_range
+	$ElevatorSelector.range = mutant_type.elevator_range
+	health *= mutant_type.max_health / 100
 
 func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
 	return scalar if dir == Direction.right else -scalar
@@ -118,13 +123,11 @@ func pick_next_action() -> void:
 		);
 		
 	# Go for elevator if no items or targets
-	var selector = $TargetSelector
-	selector.target_bit = 5
-	selector.use_body_collider = false
-	target = selector.target_elevator()
-	if target:
-		#var candidate_direction = vector_to_direction(target.global_position.x - global_position.x)
-		elevator_attraction = (target.global_position - self.global_position).normalized()
+	var elevator = $ElevatorSelector.scan()
+	if elevator:
+		elevator_attraction = (target.global_position - global_position).normalized()
+	else:
+		elevator_attraction = Vector2(0,0)
 
 	return start_boids_action()
 
@@ -159,11 +162,13 @@ func start_action(act: Action, time: float, dir: Direction, target: Node2D = nul
 	$Chassis.animate(action_animation_map[action])
 
 func mutate(mutation: Mutation):
+	# Revert the health to a 0-100 range.
+	health = clamp(health * 100 / mutant_type.max_health, 1, 100)
 	mutation_sounds.play()
 	$Chassis.apply_mutation(mutation)
 	mutant_type = MutantType.new()
 	$Chassis.modify_attributes(mutant_type)
-	
+	update_properties()
 
 func update_vision_range():
 	var range = $TargetSelector.range

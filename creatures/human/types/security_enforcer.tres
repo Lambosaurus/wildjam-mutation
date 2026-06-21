@@ -8,6 +8,7 @@ script = ExtResource("1_ufmkq")
 name = "Security Enforcer"
 max_health = 150.0
 giblet_count = 7
+wander_chance = 0.1
 sprites = ExtResource("2_ufmkq")
 chase_range = 400.0
 flee_range = 75.0

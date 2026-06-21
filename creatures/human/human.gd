@@ -73,7 +73,7 @@ func pick_next_action(is_idle: bool = false) -> void:
 	
 	# Idle behavior
 	return start_action(
-		randi_range(Action.idle, Action.walk) as Action,
+		Action.walk if randf() < human_type.wander_chance else Action.idle,
 		randf_range(0.5, 3),
 		randi_range(Direction.left, Direction.right) as Direction
 	)
