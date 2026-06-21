@@ -6,7 +6,8 @@
 
 [sub_resource type="Resource" id="Resource_d3qlg"]
 script = ExtResource("2_ft1sd")
-health_bonus = 0.8
+chase_range_bonus = 1.2
+eat_range_bonus = 1.2
 metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
 
 [resource]

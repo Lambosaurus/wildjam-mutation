@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://b0108phmbvgjr" path="res://creatures/mutations/body_parts/primal_head/HeadDumb.png" id="2_lk0g3"]
 [ext_resource type="PackedScene" uid="uid://b60efalyu4ar8" path="res://creatures/mutations/body_parts/head.tscn" id="3_dh46v"]
 
-[node name="PrimalHead" type="Node2D" unique_id=1017392848]
+[node name="PrimalHead" type="Node2D" unique_id=1017392848 node_paths=PackedStringArray("skeleton")]
 script = ExtResource("1_vl2bl")
+skeleton = NodePath("Head")
 metadata/_custom_type_script = "uid://bvb4unmbfmir"
 
 [node name="HeadDumb" type="Polygon2D" parent="." unique_id=817437495]

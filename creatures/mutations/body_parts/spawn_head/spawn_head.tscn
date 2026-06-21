@@ -212,8 +212,9 @@ _data = {
 &"walk": SubResource("Animation_mq0lx")
 }
 
-[node name="SpawnHead" type="Node2D" unique_id=949289082]
+[node name="SpawnHead" type="Node2D" unique_id=949289082 node_paths=PackedStringArray("skeleton")]
 script = ExtResource("1_xtmvs")
+skeleton = NodePath("Head")
 metadata/_custom_type_script = "uid://bvb4unmbfmir"
 
 [node name="HeadSpawn" type="Polygon2D" parent="." unique_id=735857444]

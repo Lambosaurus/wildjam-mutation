@@ -6,6 +6,9 @@
 
 [sub_resource type="Resource" id="Resource_l8xuj"]
 script = ExtResource("2_06d47")
+speed_bonus = 0.2
+health_bonus = 1.2
+spawn_on_timeout = 3
 metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
 
 [resource]
@@ -14,5 +17,5 @@ slot = 3
 body_part = ExtResource("1_48yap")
 mutation_type = SubResource("Resource_l8xuj")
 cost = 100
-name = "Spawn"
+name = "Spawner"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

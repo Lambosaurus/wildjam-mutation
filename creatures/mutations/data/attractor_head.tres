@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://dtdm6arvaqk7v"]
+
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_7h8q1"]
+[ext_resource type="PackedScene" uid="uid://b5rd0y13o0oe2" path="res://creatures/mutations/body_parts/attractor_head/attractor_head.tscn" id="1_xdsr2"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_6xq8n"]
+
+[sub_resource type="Resource" id="Resource_mpesp"]
+script = ExtResource("2_6xq8n")
+speed_bonus = 0.9
+health_bonus = 1.1
+swarm_attractor_bonus = 2.0
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_7h8q1")
+slot = 3
+body_part = ExtResource("1_xdsr2")
+mutation_type = SubResource("Resource_mpesp")
+cost = 150
+name = "Attractor"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"
