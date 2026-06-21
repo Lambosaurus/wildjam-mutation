@@ -303,7 +303,7 @@ position = Vector2(769, -98)
 human_type = ExtResource("17_d8vpj")
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=35768897]
-position = Vector2(575, 326)
+position = Vector2(576, 670)
 
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=1429688143]
 
