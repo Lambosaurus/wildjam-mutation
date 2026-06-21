@@ -2,6 +2,7 @@ class_name BodyPart
 extends Node2D
 
 @export var skeleton: AnimatedSkeleton
+@export var keep_animation_state = true
 
 const animation_map = {
 	Chassis.Animations.ATTACK: "attack",
@@ -16,7 +17,7 @@ func animate(chassis_animation: Chassis.Animations):
 		skeleton.animation.play(animation_name)
 		
 func apply_animation_state_to(body_part: BodyPart):
-	if not skeleton.animation or not skeleton.animation.is_playing(): return
+	if not body_part.keep_animation_state or not skeleton.animation or not skeleton.animation.is_playing(): return
 	
 	body_part.skeleton.animation.play(skeleton.animation.current_animation)
 	body_part.skeleton.animation.seek(skeleton.animation.current_animation_position)

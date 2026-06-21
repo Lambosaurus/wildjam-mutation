@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://bqx54slffm7dp"]
+
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_8rc8y"]
+[ext_resource type="PackedScene" uid="uid://4wxgjsoa5elm" path="res://creatures/mutations/body_parts/consumer_head/consumer_head.tscn" id="1_y63io"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_pfpau"]
+
+[sub_resource type="Resource" id="Resource_v02sg"]
+script = ExtResource("2_pfpau")
+speed_bonus = 0.9
+chase_range_bonus = 0.1
+eat_range_bonus = 2.0
+eat_efficiency_bonus = 2.0
+swarm_bonus = 1.5
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_8rc8y")
+slot = 3
+body_part = ExtResource("1_y63io")
+mutation_type = SubResource("Resource_v02sg")
+cost = 150
+name = "Consumer"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"
