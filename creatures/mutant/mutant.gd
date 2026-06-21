@@ -197,3 +197,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = move_toward(velocity.x, x_speed, mutant_type.run_speed)
 
 	move_and_slide()
+	
+	if is_on_wall():
+		direction = Direction.right if direction == Direction.left else Direction.left
+		$Chassis.set_direction(direction)
