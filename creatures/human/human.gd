@@ -111,6 +111,8 @@ func kill() -> void:
 	queue_free()
 
 func apply_damage(damage: float) -> bool:
+	if health <= 0.0:
+		return false
 	if damage >= health:
 		kill();
 		return true

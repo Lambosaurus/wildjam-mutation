@@ -11,27 +11,26 @@ var action_animation_map = {
 	Action.attack: Chassis.Animations.ATTACK
 }
 
-var attributes = {
-	"agression": 0.0
-}
-
 @export var mutant_type: MutantType
 
 const MELEE_STRIKE = preload('res://entities/strike/strike.tscn')
 const SPLATTER = preload('res://entities/pop/pop.tscn')
+const NEW_MUTANT = preload('res://creatures/mutant/mutant.tscn')
 
 @export var initial_mutations: Array[Mutation]
 
 @export_group("BOIDS Controls")
 @export var BOIDS_REPULSION = 1000.0
 @export var BOIDS_ATTRACTION = 1500.0
-@export var BOIDS_COHESION = 2.0
-@export var BOIDS_THRESH_MIN = 50.0
+@export var BOIDS_COHESION = 3.0
+@export var BOIDS_THRESH_MIN = 100.0
 @export var BOIDS_THRESH_MAX = 1000.0
 
 @export var health = 100
 @onready var detection_sounds = $DetectionSounds
 @onready var mutation_sounds = $MutationSounds
+var explode_timeout: float = 3.0
+
 
 var action = Action.idle;
 var action_timeout = 0
@@ -116,7 +115,7 @@ func pick_next_action() -> void:
 		if dist < mutant_type.attack_range:
 			if "eat" in item:
 				$SlurpSounds.play()
-				GameState.biomass += item.eat()
+				GameState.biomass += item.eat() * mutant_type.eat_efficiency
 
 			return start_action(
 				Action.idle,
@@ -143,7 +142,9 @@ func start_boids_action() -> void:
 	# MAGIC NUMBERS BEWARE!
 	var swarm = $SwarmDetector
 	swarm.compute()
-	var force = (swarm.repulsion * BOIDS_REPULSION) + (swarm.cohesion * BOIDS_COHESION) + (elevator_attraction * BOIDS_ATTRACTION)
+	var force = (swarm.repulsion * BOIDS_REPULSION)	\
+		+ (swarm.cohesion * mutant_type.swarm_attraction * BOIDS_COHESION)	\
+		+ (elevator_attraction * mutant_type.elevator_attraction * BOIDS_ATTRACTION)
 
 	if abs(force.x) < BOIDS_THRESH_MIN:
 		return start_action(
@@ -183,11 +184,24 @@ func update_vision_range():
 	var scale = range / 100
 	$Vision.scale = Vector2(scale, scale) # Vision light is 100px
 	pass
+	
+func on_spawn_timeout():
+	kill()
+	for i in range(mutant_type.spawn_on_timeout):
+		var new_mutant = NEW_MUTANT.instantiate()
+		new_mutant.position = position + Vector2(randf_range(-25,25), randf_range(-25, 0))
+		add_sibling(new_mutant)
+	
 
 func _process(delta: float) -> void:
 	action_timeout -= delta
 	if (action_timeout < 0):
 		pick_next_action()
+		
+	if mutant_type.spawn_on_timeout:
+		explode_timeout -= delta
+		if explode_timeout < 0:
+			on_spawn_timeout()
 		
 	update_vision_range()
 
