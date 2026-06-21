@@ -20,8 +20,9 @@ const NEW_MUTANT = preload('res://creatures/mutant/mutant.tscn')
 @export var initial_mutations: Array[Mutation]
 
 @export_group("BOIDS Controls")
-@export var BOIDS_REPULSION = 0
-@export var BOIDS_COHESION = 10.0
+@export var BOIDS_REPULSION = 500.0
+@export var BOIDS_ATTRACTION = 2000.0
+@export var BOIDS_COHESION = 1.0
 @export var BOIDS_THRESH_MIN = 200.0
 @export var BOIDS_THRESH_MAX = 1000.0
 
@@ -34,6 +35,8 @@ var explode_timeout: float = 3.0
 var action = Action.idle;
 var action_timeout = 0
 var direction = Direction.right
+
+var elevator_attraction: Vector2 = Vector2(0.0, 0.0)
 
 func _ready() -> void:
 	
@@ -130,12 +133,9 @@ func pick_next_action() -> void:
 	# Go for elevator if no items or targets
 	var elevator = $ElevatorSelector.scan()
 	if elevator:
-		if randf_range(0, 10.0) < mutant_type.elevator_attraction:
-			return start_action(
-				Action.walk,
-				randf_range(0.1, 0.3),
-				vector_to_direction(elevator.global_position.x - global_position.x),
-			);
+		elevator_attraction = (elevator.global_position - global_position).normalized()
+	else:
+		elevator_attraction = Vector2(0,0)
 
 	return start_boids_action()
 	
@@ -157,12 +157,10 @@ func start_boids_action() -> void:
 	var swarm = $SwarmDetector
 	swarm.compute()
 	var force = (swarm.repulsion * BOIDS_REPULSION)	\
-		+ (swarm.cohesion * mutant_type.swarm_attraction * BOIDS_COHESION)
-	
-	var fx = force.x
-	fx *= randf_range(0.5, 2.0)
-	
-	if abs(fx) < BOIDS_THRESH_MIN:
+		+ (swarm.cohesion * mutant_type.swarm_attraction * BOIDS_COHESION)	\
+		+ (elevator_attraction * mutant_type.elevator_attraction * BOIDS_ATTRACTION)
+
+	if abs(force.x) < BOIDS_THRESH_MIN:
 		return start_action(
 			Action.walk if randf() > 0.75 else Action.idle,
 			randf_range(0.25, 1.0),
@@ -171,15 +169,16 @@ func start_boids_action() -> void:
 
 	return start_action(
 		Action.walk,
-		clampf(abs(fx) / BOIDS_THRESH_MAX, 0.1, 0.9) + randf_range(0, 0.1),
-		vector_to_direction(fx)
+		clampf(abs(force.x) / BOIDS_THRESH_MAX, 0.1, 0.9) + randf_range(0, 0.1),
+		vector_to_direction(force.x)
 	)
 
 
-func start_action(act: Action, time: float, dir: Direction) -> void:
+func start_action(act: Action, time: float, dir: Direction, target: Node2D = null) -> void:
 	action = act
 	action_timeout = time
 	direction = dir
+	target = target
 
 	# Handle Chassis updates
 	$Chassis.set_direction(dir)
