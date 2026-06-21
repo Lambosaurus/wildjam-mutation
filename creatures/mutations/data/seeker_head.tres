@@ -7,9 +7,9 @@
 [sub_resource type="Resource" id="Resource_p2bai"]
 script = ExtResource("2_oef38")
 speed_bonus = 0.9
-swarm_attractor_bonus = 2.0
+swarm_attractor_bonus = 1.0
 swarm_bonus = 0.5
-elevator_bonus = 2.0
+elevator_bonus = 10.0
 metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
 
 [resource]
@@ -17,6 +17,6 @@ script = ExtResource("1_hdhvj")
 slot = 3
 body_part = ExtResource("1_rauql")
 mutation_type = SubResource("Resource_p2bai")
-cost = 150
+cost = 50
 name = "Seeker"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

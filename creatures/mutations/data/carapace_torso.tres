@@ -16,6 +16,6 @@ script = ExtResource("1_gb2y0")
 slot = 2
 body_part = ExtResource("1_tbhxj")
 mutation_type = SubResource("Resource_jpqmj")
-cost = 250
+cost = 100
 name = "Carapace"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

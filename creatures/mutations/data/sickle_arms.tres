@@ -15,6 +15,6 @@ metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
 script = ExtResource("1_qb0iy")
 body_part = ExtResource("1_kbfud")
 mutation_type = SubResource("Resource_aace7")
-cost = 250
+cost = 200
 name = "Sickle Arms"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

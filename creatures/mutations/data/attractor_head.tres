@@ -17,6 +17,6 @@ script = ExtResource("1_7h8q1")
 slot = 3
 body_part = ExtResource("1_xdsr2")
 mutation_type = SubResource("Resource_mpesp")
-cost = 150
+cost = 100
 name = "Attractor"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

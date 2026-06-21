@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c4knu1o0mibmy" path="res://main/main.gd" id="1_3wy1v"]
 [ext_resource type="Resource" uid="uid://w7el4w33gto" path="res://main/main_mutations.tres" id="2_grrlh"]
 [ext_resource type="PackedScene" uid="uid://bcckgfd8qlmhm" path="res://creatures/human/human.tscn" id="2_pjrb6"]
-[ext_resource type="PackedScene" uid="uid://byescby3rnuk1" path="res://entities/entity_spawner.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://dlom32x0f3tyr" path="res://creatures/mutant/mutant.tscn" id="4_c651c"]
 [ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="7_oagth"]
 [ext_resource type="Resource" uid="uid://cxftaxj083bso" path="res://creatures/mutations/data/implanted_legs.tres" id="8_n53tw"]
@@ -28,7 +27,7 @@
 [node name="Main" type="Node2D" unique_id=634852315 node_paths=PackedStringArray("swat_spawn_point")]
 script = ExtResource("1_3wy1v")
 mutation_service = ExtResource("2_grrlh")
-swat_spawn_point = NodePath("Spawners/SwatLocation")
+swat_spawn_point = NodePath("")
 
 [node name="BuildingTiles" parent="." unique_id=850572857 instance=ExtResource("10_0i4oc")]
 position = Vector2(565, 370)
@@ -108,38 +107,6 @@ position = Vector2(1017, -113)
 [node name="Mutant" parent="." unique_id=88951864 instance=ExtResource("4_c651c")]
 position = Vector2(399, 764)
 initial_mutations = Array[ExtResource("7_oagth")]([ExtResource("8_n53tw")])
-
-[node name="Spawners" type="Node" parent="." unique_id=699582945]
-
-[node name="SwatLocation" type="Node2D" parent="Spawners" unique_id=718896585]
-position = Vector2(233, 458)
-
-[node name="MutantLevel1" parent="Spawners" unique_id=1106100923 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
-light_mask = 2
-position = Vector2(40, 444)
-spawn_location = NodePath("Location")
-spawnable = ExtResource("4_c651c")
-
-[node name="Location" type="Node2D" parent="Spawners/MutantLevel1" unique_id=503858260]
-position = Vector2(271, 108)
-
-[node name="HumanLevel1" parent="Spawners" unique_id=345066504 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
-light_mask = 2
-position = Vector2(13, 444)
-spawn_location = NodePath("Location")
-spawnable = ExtResource("2_pjrb6")
-
-[node name="Location" type="Node2D" parent="Spawners/HumanLevel1" unique_id=1435144818]
-position = Vector2(795, 109)
-
-[node name="MutantLevel0" parent="Spawners" unique_id=658344345 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
-light_mask = 2
-position = Vector2(12, 685)
-spawn_location = NodePath("Location")
-spawnable = ExtResource("4_c651c")
-
-[node name="Location" type="Node2D" parent="Spawners/MutantLevel0" unique_id=1086107178]
-position = Vector2(298, 57)
 
 [node name="Humans" type="Node" parent="." unique_id=1846980081]
 

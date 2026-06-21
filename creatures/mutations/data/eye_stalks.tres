@@ -15,6 +15,6 @@ script = ExtResource("1_eb7rv")
 slot = 3
 body_part = ExtResource("1_mjue3")
 mutation_type = SubResource("Resource_d3qlg")
-cost = 100
+cost = 50
 name = "Eye Stalks"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"
