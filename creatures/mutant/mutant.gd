@@ -91,6 +91,7 @@ func pick_next_action() -> void:
 			var strike = MELEE_STRIKE.instantiate()
 			strike.damage = mutant_type.attack_damage
 			strike.flip_h = candidate_direction == Direction.left
+			strike.attacker = self
 			add_sibling(strike)
 			strike.global_position = target.global_position
 
@@ -137,6 +138,19 @@ func pick_next_action() -> void:
 		elevator_attraction = Vector2(0,0)
 
 	return start_boids_action()
+	
+func spawn_mutants(count: int, parent: Node2D):
+	for i in range(count):
+		var new_mutant = NEW_MUTANT.instantiate()
+		var new_pos = parent.position
+		if count > 1:
+			new_pos += Vector2(randf_range(-25,25), randf_range(-25, 0))
+		new_mutant.global_position = new_pos
+		parent.add_sibling(new_mutant)
+	
+func on_kill(node: Node2D):
+	if mutant_type.spawn_on_kill:
+		spawn_mutants(mutant_type.spawn_on_kill, node)
 
 func start_boids_action() -> void:
 	# MAGIC NUMBERS BEWARE!
@@ -186,12 +200,8 @@ func update_vision_range():
 	pass
 	
 func on_spawn_timeout():
+	spawn_mutants(mutant_type.spawn_on_timeout, self)
 	kill()
-	for i in range(mutant_type.spawn_on_timeout):
-		var new_mutant = NEW_MUTANT.instantiate()
-		new_mutant.position = position + Vector2(randf_range(-25,25), randf_range(-25, 0))
-		add_sibling(new_mutant)
-	
 
 func _process(delta: float) -> void:
 	action_timeout -= delta
