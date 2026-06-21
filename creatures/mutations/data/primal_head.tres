@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://cnevu5r2xp5w0"]
+
+[ext_resource type="PackedScene" uid="uid://b0lujayyyunx" path="res://creatures/mutations/body_parts/primal_head/primal_head.tscn" id="1_poqel"]
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_tnoay"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_2idh3"]
+
+[sub_resource type="Resource" id="Resource_fg66p"]
+script = ExtResource("2_2idh3")
+speed_bonus = 1.1
+chase_range_bonus = 2.0
+swarm_attractor_bonus = 0.5
+swarm_bonus = 0.1
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_tnoay")
+slot = 3
+body_part = ExtResource("1_poqel")
+mutation_type = SubResource("Resource_fg66p")
+cost = 150
+name = "Primal"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"

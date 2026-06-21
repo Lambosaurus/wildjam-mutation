@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_gn6ag"]
 [ext_resource type="Resource" uid="uid://bx6h6nrlkn8ay" path="res://creatures/mutations/data/beefy_legs.tres" id="2_3t3nk"]
+[ext_resource type="Resource" uid="uid://dtdm6arvaqk7v" path="res://creatures/mutations/data/attractor_head.tres" id="2_diu5b"]
 [ext_resource type="Resource" uid="uid://fyqs6760rnmu" path="res://creatures/mutations/data/horned_head.tres" id="2_gn6ag"]
 [ext_resource type="Resource" uid="uid://vwbi0afj3ffu" path="res://creatures/mutations/data/carapace_torso.tres" id="3_dqv8n"]
 [ext_resource type="Resource" uid="uid://q6772ll5r6yy" path="res://creatures/mutations/data/sickle_arms.tres" id="3_oen3j"]
@@ -10,9 +11,13 @@
 [ext_resource type="Resource" uid="uid://0rs1j0f8weml" path="res://creatures/mutations/data/hammer_arms.tres" id="5_0aafx"]
 [ext_resource type="Resource" uid="uid://djvbj3326u370" path="res://creatures/mutations/data/slim_body.tres" id="5_kmygs"]
 [ext_resource type="Resource" uid="uid://cxftaxj083bso" path="res://creatures/mutations/data/implanted_legs.tres" id="7_qukvd"]
+[ext_resource type="Resource" uid="uid://cu2cpa46nlyir" path="res://creatures/mutations/data/infector_arms.tres" id="9_4ktpy"]
 [ext_resource type="Resource" uid="uid://cn0fkn18a0gjy" path="res://creatures/mutations/data/spring_legs.tres" id="10_5qlxx"]
+[ext_resource type="Resource" uid="uid://cnevu5r2xp5w0" path="res://creatures/mutations/data/primal_head.tres" id="10_vmf1i"]
+[ext_resource type="Resource" uid="uid://ho6tbygr7gf1" path="res://creatures/mutations/data/seeker_head.tres" id="11_y3mi6"]
+[ext_resource type="Resource" uid="uid://rbviju5c7x2u" path="res://creatures/mutations/data/spawn_head.tres" id="14_c1pu2"]
 
 [resource]
 script = ExtResource("4_kmygs")
-available_mutations = Array[ExtResource("1_gn6ag")]([ExtResource("2_3t3nk"), ExtResource("3_dqv8n"), ExtResource("4_kcmht"), ExtResource("5_0aafx"), ExtResource("2_gn6ag"), ExtResource("7_qukvd"), ExtResource("3_oen3j"), ExtResource("5_kmygs"), ExtResource("10_5qlxx")])
+available_mutations = Array[ExtResource("1_gn6ag")]([ExtResource("2_diu5b"), ExtResource("2_3t3nk"), ExtResource("3_dqv8n"), ExtResource("4_kcmht"), ExtResource("5_0aafx"), ExtResource("2_gn6ag"), ExtResource("7_qukvd"), ExtResource("9_4ktpy"), ExtResource("10_vmf1i"), ExtResource("11_y3mi6"), ExtResource("3_oen3j"), ExtResource("5_kmygs"), ExtResource("14_c1pu2"), ExtResource("10_5qlxx")])
 metadata/_custom_type_script = "uid://dqw8fexj5crea"

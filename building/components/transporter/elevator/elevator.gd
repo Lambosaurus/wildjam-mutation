@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var elevator_interior: Node2D
 @export var active_floor_stops: Array[FloorStop]
 @export var travel_time: int = 5
 @export var wait_time: int = 3
@@ -16,6 +17,7 @@ var target_floor: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	elevator_interior.visible = false
 	timer.one_shot = true
 	timer.connect("timeout", _handle_elevator_travel)
 	var tween = create_tween()
@@ -73,9 +75,14 @@ func _handle_traveller_present(body: CharacterBody2D, floor_name):
 		body.start_action(body.Action.idle, 20, body.Direction.left)
 		traveller_queue.append(body)
 
+func teleport_traveler_to_elevator_interior(traveler):
+	elevator_interior.add_child(traveler)
+
 func fade_travellers(tween_target, tween_time):
 	var tween = create_tween()
+	
 	for body in traveller_queue:
+		tween.finished.connect(teleport_traveler_to_elevator_interior.bind(body))
 		if not is_instance_valid(body):
 			continue
 		tween.tween_property(body, "modulate:a", tween_target, tween_time)

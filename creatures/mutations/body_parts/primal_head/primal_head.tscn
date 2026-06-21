@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b0lujayyyunx"]
+
+[ext_resource type="Script" uid="uid://bvb4unmbfmir" path="res://creatures/mutations/body_part.gd" id="1_vl2bl"]
+[ext_resource type="Texture2D" uid="uid://b0108phmbvgjr" path="res://creatures/mutations/body_parts/primal_head/HeadDumb.png" id="2_lk0g3"]
+[ext_resource type="PackedScene" uid="uid://b60efalyu4ar8" path="res://creatures/mutations/body_parts/head.tscn" id="3_dh46v"]
+
+[node name="PrimalHead" type="Node2D" unique_id=1017392848 node_paths=PackedStringArray("skeleton")]
+script = ExtResource("1_vl2bl")
+skeleton = NodePath("Head")
+metadata/_custom_type_script = "uid://bvb4unmbfmir"
+
+[node name="HeadDumb" type="Polygon2D" parent="." unique_id=817437495]
+position = Vector2(7, 16)
+texture = ExtResource("2_lk0g3")
+skeleton = NodePath("../Head")
+polygon = PackedVector2Array(-7.9000015, -32.2, -9, -31.6, -9, -30.4, -9.400002, -30, -11, -30, -11, -13, -2.9000015, -13, -4.0999985, -25.6, -4, -29.5)
+uv = PackedVector2Array(42.1, 17.8, 41, 18.4, 41, 19.6, 40.6, 20, 39, 20, 39, 37, 47.1, 37, 45.9, 24.4, 46, 20.5)
+polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8)]
+bones = ["Core", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1), "Core/Head", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1)]
+
+[node name="Head" parent="." unique_id=476566604 instance=ExtResource("3_dh46v")]
+visible = false

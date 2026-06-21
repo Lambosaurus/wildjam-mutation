@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://ho6tbygr7gf1"]
+
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_hdhvj"]
+[ext_resource type="PackedScene" uid="uid://bu1x52tfxvx5q" path="res://creatures/mutations/body_parts/seeker_head/seeker_head.tscn" id="1_rauql"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_oef38"]
+
+[sub_resource type="Resource" id="Resource_p2bai"]
+script = ExtResource("2_oef38")
+speed_bonus = 0.9
+swarm_attractor_bonus = 2.0
+swarm_bonus = 0.5
+elevator_bonus = 2.0
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_hdhvj")
+slot = 3
+body_part = ExtResource("1_rauql")
+mutation_type = SubResource("Resource_p2bai")
+cost = 150
+name = "Seeker"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"
