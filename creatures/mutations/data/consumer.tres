@@ -8,7 +8,7 @@
 script = ExtResource("2_pfpau")
 speed_bonus = 0.9
 chase_range_bonus = 0.1
-eat_range_bonus = 2.0
+eat_range_bonus = 3.0
 eat_efficiency_bonus = 2.0
 swarm_bonus = 1.5
 metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
