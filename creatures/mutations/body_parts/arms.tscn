@@ -4,6 +4,54 @@
 
 [sub_resource type="Animation" id="Animation_ax28a"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arms/Core/ShoulderR:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arms/Core/ShoulderL:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Arms/Core/ShoulderR:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(12, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Arms/Core/ShoulderL:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_7k7mv"]
 resource_name = "attack"
@@ -40,26 +88,26 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Arms/Core/ShoulderR/Arm:position")
+tracks/0/path = NodePath("Arms/Core/ShoulderR:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.79, 1.4),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-3.1360123, 19.878769), Vector2(-8.832694, 15.810867)]
+"values": [Vector2(12, 0), Vector2(12, 3)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Arms/Core/ShoulderL/Arm:position")
+tracks/1/path = NodePath("Arms/Core/ShoulderL:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.79, 1.4),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-15.352114, 10.968712), Vector2(-9.2644825, 14.566036)]
+"values": [Vector2(-8, 1), Vector2(-8, 4)]
 }
 
 [sub_resource type="Animation" id="Animation_7os6j"]
@@ -141,7 +189,7 @@ position = Vector2(12, 0)
 rest = Transform2D(1, 0, 0, 1, 12, 0)
 
 [node name="Arm" type="Bone2D" parent="Core/ShoulderR" unique_id=758649855]
-position = Vector2(-3.9474788, 19.299314)
+position = Vector2(-8.049961, 16.369804)
 rest = Transform2D(1, 0, 0, 1, -6, 18)
 
 [node name="Fore" type="Bone2D" parent="Core/ShoulderR/Arm" unique_id=1071864264]
@@ -153,7 +201,7 @@ position = Vector2(-8, 1)
 rest = Transform2D(1, 0, 0, 1, -8, 1)
 
 [node name="Arm" type="Bone2D" parent="Core/ShoulderL" unique_id=1770523382]
-position = Vector2(-14.484959, 11.481134)
+position = Vector2(-10.100933, 14.071758)
 rest = Transform2D(1, 0, 0, 1, -3, 18)
 
 [node name="Fore" type="Bone2D" parent="Core/ShoulderL/Arm" unique_id=1887298257]

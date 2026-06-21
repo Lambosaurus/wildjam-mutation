@@ -7,7 +7,7 @@ enum Direction { left, right }
 var action_animation_map = {
 	Action.idle: Chassis.Animations.IDLE,
 	Action.walk: Chassis.Animations.WALK,
-	Action.run: Chassis.Animations.WALK,
+	Action.run: Chassis.Animations.RUN,
 	Action.attack: Chassis.Animations.ATTACK
 }
 

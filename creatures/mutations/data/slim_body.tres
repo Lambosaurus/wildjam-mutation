@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://djvbj3326u370"]
+
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_3spt6"]
+[ext_resource type="PackedScene" uid="uid://ccrq4lhnijk8g" path="res://creatures/mutations/body_parts/slim_torso/slim_torso.tscn" id="1_5jth4"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_gk8g2"]
+
+[sub_resource type="Resource" id="Resource_8dja6"]
+script = ExtResource("2_gk8g2")
+speed_bonus = 2.0
+damage_bonus = 1.0
+attack_rate_bonus = 1.5
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_3spt6")
+body_part = ExtResource("1_5jth4")
+mutation_type = SubResource("Resource_8dja6")
+cost = 150
+name = "Slim Body"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"
