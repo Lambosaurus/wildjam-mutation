@@ -331,6 +331,7 @@ human_type = ExtResource("17_d8vpj")
 position = Vector2(576, 670)
 
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=1429688143]
+process_mode = 3
 
 [node name="MainGUI" parent="GUILayer" unique_id=10804972 instance=ExtResource("9_grrlh")]
 mouse_filter = 1

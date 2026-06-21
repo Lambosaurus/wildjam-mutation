@@ -54,6 +54,8 @@ func display_error(message: String, timeout: float = 1):
 	$ErrorLabel/UITimer.start(timeout)
 
 func _on_mutations_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
+	if mouse_button_index != MouseButton.MOUSE_BUTTON_LEFT: return
+	
 	var mutation = mutation_service.available_mutations[index]
 	if not mutation: return
 	

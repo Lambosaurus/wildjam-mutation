@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cixa1hhfqwv7y" path="res://creatures/mutations/body_parts/simple_legs/simple_legs.tscn" id="6_ulkix"]
 
 [node name="Chassis" type="Node2D" unique_id=1809367835]
+z_index = 1
 script = ExtResource("1_2n2iq")
 
 [node name="HeadSlot" parent="." unique_id=2110189134 instance=ExtResource("2_ulkix")]

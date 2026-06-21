@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bnfpdf0k1xiqy"]
+
+[ext_resource type="Script" uid="uid://da02sdw6wu7d1" path="res://ui/game_pause.gd" id="1_vy6ds"]
+
+[node name="GamePause" type="Control" unique_id=622485225]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vy6ds")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=419697573]
+modulate = Color(0.019282646, 0.22268459, 0.4601015, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 60.0
+grow_horizontal = 0
+
+[node name="PauseL" type="ColorRect" parent="HBoxContainer" unique_id=2100346555]
+custom_minimum_size = Vector2(20, 40)
+layout_mode = 2
+
+[node name="PauseL2" type="ColorRect" parent="HBoxContainer" unique_id=1036156746]
+custom_minimum_size = Vector2(20, 40)
+layout_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -6,6 +6,9 @@ signal node_deselected(node: SelectionArea)
 var _current_group = null
 var selected_nodes_dict: Dictionary[SelectionArea, bool] = {}
 
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
 func clicked_node(node, button):
 	if node.group != _current_group: 
 		deselect_all()
