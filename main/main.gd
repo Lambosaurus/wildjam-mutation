@@ -1,12 +1,13 @@
 extends Node2D
 
 @export var mutation_service: MutationService
+
+@export var swat_spawn_point: Node2D
+
 @export_group("Camera")
 @export var camera_speed = 20
-@export var threat_level = 0
 @export var min_zoom: float = 0.25
 @export var max_zoom: float = 2.0
-
 @onready var zoom = $MainCamera.zoom.x
 
 

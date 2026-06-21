@@ -24,9 +24,10 @@
 [ext_resource type="Resource" uid="uid://droqwktc0jqvp" path="res://creatures/human/types/security_enforcer.tres" id="16_d00gp"]
 [ext_resource type="Resource" uid="uid://cirk3igetj714" path="res://creatures/human/types/boss.tres" id="17_d8vpj"]
 
-[node name="Main" type="Node2D" unique_id=634852315]
+[node name="Main" type="Node2D" unique_id=634852315 node_paths=PackedStringArray("swat_spawn_point")]
 script = ExtResource("1_3wy1v")
 mutation_service = ExtResource("2_grrlh")
+swat_spawn_point = NodePath("Spawners/SwatLocation")
 
 [node name="BuildingTiles" parent="." unique_id=850572857 instance=ExtResource("10_0i4oc")]
 position = Vector2(565, 370)
@@ -98,6 +99,9 @@ position = Vector2(-1320, 126)
 
 [node name="Spawners" type="Node" parent="." unique_id=699582945]
 
+[node name="SwatLocation" type="Node2D" parent="Spawners" unique_id=718896585]
+position = Vector2(233, 458)
+
 [node name="MutantLevel1" parent="Spawners" unique_id=1106100923 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
 light_mask = 2
 position = Vector2(40, 444)
@@ -119,11 +123,11 @@ position = Vector2(795, 109)
 [node name="MutantLevel0" parent="Spawners" unique_id=658344345 node_paths=PackedStringArray("spawn_location") instance=ExtResource("3_xwkvk")]
 light_mask = 2
 position = Vector2(12, 685)
-spawn_location = NodePath("SpawnPoint")
+spawn_location = NodePath("Location")
 spawnable = ExtResource("4_c651c")
 
-[node name="SpawnPoint" type="Node2D" parent="Spawners/MutantLevel0" unique_id=1086107178]
-position = Vector2(557, 63)
+[node name="Location" type="Node2D" parent="Spawners/MutantLevel0" unique_id=1086107178]
+position = Vector2(298, 57)
 
 [node name="Humans" type="Node" parent="." unique_id=1846980081]
 
@@ -279,7 +283,7 @@ position = Vector2(345, 94)
 human_type = ExtResource("15_re7it")
 
 [node name="SecurityOfficer2" parent="Humans" unique_id=1416298830 instance=ExtResource("2_pjrb6")]
-position = Vector2(610, -3)
+position = Vector2(610, -4)
 human_type = ExtResource("15_re7it")
 
 [node name="SecurityEnforcer1" parent="Humans" unique_id=1269893838 instance=ExtResource("2_pjrb6")]
