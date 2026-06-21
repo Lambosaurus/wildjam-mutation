@@ -8,7 +8,7 @@ extends Node2D
 @export var max_zoom: float = 2.0
 
 @onready var zoom = $MainCamera.zoom.x
-		
+
 
 var pause_menu = preload("res://ui/pause_menu.tscn")
 
