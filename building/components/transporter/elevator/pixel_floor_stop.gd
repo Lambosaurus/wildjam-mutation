@@ -6,6 +6,10 @@ extends Node2D
 
 @export var travel_enabled = true
 
+func _ready() -> void:
+	if not travel_enabled:
+		$TravellerArea.queue_free()
+
 func open():
 	animator.play("open")
 	
