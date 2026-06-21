@@ -20,8 +20,14 @@ func set_target(target: Vector2, spread: float = 0.0) -> void:
 	velocity = Vector2.from_angle(angle) * speed
 	
 func _on_body_entered(body: Node2D) -> void:
+	
+	if damage <= 0:
+		return
+	
 	if "apply_damage" in body:
 		body.apply_damage(damage)
+	
+	damage = 0
 		
 	var pop = POP.instantiate()
 	pop.position = position
