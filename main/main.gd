@@ -34,7 +34,6 @@ func update_camera():
 	if move_direction:
 		$MainCamera.position += move_direction * camera_speed / zoom
 	
-	
 	if Input.is_action_just_released("scroll_up"):
 		if zoom < max_zoom:
 			modify_zoom(1.1)

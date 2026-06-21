@@ -13,6 +13,7 @@ metadata/_custom_type_script = "uid://bvb4unmbfmir"
 visible = false
 
 [node name="RightLeg" type="Polygon2D" parent="." unique_id=1592513201]
+z_index = 1
 position = Vector2(17, 7)
 texture = ExtResource("3_r8rbi")
 skeleton = NodePath("../Legs")
