@@ -1,95 +1,94 @@
 extends Node2D
 
 @export var elevator_interior: Node2D
-var active_floor_stops: Array[FloorStop]
 @export var travel_time: int = 5
 @export var wait_time: int = 3
-@onready var timer: Timer = $TravelTimeCycle
+@onready var travel_timer: Timer = $TravelTimeCycle
+@onready var wait_timer: Timer = $WaitTimer
 
-enum FloorState {DoorsOpening, DoorsOpen, DoorsClosing, DoorsClosed, Travelling}
-var state = FloorState.DoorsClosed
+enum Direction {UP, DOWN}
 
+var _active_floor_stops: Array[Node]
 # Track which entities are moving to the next floor
-var traveller_queue: Array[CharacterBody2D] = []
-# Stops entities which have just travelled recently from travelling on the elevator immediately again
-var excluded_travellers: Array[CharacterBody2D] = [] 
-var target_floor: int = 0
+var traveller_queue: Array[Node2D] = []
+
+var current_floor = 0
+var current_direction = Direction.UP
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	gather_floor_stops()
-	
-	elevator_interior.visible = false
-	timer.one_shot = true
-	timer.connect("timeout", _handle_elevator_travel)
-	
-	for idx in len(active_floor_stops):
-		var floor_stop = active_floor_stops[idx]
-		floor_stop.name = str(idx)
-		floor_stop.connect("traveller_present", _handle_traveller_present)
-		floor_stop.connect("door_animation_finished", _handle_animation_finished)
-	timer.start(travel_time)
+	if elevator_interior: elevator_interior.visible = false
+	detect_floor_stops()
 
-func gather_floor_stops():
+	wait_timer.timeout.connect(handle_new_travellers)
+	travel_timer.timeout.connect(eject_travellers)
+
+	current_floor_stop().open()
+	wait_timer.start(wait_time)
+
+func detect_floor_stops():
 	for child in get_children():
-		if child is FloorStop:
-			active_floor_stops.append(child)
-	active_floor_stops.sort_custom( func(node): return -(node.position.y) )
-
-func _handle_elevator_travel():
-	if state == FloorState.Travelling:
-		state = FloorState.DoorsClosed
-	if state == FloorState.DoorsClosed:
-		state = FloorState.DoorsOpening
-		active_floor_stops[target_floor].animator.play("open_door")
-		for body in traveller_queue:
-			if not is_instance_valid(body):
-				continue
-			body.global_position = active_floor_stops[target_floor].global_position
-			body.start_action(body.Action.idle, 0, body.Direction.left)
-		fade_travellers(1, 0.25)
-		
-	if state == FloorState.DoorsOpen:
-		state = FloorState.DoorsClosing
-		active_floor_stops[target_floor].animator.play("close_door")
-
-func _handle_animation_finished(name):
-	if state == FloorState.DoorsOpening:
-		state = FloorState.DoorsOpen
-		excluded_travellers = traveller_queue
-		traveller_queue = []
-		timer.start(wait_time)
-		
-	if state == FloorState.DoorsClosing:
-		fade_travellers(0.1, 1.0)
-		timer.start(travel_time)
-		target_floor += 1
-		state = FloorState.Travelling
-		# Reset excluded travellers once the elevator is moving again to the next floor
-		excluded_travellers = []
-		
-	# Loop back to start
-	if target_floor == len(active_floor_stops): 
-		target_floor = 0
-
-func _handle_traveller_present(body: CharacterBody2D, floor_name):
-	if state == FloorState.DoorsOpen and target_floor == int(floor_name):
-		if body in excluded_travellers:
-			return
-		var tween = create_tween()
-		tween.tween_property(body, "global_position", active_floor_stops[target_floor].global_position, 2)
-		tween.tween_property(body, "modulate:a", 0, 1)
-		body.start_action(body.Action.idle, 20, body.Direction.left)
-		traveller_queue.append(body)
+		if child is PixelFloorStop:
+			_active_floor_stops.append(child)
 
 func teleport_traveler_to_elevator_interior(traveler):
-	elevator_interior.add_child(traveler)
+	traveler.global_position = elevator_interior.global_position
 
-func fade_travellers(tween_target, tween_time):
+func fade_traveller(traveller, tween_target, tween_time):
+	if not is_instance_valid(traveller): return
+
 	var tween = create_tween()
-	
-	for body in traveller_queue:
-		if not is_instance_valid(body):
-			continue
-		tween.finished.connect(teleport_traveler_to_elevator_interior.bind(body))
-		tween.tween_property(body, "modulate:a", tween_target, tween_time)
+	tween.tween_property(traveller, "modulate:a", tween_target, tween_time)
+	tween.play()
+
+	return tween
+
+func handle_new_travellers():
+	var current_stop = current_floor_stop()
+	traveller_queue = current_stop.get_travellers()
+	for traveller in traveller_queue:
+		if current_direction == Direction.DOWN and traveller is Mutant: continue
+
+		var tween = fade_traveller(traveller, 0, 0.25)
+		if elevator_interior: tween.finished.connect(teleport_traveler_to_elevator_interior.bind(traveller))
+
+	current_floor_stop().close()
+	travel_timer.start(travel_time)
+
+func eject_travellers():
+	next_floor()
+	for traveller in traveller_queue:
+		move_traveller_to_new_floor(traveller)
+
+	traveller_queue = []
+	current_floor_stop().open()
+	wait_timer.start(wait_time)
+
+func next_floor():
+	var floor_count = len(_active_floor_stops)
+	match current_direction:
+		Direction.UP:
+			current_floor += 1
+			if current_floor >= floor_count:
+				current_floor -= 2
+				current_direction = Direction.DOWN
+		Direction.DOWN:
+			current_floor -= 1
+			if current_floor < 0:
+				current_floor += 2
+				current_direction = Direction.UP
+
+	return current_floor
+
+func move_traveller_to_new_floor(traveller):
+	if not is_instance_valid(traveller): return
+
+	var stop = current_floor_stop()
+	traveller.global_position = stop.global_position
+	fade_traveller(traveller, 1, 0.25)
+	traveller.start_action(traveller.Action.idle, 0, traveller.Direction.left)
+
+func current_floor_stop():
+	if len(_active_floor_stops) <= current_floor: return
+
+	return _active_floor_stops[current_floor]

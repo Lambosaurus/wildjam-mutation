@@ -6,3 +6,9 @@
 script = ExtResource("1_bsmdj")
 
 [node name="TravelTimeCycle" type="Timer" parent="." unique_id=255726013]
+one_shot = true
+
+[node name="WaitTimer" type="Timer" parent="." unique_id=1790196474]
+one_shot = true
+
+[connection signal="timeout" from="TravelTimeCycle" to="." method="_on_travel_time_cycle_timeout"]

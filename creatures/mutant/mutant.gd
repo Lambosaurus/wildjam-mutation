@@ -20,7 +20,7 @@ const NEW_MUTANT = preload('res://creatures/mutant/mutant.tscn')
 @export var initial_mutations: Array[Mutation]
 
 @export_group("BOIDS Controls")
-@export var BOIDS_REPULSION = 500.0
+@export var BOIDS_REPULSION = 100.0
 @export var BOIDS_ATTRACTION = 2000.0
 @export var BOIDS_COHESION = 1.0
 @export var BOIDS_THRESH_MIN = 200.0
@@ -173,6 +173,17 @@ func start_boids_action() -> void:
 		vector_to_direction(force.x)
 	)
 
+func can_elevator():
+	if action == Action.idle or action == Action.walk:
+		start_action(
+			Action.idle,
+			100,
+			direction
+		)
+		
+		return true
+	return false
+		
 
 func start_action(act: Action, time: float, dir: Direction, target: Node2D = null) -> void:
 	action = act

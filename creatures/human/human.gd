@@ -1,3 +1,4 @@
+class_name Human
 extends CharacterBody2D
 
 enum Action { idle, walk, run, attack }
@@ -32,6 +33,17 @@ func _ready() -> void:
 	$TargetSelector.range = max(human_type.shoot_range, human_type.flee_range, human_type.melee_range, human_type.chase_range)
 	$Spritesheet.sprite_frames = human_type.sprites
 	health = human_type.max_health
+	
+func can_elevator():
+	if action == Action.idle:
+		start_action(
+			Action.idle,
+			20,
+			direction
+		)
+		
+		return true
+	return false
 
 func direction_to_vector(dir: Direction, scalar: float = 1.0) -> float:
 	return scalar if dir == Direction.right else -scalar
