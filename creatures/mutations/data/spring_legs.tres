@@ -15,6 +15,6 @@ script = ExtResource("1_q6x4t")
 slot = 1
 body_part = ExtResource("1_7jlxp")
 mutation_type = SubResource("Resource_6vh32")
-cost = 150
+cost = 75
 name = "Spring Legs"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

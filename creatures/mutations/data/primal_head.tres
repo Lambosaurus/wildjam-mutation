@@ -17,6 +17,6 @@ script = ExtResource("1_tnoay")
 slot = 3
 body_part = ExtResource("1_poqel")
 mutation_type = SubResource("Resource_fg66p")
-cost = 150
+cost = 50
 name = "Primal"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

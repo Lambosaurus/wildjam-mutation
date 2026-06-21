@@ -16,6 +16,6 @@ script = ExtResource("1_3spt6")
 slot = 2
 body_part = ExtResource("1_5jth4")
 mutation_type = SubResource("Resource_8dja6")
-cost = 150
+cost = 75
 name = "Slim Body"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

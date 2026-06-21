@@ -15,6 +15,6 @@ metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
 script = ExtResource("1_m2nrq")
 body_part = ExtResource("1_01lqu")
 mutation_type = SubResource("Resource_ity7y")
-cost = 300
+cost = 250
 name = "Hammer Arms"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"

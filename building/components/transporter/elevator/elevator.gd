@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var elevator_interior: Node2D
-@export var active_floor_stops: Array[FloorStop]
+var active_floor_stops: Array[FloorStop]
 @export var travel_time: int = 5
 @export var wait_time: int = 3
 @onready var timer: Timer = $TravelTimeCycle
@@ -17,10 +17,12 @@ var target_floor: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	gather_floor_stops()
+	
 	elevator_interior.visible = false
 	timer.one_shot = true
 	timer.connect("timeout", _handle_elevator_travel)
-	var tween = create_tween()
+	
 	for idx in len(active_floor_stops):
 		var floor_stop = active_floor_stops[idx]
 		floor_stop.name = str(idx)
@@ -28,12 +30,17 @@ func _ready() -> void:
 		floor_stop.connect("door_animation_finished", _handle_animation_finished)
 	timer.start(travel_time)
 
+func gather_floor_stops():
+	for child in get_children():
+		if child is FloorStop:
+			active_floor_stops.append(child)
+	active_floor_stops.sort_custom( func(node): return -(node.position.y) )
+
 func _handle_elevator_travel():
 	if state == FloorState.Travelling:
 		state = FloorState.DoorsClosed
 	if state == FloorState.DoorsClosed:
 		state = FloorState.DoorsOpening
-		var tween = create_tween()
 		active_floor_stops[target_floor].animator.play("open_door")
 		for body in traveller_queue:
 			if not is_instance_valid(body):

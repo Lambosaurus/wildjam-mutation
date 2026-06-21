@@ -15,6 +15,6 @@ script = ExtResource("1_njxx7")
 slot = 3
 body_part = ExtResource("1_ku7nd")
 mutation_type = SubResource("Resource_mmund")
-cost = 200
+cost = 25
 name = "Horned Head"
 metadata/_custom_type_script = "uid://c8shh7tf8tebl"
