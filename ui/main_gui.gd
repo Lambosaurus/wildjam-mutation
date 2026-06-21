@@ -61,7 +61,8 @@ func _on_mutations_item_clicked(index: int, at_position: Vector2, mouse_button_i
 	
 	for creature in SelectionManager.get_selected_nodes():
 		if creature.action_target is Mutant:
-			if not mutation_service.apply_mutation_to(mutation, creature.action_target):
-				display_error("Not enough Biomass")
+			var result = mutation_service.apply_mutation_to(mutation, creature.action_target)
+			if result is String:
+				display_error(result)
 				
 				

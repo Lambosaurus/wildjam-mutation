@@ -193,6 +193,9 @@ func mutate(mutation: Mutation):
 	$Chassis.modify_attributes(mutant_type)
 	update_properties()
 
+func has_mutation(mutation: Mutation):
+	return $Chassis.has_mutation(mutation)
+
 func update_vision_range():
 	var range = $TargetSelector.range
 	var scale = range / 100

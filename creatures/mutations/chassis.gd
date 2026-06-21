@@ -28,8 +28,14 @@ func modify_attributes(mutant_type: MutantType) -> void:
 		if slot.mutation:
 			slot.mutation.modify_attributes(mutant_type)
 	
-func animate(name: Animations):
-	$BodySlot.body_part.animate(name)
-	$ArmSlot.body_part.animate(name)
-	$LegSlot.body_part.animate(name)
-	$HeadSlot.body_part.animate(name)
+func get_mutations():
+	return slots_dict.values().map(func(slot: Slot): return slot.mutation) as Array[Mutation]
+	
+func has_mutation(mutation: Mutation):
+	return get_mutations().has(mutation)
+	
+func animate(anim: Animations):
+	$BodySlot.body_part.animate(anim)
+	$ArmSlot.body_part.animate(anim)
+	$LegSlot.body_part.animate(anim)
+	$HeadSlot.body_part.animate(anim)
