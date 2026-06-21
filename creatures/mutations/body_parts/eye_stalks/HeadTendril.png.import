@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxc58cmagdqck"
-path="res://.godot/imported/arm.png-b04b4fc6d4a6ed6c241889bbaf603f25.ctex"
+uid="uid://brjsem6063wdu"
+path="res://.godot/imported/HeadTendril.png-28c94e8bef8f46bd7a9780e79b62b940.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://creatures/mutations/body_parts/sprites/arm.png"
-dest_files=["res://.godot/imported/arm.png-b04b4fc6d4a6ed6c241889bbaf603f25.ctex"]
+source_file="res://creatures/mutations/body_parts/eye_stalks/HeadTendril.png"
+dest_files=["res://.godot/imported/HeadTendril.png-28c94e8bef8f46bd7a9780e79b62b940.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dosrf3cvjxb53"
-path="res://.godot/imported/torso.png-9b868553deaf8c475893ec0d18b0371b.ctex"
+uid="uid://1ewgulwi6v4"
+path="res://.godot/imported/LegBeef.png-6d0ab57b0f52eb4949ad032db686b744.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://creatures/mutations/body_parts/sprites/torso.png"
-dest_files=["res://.godot/imported/torso.png-9b868553deaf8c475893ec0d18b0371b.ctex"]
+source_file="res://creatures/mutations/body_parts/beefy_legs/LegBeef.png"
+dest_files=["res://.godot/imported/LegBeef.png-6d0ab57b0f52eb4949ad032db686b744.ctex"]
 
 [params]
 

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dpd1bf7rksa2k"]
+
+[ext_resource type="Script" uid="uid://bvb4unmbfmir" path="res://creatures/mutations/body_part.gd" id="1_bc2b7"]
+[ext_resource type="PackedScene" uid="uid://duwwp1h24hrri" path="res://creatures/mutations/body_parts/legs.tscn" id="2_o64cd"]
+[ext_resource type="Texture2D" uid="uid://1ewgulwi6v4" path="res://creatures/mutations/body_parts/beefy_legs/LegBeef.png" id="3_onabu"]
+
+[node name="BeefyLegs" type="Node2D" unique_id=718226536 node_paths=PackedStringArray("skeleton")]
+script = ExtResource("1_bc2b7")
+skeleton = NodePath("Legs")
+metadata/_custom_type_script = "uid://bvb4unmbfmir"
+
+[node name="Legs" parent="." unique_id=79999291 instance=ExtResource("2_o64cd")]
+visible = false
+
+[node name="RLegBeef" type="Polygon2D" parent="." unique_id=1712456469]
+position = Vector2(10, -13)
+texture = ExtResource("3_onabu")
+skeleton = NodePath("../Legs")
+polygon = PackedVector2Array(-7, 7, -17, 7, -17, 8.599998, -17.400002, 9, -19, 9, -19, 11, -20, 11, -19, 42, -18, 42, -18, 43.4, -20, 44.4, -20, 50, -3.9000015, 50, -2.5, 48, -1, 48, -1, 40.800003, -4.4000015, 34, -1, 27.199997, -1, 11.400002, -7, 8.400002)
+uv = PackedVector2Array(43, 57, 33, 57, 33, 58.6, 32.6, 59, 31, 59, 31, 61, 30, 61, 31, 92, 32, 92, 32, 93.4, 30, 94.4, 30, 100, 46.1, 100, 47.5, 98, 49, 98, 49, 90.8, 45.6, 84, 49, 77.2, 49, 61.4, 43, 58.4)
+polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)]
+bones = ["Pelvis", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Pelvis/RThigh", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Pelvis/RThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0), "Pelvis/RThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="LLegBeef" type="Polygon2D" parent="." unique_id=1958131078]
+position = Vector2(-4, -13)
+texture = ExtResource("3_onabu")
+skeleton = NodePath("../Legs")
+polygon = PackedVector2Array(-7, 7, -17, 7, -17, 8.599998, -17.400002, 9, -19, 9, -19, 11, -20, 11, -19, 42, -18, 42, -18, 43.4, -20, 44.4, -20, 50, -3.9000015, 50, -2.5, 48, -1, 48, -1, 40.800003, -4.4000015, 34, -1, 27.199997, -1, 11.400002, -7, 8.400002)
+uv = PackedVector2Array(43, 57, 33, 57, 33, 58.6, 32.6, 59, 31, 59, 31, 61, 30, 61, 31, 92, 32, 92, 32, 93.4, 30, 94.4, 30, 100, 46.1, 100, 47.5, 98, 49, 98, 49, 90.8, 45.6, 84, 49, 77.2, 49, 61.4, 43, 58.4)
+polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)]
+bones = ["Pelvis", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Pelvis/RThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/RThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/RThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Pelvis/LThigh", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Pelvis/LThigh/Leg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0), "Pelvis/LThigh/Leg/Shin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]

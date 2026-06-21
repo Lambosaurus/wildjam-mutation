@@ -382,7 +382,6 @@ rest = Transform2D(1, 0, 0, 1, 9, 0)
 [node name="Leg" type="Bone2D" parent="Pelvis/RThigh" unique_id=1358134331]
 position = Vector2(-2, 20)
 rotation = -0.2602095
-scale = Vector2(0.99999976, 0.99999976)
 rest = Transform2D(1, 0, 0, 1, -2, 20)
 
 [node name="Shin" type="Bone2D" parent="Pelvis/RThigh/Leg" unique_id=1364799557]
@@ -392,7 +391,6 @@ rest = Transform2D(1, 0, 0, 1, 7, 15)
 [node name="LThigh" type="Bone2D" parent="Pelvis" unique_id=1638564878]
 position = Vector2(-8, 0)
 rotation = 0.7393683
-scale = Vector2(0.9999999, 0.9999999)
 rest = Transform2D(1, 0, 0, 1, -8, 0)
 
 [node name="Leg" type="Bone2D" parent="Pelvis/LThigh" unique_id=1675065280]

@@ -10,6 +10,10 @@ const SPLATTER =  preload('res://entities/pop/pop.tscn')
 
 const POLL_DURATION = 0.05
 
+const CHAT_CHANCE = 0.1
+const CHAT_TIMEOUT_MIN = 5
+const CHAT_TIMEOUT_MAX = 15
+
 const ANIMATIONS: Dictionary = {
 	Action.idle: "idle",
 	Action.walk: "walk",
@@ -24,6 +28,7 @@ var direction = Direction.right
 var poll_timeout = POLL_DURATION
 
 func _ready() -> void:
+	run_chat_timer()
 	$TargetSelector.range = max(human_type.shoot_range, human_type.flee_range, human_type.melee_range, human_type.chase_range)
 	$Spritesheet.sprite_frames = human_type.sprites
 	health = human_type.max_health
@@ -141,10 +146,13 @@ func _physics_process(delta: float) -> void:
 		direction = Direction.right if direction == Direction.left else Direction.left
 		var spritesheet = $Spritesheet
 		spritesheet.flip_h = direction == Direction.left
-	
-
 
 func _on_chat_zone_area_entered(area):
-	if action == Action.idle and $ChatZone/Cooldown.is_stopped() and randf() > 0.25:
-		$Voice.speak_dialog("chat")
-		$ChatZone/Cooldown.start()
+	if action == Action.idle and $ChatZone/Cooldown.is_stopped():
+		if randf() < CHAT_CHANCE:
+			$Voice.speak_dialog("chat")
+		run_chat_timer()
+
+func run_chat_timer():
+	var duration = randf_range(CHAT_TIMEOUT_MIN, CHAT_TIMEOUT_MAX)
+	$ChatZone/Cooldown.start()

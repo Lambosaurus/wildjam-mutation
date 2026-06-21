@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://vwbi0afj3ffu"]
+
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_gb2y0"]
+[ext_resource type="PackedScene" uid="uid://der33dwieyoql" path="res://creatures/mutations/body_parts/carapace_torso/carapce_torso.tscn" id="1_tbhxj"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_vnraa"]
+
+[sub_resource type="Resource" id="Resource_jpqmj"]
+script = ExtResource("2_vnraa")
+speed_bonus = 0.5
+attack_rate_bonus = 0.8
+health_bonus = 2.0
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_gb2y0")
+slot = 2
+body_part = ExtResource("1_tbhxj")
+mutation_type = SubResource("Resource_jpqmj")
+cost = 250
+name = "Carapace"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"

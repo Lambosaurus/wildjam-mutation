@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://cn0fkn18a0gjy"]
+
+[ext_resource type="PackedScene" uid="uid://ntnhc6d7n1o0" path="res://creatures/mutations/body_parts/spring_legs/spring_legs.tscn" id="1_7jlxp"]
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_q6x4t"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_c5gr5"]
+
+[sub_resource type="Resource" id="Resource_6vh32"]
+script = ExtResource("2_c5gr5")
+speed_bonus = 2.0
+health_bonus = 0.8
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_q6x4t")
+slot = 1
+body_part = ExtResource("1_7jlxp")
+mutation_type = SubResource("Resource_6vh32")
+cost = 150
+name = "Spring Legs"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"

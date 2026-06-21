@@ -1,11 +1,18 @@
 [gd_resource type="Resource" script_class="MutationService" format=3 uid="uid://w7el4w33gto"]
 
 [ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_gn6ag"]
+[ext_resource type="Resource" uid="uid://bx6h6nrlkn8ay" path="res://creatures/mutations/data/beefy_legs.tres" id="2_3t3nk"]
 [ext_resource type="Resource" uid="uid://fyqs6760rnmu" path="res://creatures/mutations/data/horned_head.tres" id="2_gn6ag"]
+[ext_resource type="Resource" uid="uid://vwbi0afj3ffu" path="res://creatures/mutations/data/carapace_torso.tres" id="3_dqv8n"]
 [ext_resource type="Resource" uid="uid://q6772ll5r6yy" path="res://creatures/mutations/data/sickle_arms.tres" id="3_oen3j"]
+[ext_resource type="Resource" uid="uid://s803s4c1wccy" path="res://creatures/mutations/data/eye_stalks.tres" id="4_kcmht"]
 [ext_resource type="Script" uid="uid://dqw8fexj5crea" path="res://creatures/mutations/mutation_service.gd" id="4_kmygs"]
+[ext_resource type="Resource" uid="uid://0rs1j0f8weml" path="res://creatures/mutations/data/hammer_arms.tres" id="5_0aafx"]
+[ext_resource type="Resource" uid="uid://djvbj3326u370" path="res://creatures/mutations/data/slim_body.tres" id="5_kmygs"]
+[ext_resource type="Resource" uid="uid://cxftaxj083bso" path="res://creatures/mutations/data/implanted_legs.tres" id="7_qukvd"]
+[ext_resource type="Resource" uid="uid://cn0fkn18a0gjy" path="res://creatures/mutations/data/spring_legs.tres" id="10_5qlxx"]
 
 [resource]
 script = ExtResource("4_kmygs")
-available_mutations = Array[ExtResource("1_gn6ag")]([ExtResource("2_gn6ag"), ExtResource("3_oen3j")])
+available_mutations = Array[ExtResource("1_gn6ag")]([ExtResource("2_3t3nk"), ExtResource("3_dqv8n"), ExtResource("4_kcmht"), ExtResource("5_0aafx"), ExtResource("2_gn6ag"), ExtResource("7_qukvd"), ExtResource("3_oen3j"), ExtResource("5_kmygs"), ExtResource("10_5qlxx")])
 metadata/_custom_type_script = "uid://dqw8fexj5crea"

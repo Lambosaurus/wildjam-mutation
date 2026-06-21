@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://0rs1j0f8weml"]
+
+[ext_resource type="PackedScene" uid="uid://df1ps0yl737ki" path="res://creatures/mutations/body_parts/hammer_arms/hammer_arms.tscn" id="1_01lqu"]
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_m2nrq"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_wfmgr"]
+
+[sub_resource type="Resource" id="Resource_ity7y"]
+script = ExtResource("2_wfmgr")
+speed_bonus = 0.8
+damage_bonus = 5.0
+attack_rate_bonus = 0.5
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_m2nrq")
+body_part = ExtResource("1_01lqu")
+mutation_type = SubResource("Resource_ity7y")
+cost = 300
+name = "Hammer Arms"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"

@@ -56,6 +56,8 @@ target_bit = 3
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1666293401]
 
 [node name="Voice" parent="." unique_id=396080467 node_paths=PackedStringArray("voice_spawn") instance=ExtResource("6_odqdi")]
+max_distance = 1000.0
+attenuation = 5.0
 voice_spawn = NodePath("VoiceSpawn")
 voice_type = SubResource("Resource_er4ts")
 dialog_tree = ExtResource("8_81tg8")

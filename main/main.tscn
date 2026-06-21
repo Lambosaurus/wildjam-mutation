@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://bvyey1fdeivis" path="res://building/components/lighting/point-light.tscn" id="13_na0o7"]
 [ext_resource type="Resource" uid="uid://bwissqiav15ti" path="res://creatures/human/types/office_manager.tres" id="13_re7it"]
 [ext_resource type="Texture2D" uid="uid://dkf32vbobi1wy" path="res://building/components/lighting/trapezoid-mask.png" id="14_73k8k"]
-[ext_resource type="Resource" uid="uid://irdrkl0ue4od" path="res://creatures/human/types/security_guard.tres" id="14_oagth"]
 [ext_resource type="Texture2D" uid="uid://y88epottr0vf" path="res://building/components/lighting/radial-mask.png" id="15_5xyti"]
 [ext_resource type="Resource" uid="uid://irdrkl0ue4od" path="res://creatures/human/types/security_officer.tres" id="15_n53tw"]
 [ext_resource type="Resource" uid="uid://droqwktc0jqvp" path="res://creatures/human/types/security_enforcer.tres" id="16_d00gp"]
@@ -260,19 +259,19 @@ human_type = ExtResource("13_re7it")
 
 [node name="SecurityGuard1" parent="Humans" unique_id=169823721 instance=ExtResource("2_pjrb6")]
 position = Vector2(798, 191)
-human_type = ExtResource("14_oagth")
+human_type = ExtResource("15_n53tw")
 
 [node name="SecurityGuard2" parent="Humans" unique_id=1162931582 instance=ExtResource("2_pjrb6")]
 position = Vector2(400, 94)
-human_type = ExtResource("14_oagth")
+human_type = ExtResource("15_n53tw")
 
 [node name="SecurityGuard3" parent="Humans" unique_id=957899927 instance=ExtResource("2_pjrb6")]
 position = Vector2(514, -4)
-human_type = ExtResource("14_oagth")
+human_type = ExtResource("15_n53tw")
 
 [node name="SecurityGuard4" parent="Humans" unique_id=1567028176 instance=ExtResource("2_pjrb6")]
 position = Vector2(353, -2)
-human_type = ExtResource("14_oagth")
+human_type = ExtResource("15_n53tw")
 
 [node name="SecurityOfficer" parent="Humans" unique_id=1797211939 instance=ExtResource("2_pjrb6")]
 position = Vector2(345, 94)

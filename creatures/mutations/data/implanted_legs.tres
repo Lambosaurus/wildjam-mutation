@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://cxftaxj083bso"]
+
+[ext_resource type="PackedScene" uid="uid://cip78vlukhspk" path="res://creatures/mutations/body_parts/implanted_legs/implanted_legs.tscn" id="1_1ey64"]
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_pfju3"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_7og5s"]
+
+[sub_resource type="Resource" id="Resource_0ebaq"]
+script = ExtResource("2_7og5s")
+speed_bonus = 0.0
+health_bonus = 1.5
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_pfju3")
+slot = 1
+body_part = ExtResource("1_1ey64")
+mutation_type = SubResource("Resource_0ebaq")
+cost = 100
+name = "Implanted"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"

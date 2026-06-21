@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://281g3hng4vb5"
-path="res://.godot/imported/leg.png-57580e89dd210b85a572fecac31937f7.ctex"
+uid="uid://d04xqepa5s56t"
+path="res://.godot/imported/BodyCarapace.png-5b7f46b6213ac99e708665aab6887129.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://creatures/mutations/body_parts/sprites/leg.png"
-dest_files=["res://.godot/imported/leg.png-57580e89dd210b85a572fecac31937f7.ctex"]
+source_file="res://creatures/mutations/body_parts/carapace_torso/BodyCarapace.png"
+dest_files=["res://.godot/imported/BodyCarapace.png-5b7f46b6213ac99e708665aab6887129.ctex"]
 
 [params]
 

@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_aace7"]
 script = ExtResource("2_epntb")
 speed_bonus = 1.5
-damage_bonus = 2.0
+damage_bonus = 1.5
 attack_rate_bonus = 1.5
 metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
 

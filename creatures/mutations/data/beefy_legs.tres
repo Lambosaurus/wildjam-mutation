@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Mutation" format=3 uid="uid://bx6h6nrlkn8ay"]
+
+[ext_resource type="PackedScene" uid="uid://dpd1bf7rksa2k" path="res://creatures/mutations/body_parts/beefy_legs/beefy_legs.tscn" id="1_oj2wq"]
+[ext_resource type="Script" uid="uid://c8shh7tf8tebl" path="res://creatures/mutations/mutation.gd" id="1_r24au"]
+[ext_resource type="Script" uid="uid://ds2tcs3bgjlp" path="res://creatures/mutations/mutation_type.gd" id="2_gok88"]
+
+[sub_resource type="Resource" id="Resource_bp1ee"]
+script = ExtResource("2_gok88")
+speed_bonus = 0.5
+damage_bonus = 1.1
+health_bonus = 1.5
+metadata/_custom_type_script = "uid://ds2tcs3bgjlp"
+
+[resource]
+script = ExtResource("1_r24au")
+slot = 1
+body_part = ExtResource("1_oj2wq")
+mutation_type = SubResource("Resource_bp1ee")
+cost = 150
+name = "Beefy Legs"
+metadata/_custom_type_script = "uid://c8shh7tf8tebl"
