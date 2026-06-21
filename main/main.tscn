@@ -35,88 +35,75 @@ position = Vector2(565, 370)
 
 [node name="Transporters" type="Node" parent="." unique_id=573249446]
 
-[node name="Elevator" parent="Transporters" unique_id=1486849745 node_paths=PackedStringArray("elevator_interior", "active_floor_stops") instance=ExtResource("9_bsumw")]
-position = Vector2(845, -21)
+[node name="Elevator1" parent="Transporters" unique_id=1486849745 node_paths=PackedStringArray("elevator_interior") instance=ExtResource("9_bsumw")]
 elevator_interior = NodePath("ElevatorInterior")
-active_floor_stops = [NodePath("PixelFloorStop"), NodePath("PixelFloorStop2"), NodePath("PixelFloorStop3"), NodePath("PixelFloorStop4"), NodePath("PixelFloorStop5")]
-travel_time = 1
 
-[node name="PixelFloorStop" parent="Transporters/Elevator" unique_id=1544292327 instance=ExtResource("10_bsumw")]
-position = Vector2(-9, 495)
+[node name="PixelFloorStop1" parent="Transporters/Elevator1" unique_id=1544292327 instance=ExtResource("10_bsumw")]
+position = Vector2(564, 762)
 
-[node name="PixelFloorStop2" parent="Transporters/Elevator" unique_id=1212054322 instance=ExtResource("10_bsumw")]
-position = Vector2(-9, 399)
+[node name="PixelFloorStop2" parent="Transporters/Elevator1" unique_id=1199441407 instance=ExtResource("10_bsumw")]
+position = Vector2(564, 666)
 
-[node name="PixelFloorStop3" parent="Transporters/Elevator" unique_id=1437522690 instance=ExtResource("10_bsumw")]
-position = Vector2(-9, 303)
+[node name="PixelFloorStop3" parent="Transporters/Elevator1" unique_id=1240242079 instance=ExtResource("10_bsumw")]
+position = Vector2(564, 570)
 
-[node name="PixelFloorStop4" parent="Transporters/Elevator" unique_id=584333959 instance=ExtResource("10_bsumw")]
-position = Vector2(-9, 207)
-
-[node name="PixelFloorStop5" parent="Transporters/Elevator" unique_id=1132868291 instance=ExtResource("10_bsumw")]
-position = Vector2(-9, 113)
+[node name="PixelFloorStop4" parent="Transporters/Elevator1" unique_id=1848783853 instance=ExtResource("10_bsumw")]
+position = Vector2(564, 474)
 travel_enabled = false
 
-[node name="ElevatorInterior" type="Node2D" parent="Transporters/Elevator" unique_id=1811925304]
-visible = false
-position = Vector2(-1096, 623)
+[node name="ElevatorInterior" type="Node2D" parent="Transporters/Elevator1" unique_id=1443242647]
+position = Vector2(1297, 750)
 
-[node name="Elevator3" parent="Transporters" unique_id=288718594 node_paths=PackedStringArray("elevator_interior", "active_floor_stops") instance=ExtResource("9_bsumw")]
-position = Vector2(574, 268)
-elevator_interior = NodePath("ElevatorInterior2")
-active_floor_stops = [NodePath("PixelFloorStop"), NodePath("PixelFloorStop2"), NodePath("PixelFloorStop3"), NodePath("PixelFloorStop4")]
-travel_time = 1
+[node name="Elevator2" parent="Transporters" unique_id=1482443233 node_paths=PackedStringArray("elevator_interior") instance=ExtResource("9_bsumw")]
+position = Vector2(842, 469)
+elevator_interior = NodePath("ElevatorInterior")
 
-[node name="PixelFloorStop" parent="Transporters/Elevator3" unique_id=1212278078 instance=ExtResource("10_bsumw")]
-position = Vector2(-9, 494)
+[node name="PixelFloorStop1" parent="Transporters/Elevator2" unique_id=1911629142 instance=ExtResource("10_bsumw")]
+position = Vector2(1, 5)
 
-[node name="PixelFloorStop2" parent="Transporters/Elevator3" unique_id=1557214138 instance=ExtResource("10_bsumw")]
-position = Vector2(-9, 399)
+[node name="PixelFloorStop2" parent="Transporters/Elevator2" unique_id=1534874226 instance=ExtResource("10_bsumw")]
+position = Vector2(1, -91)
 
-[node name="PixelFloorStop3" parent="Transporters/Elevator3" unique_id=1451617305 instance=ExtResource("10_bsumw")]
-position = Vector2(-9, 302)
+[node name="PixelFloorStop3" parent="Transporters/Elevator2" unique_id=171093578 instance=ExtResource("10_bsumw")]
+position = Vector2(2, -187)
 
-[node name="PixelFloorStop4" parent="Transporters/Elevator3" unique_id=93177635 instance=ExtResource("10_bsumw")]
-position = Vector2(-9, 207)
+[node name="PixelFloorStop4" parent="Transporters/Elevator2" unique_id=1385576754 instance=ExtResource("10_bsumw")]
+position = Vector2(3, -282)
+
+[node name="PixelFloorStop5" parent="Transporters/Elevator2" unique_id=1657698890 instance=ExtResource("10_bsumw")]
+position = Vector2(4, -379)
 travel_enabled = false
 
-[node name="ElevatorInterior2" type="Node2D" parent="Transporters/Elevator3" unique_id=1468777264]
-visible = false
-position = Vector2(473, -5)
+[node name="ElevatorInterior" type="Node2D" parent="Transporters/Elevator2" unique_id=456657191]
+position = Vector2(439, 4)
 
-[node name="Elevator2" parent="Transporters" unique_id=491983639 node_paths=PackedStringArray("elevator_interior", "active_floor_stops") instance=ExtResource("9_bsumw")]
-position = Vector2(1879, -40)
-elevator_interior = NodePath("ElevatorInterior3")
-active_floor_stops = [NodePath("PixelFloorStop6"), NodePath("PixelFloorStop5")]
-travel_time = 1
+[node name="Elevator3" parent="Transporters" unique_id=1097855600 node_paths=PackedStringArray("elevator_interior") instance=ExtResource("9_bsumw")]
+position = Vector2(557, 77)
+elevator_interior = NodePath("ElevatorInterior")
 
-[node name="PixelFloorStop6" parent="Transporters/Elevator2" unique_id=633424822 instance=ExtResource("10_bsumw")]
-position = Vector2(-1323, 34)
+[node name="PixelFloorStop1" parent="Transporters/Elevator3" unique_id=841728474 instance=ExtResource("10_bsumw")]
+position = Vector2(1, 13)
+
+[node name="PixelFloorStop2" parent="Transporters/Elevator3" unique_id=1261844458 instance=ExtResource("10_bsumw")]
+position = Vector2(1, -83)
 travel_enabled = false
 
-[node name="PixelFloorStop5" parent="Transporters/Elevator2" unique_id=127738327 instance=ExtResource("10_bsumw")]
-position = Vector2(-1324, 130)
+[node name="ElevatorInterior" type="Node2D" parent="Transporters/Elevator3" unique_id=363907068]
+position = Vector2(732, 15)
 
-[node name="ElevatorInterior3" type="Node2D" parent="Transporters/Elevator2" unique_id=1043234613]
-visible = false
-position = Vector2(-2021, 97)
+[node name="Elevator4" parent="Transporters" unique_id=783300361 node_paths=PackedStringArray("elevator_interior") instance=ExtResource("9_bsumw")]
+position = Vector2(278, -14)
+elevator_interior = NodePath("ElevatorInterior")
 
-[node name="Elevator4" parent="Transporters" unique_id=436440057 node_paths=PackedStringArray("elevator_interior", "active_floor_stops") instance=ExtResource("9_bsumw")]
-position = Vector2(1612, -132)
-elevator_interior = NodePath("ElevatorInterior4")
-active_floor_stops = [NodePath("PixelFloorStop6"), NodePath("PixelFloorStop5")]
-travel_time = 1
+[node name="PixelFloorStop1" parent="Transporters/Elevator4" unique_id=1206296462 instance=ExtResource("10_bsumw")]
+position = Vector2(1, 8)
 
-[node name="PixelFloorStop6" parent="Transporters/Elevator4" unique_id=774658696 instance=ExtResource("10_bsumw")]
-position = Vector2(-1319, 31)
+[node name="PixelFloorStop2" parent="Transporters/Elevator4" unique_id=522951287 instance=ExtResource("10_bsumw")]
+position = Vector2(1, -88)
 travel_enabled = false
 
-[node name="PixelFloorStop5" parent="Transporters/Elevator4" unique_id=316634137 instance=ExtResource("10_bsumw")]
-position = Vector2(-1320, 126)
-
-[node name="ElevatorInterior4" type="Node2D" parent="Transporters/Elevator4" unique_id=1372711861]
-visible = false
-position = Vector2(-1760, 35)
+[node name="ElevatorInterior" type="Node2D" parent="Transporters/Elevator4" unique_id=755975368]
+position = Vector2(1017, -113)
 
 [node name="Mutant" parent="." unique_id=88951864 instance=ExtResource("4_c651c")]
 position = Vector2(399, 764)
