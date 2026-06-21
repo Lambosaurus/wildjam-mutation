@@ -20,8 +20,8 @@ const NEW_MUTANT = preload('res://creatures/mutant/mutant.tscn')
 @export var initial_mutations: Array[Mutation]
 
 @export_group("BOIDS Controls")
-@export var BOIDS_REPULSION = 500.0
-@export var BOIDS_COHESION = 3.0
+@export var BOIDS_REPULSION = 0
+@export var BOIDS_COHESION = 10.0
 @export var BOIDS_THRESH_MIN = 200.0
 @export var BOIDS_THRESH_MAX = 1000.0
 
@@ -158,7 +158,6 @@ func start_boids_action() -> void:
 	swarm.compute()
 	var force = (swarm.repulsion * BOIDS_REPULSION)	\
 		+ (swarm.cohesion * mutant_type.swarm_attraction * BOIDS_COHESION)
-	print(force)
 	
 	var fx = force.x
 	fx *= randf_range(0.5, 2.0)
@@ -177,11 +176,10 @@ func start_boids_action() -> void:
 	)
 
 
-func start_action(act: Action, time: float, dir: Direction, target: Node2D = null) -> void:
+func start_action(act: Action, time: float, dir: Direction) -> void:
 	action = act
 	action_timeout = time
 	direction = dir
-	target = target
 
 	# Handle Chassis updates
 	$Chassis.set_direction(dir)
@@ -195,6 +193,8 @@ func mutate(mutation: Mutation):
 	mutant_type = MutantType.new()
 	$Chassis.modify_attributes(mutant_type)
 	update_properties()
+	
+	start_action(Action.idle, 0.1, direction)
 
 func has_mutation(mutation: Mutation):
 	return $Chassis.has_mutation(mutation)
