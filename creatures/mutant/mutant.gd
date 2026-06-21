@@ -22,6 +22,7 @@ const SPLATTER = preload('res://entities/pop/pop.tscn')
 
 @export_group("BOIDS Controls")
 @export var BOIDS_REPULSION = 1000.0
+@export var BOIDS_ATTRACTION = 1500.0
 @export var BOIDS_COHESION = 2.0
 @export var BOIDS_THRESH_MIN = 50.0
 @export var BOIDS_THRESH_MAX = 1000.0
@@ -33,6 +34,8 @@ const SPLATTER = preload('res://entities/pop/pop.tscn')
 var action = Action.idle;
 var action_timeout = 0
 var direction = Direction.right
+
+var elevator_attraction: Vector2 = Vector2(0.0, 0.0)
 
 func _ready() -> void:
 	$TargetSelector.range = max(mutant_type.chase_range, mutant_type.attack_range)
@@ -113,6 +116,15 @@ func pick_next_action() -> void:
 			0.25,
 			candidate_direction,
 		);
+		
+	# Go for elevator if no items or targets
+	var selector = $TargetSelector
+	selector.target_bit = 5
+	selector.use_body_collider = false
+	target = selector.target_elevator()
+	if target:
+		#var candidate_direction = vector_to_direction(target.global_position.x - global_position.x)
+		elevator_attraction = (target.global_position - self.global_position).normalized()
 
 	return start_boids_action()
 
@@ -120,7 +132,7 @@ func start_boids_action() -> void:
 	# MAGIC NUMBERS BEWARE!
 	var swarm = $SwarmDetector
 	swarm.compute()
-	var force = (swarm.repulsion * BOIDS_REPULSION) + (swarm.cohesion * BOIDS_COHESION)
+	var force = (swarm.repulsion * BOIDS_REPULSION) + (swarm.cohesion * BOIDS_COHESION) + (elevator_attraction * BOIDS_ATTRACTION)
 
 	if abs(force.x) < BOIDS_THRESH_MIN:
 		return start_action(

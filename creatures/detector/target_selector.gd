@@ -1,7 +1,7 @@
 class_name TargetSelector
 extends Area2D
 
-@export var range: float = 250:
+@export var range: float = 240:
 	set(value):
 		$Area.shape.radius = value
 		range = value
@@ -11,6 +11,11 @@ extends Area2D
 		collision_mask = 1 << (value - 1)
 		$Raycast.collision_mask = 1 | (1 << (value-1))
 		target_bit = value
+
+@export var use_body_collider = true:
+	set(value):
+		$Raycast.collide_with_areas = value
+		$Raycast.collide_with_areas = !value
 		
 @export var target: Node2D
 
@@ -39,3 +44,13 @@ func can_see(target: Node2D) -> bool:
 	ray.force_raycast_update()
 	var collider = ray.get_collider()
 	return collider == target
+
+func target_elevator():
+	var best_node = null
+	var best_dist_sq = INF
+	for node:Node2D in get_overlapping_areas():
+		var dist_sq = global_position.distance_squared_to(node.global_position)
+		if dist_sq < best_dist_sq and can_see(node):
+			best_dist_sq = dist_sq
+			best_node = node
+	return best_node

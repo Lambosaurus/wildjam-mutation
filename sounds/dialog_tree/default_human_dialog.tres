@@ -29,6 +29,41 @@
 [ext_resource type="AudioStream" uid="uid://vgouqynmfcpy" path="res://sounds/human_sounds/scream_5.mp3" id="22_wd38f"]
 [ext_resource type="AudioStream" uid="uid://xlcbo0fdynnf" path="res://sounds/human_sounds/scream_6.mp3" id="23_xnll1"]
 
+[sub_resource type="Resource" id="Resource_y7lkh"]
+script = ExtResource("2_anr03")
+clip = ExtResource("7_ep6f7")
+dialog = "Help! Theres a monster!!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_makg3"]
+script = ExtResource("2_anr03")
+clip = ExtResource("9_ep6f7")
+dialog = "Help us~~~"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_2tvq5"]
+script = ExtResource("2_anr03")
+clip = ExtResource("10_l6jee")
+dialog = "Help! Its coming to eat us all"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_dsc5t"]
+script = ExtResource("2_anr03")
+clip = ExtResource("20_0kr53")
+dialog = "Please!! I dont want to die!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_5ckfs"]
+script = ExtResource("2_anr03")
+clip = ExtResource("21_wd38f")
+dialog = "Alert! Send the guard!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_amhn7"]
+script = ExtResource("1_pkxe5")
+speeches = Array[ExtResource("2_anr03")]([SubResource("Resource_y7lkh"), SubResource("Resource_makg3"), SubResource("Resource_2tvq5"), SubResource("Resource_dsc5t"), SubResource("Resource_5ckfs")])
+metadata/_custom_type_script = "uid://b8pnktwqr4wnb"
+
 [sub_resource type="Resource" id="Resource_1jmd3"]
 script = ExtResource("2_anr03")
 clip = ExtResource("3_makg3")
@@ -163,41 +198,6 @@ metadata/_custom_type_script = "uid://bs2lmby8suipk"
 [sub_resource type="Resource" id="Resource_pqx4v"]
 script = ExtResource("1_pkxe5")
 speeches = Array[ExtResource("2_anr03")]([SubResource("Resource_l6jee"), SubResource("Resource_e0fb1"), SubResource("Resource_gjk5i"), SubResource("Resource_se584"), SubResource("Resource_hjvw7"), SubResource("Resource_i8ln2"), SubResource("Resource_2q8l8"), SubResource("Resource_26r33"), SubResource("Resource_4abbf"), SubResource("Resource_183tx"), SubResource("Resource_a3tqd"), SubResource("Resource_c80pd"), SubResource("Resource_fwqxt")])
-metadata/_custom_type_script = "uid://b8pnktwqr4wnb"
-
-[sub_resource type="Resource" id="Resource_y7lkh"]
-script = ExtResource("2_anr03")
-clip = ExtResource("7_ep6f7")
-dialog = "Help! Theres a monster!!"
-metadata/_custom_type_script = "uid://bs2lmby8suipk"
-
-[sub_resource type="Resource" id="Resource_makg3"]
-script = ExtResource("2_anr03")
-clip = ExtResource("9_ep6f7")
-dialog = "Help us~~~"
-metadata/_custom_type_script = "uid://bs2lmby8suipk"
-
-[sub_resource type="Resource" id="Resource_2tvq5"]
-script = ExtResource("2_anr03")
-clip = ExtResource("10_l6jee")
-dialog = "Help! Its coming to eat us all"
-metadata/_custom_type_script = "uid://bs2lmby8suipk"
-
-[sub_resource type="Resource" id="Resource_dsc5t"]
-script = ExtResource("2_anr03")
-clip = ExtResource("20_0kr53")
-dialog = "Please!! I dont want to die!"
-metadata/_custom_type_script = "uid://bs2lmby8suipk"
-
-[sub_resource type="Resource" id="Resource_5ckfs"]
-script = ExtResource("2_anr03")
-clip = ExtResource("21_wd38f")
-dialog = "Alert! Send the guard!"
-metadata/_custom_type_script = "uid://bs2lmby8suipk"
-
-[sub_resource type="Resource" id="Resource_amhn7"]
-script = ExtResource("1_pkxe5")
-speeches = Array[ExtResource("2_anr03")]([SubResource("Resource_y7lkh"), SubResource("Resource_makg3"), SubResource("Resource_2tvq5"), SubResource("Resource_dsc5t"), SubResource("Resource_5ckfs")])
 metadata/_custom_type_script = "uid://b8pnktwqr4wnb"
 
 [resource]

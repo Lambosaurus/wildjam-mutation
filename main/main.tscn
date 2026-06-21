@@ -29,6 +29,7 @@ position = Vector2(565, 370)
 [node name="Elevator" parent="Transporters" unique_id=1486849745 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
 position = Vector2(845, -21)
 active_floor_stops = [NodePath("PixelFloorStop"), NodePath("PixelFloorStop2"), NodePath("PixelFloorStop3"), NodePath("PixelFloorStop4"), NodePath("PixelFloorStop5")]
+travel_time = 2
 
 [node name="PixelFloorStop" parent="Transporters/Elevator" unique_id=1544292327 instance=ExtResource("10_bsumw")]
 position = Vector2(-9, 495)
@@ -44,11 +45,12 @@ position = Vector2(-9, 207)
 
 [node name="PixelFloorStop5" parent="Transporters/Elevator" unique_id=1132868291 instance=ExtResource("10_bsumw")]
 position = Vector2(-9, 113)
-
+travel_enabled = false
 
 [node name="Elevator3" parent="Transporters" unique_id=288718594 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
 position = Vector2(574, 268)
 active_floor_stops = [NodePath("PixelFloorStop"), NodePath("PixelFloorStop2"), NodePath("PixelFloorStop3"), NodePath("PixelFloorStop4")]
+travel_time = 2
 
 [node name="PixelFloorStop" parent="Transporters/Elevator3" unique_id=1212278078 instance=ExtResource("10_bsumw")]
 position = Vector2(-9, 494)
@@ -66,7 +68,7 @@ travel_enabled = false
 [node name="Elevator2" parent="Transporters" unique_id=491983639 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
 position = Vector2(1879, -40)
 active_floor_stops = [NodePath("PixelFloorStop6"), NodePath("PixelFloorStop5")]
-travel_time = 1
+travel_time = 2
 
 [node name="PixelFloorStop6" parent="Transporters/Elevator2" unique_id=633424822 instance=ExtResource("10_bsumw")]
 position = Vector2(-1323, 34)
@@ -78,9 +80,11 @@ position = Vector2(-1324, 130)
 [node name="Elevator4" parent="Transporters" unique_id=436440057 node_paths=PackedStringArray("active_floor_stops") instance=ExtResource("9_bsumw")]
 position = Vector2(1612, -132)
 active_floor_stops = [NodePath("PixelFloorStop6"), NodePath("PixelFloorStop5")]
+travel_time = 2
 
 [node name="PixelFloorStop6" parent="Transporters/Elevator4" unique_id=774658696 instance=ExtResource("10_bsumw")]
 position = Vector2(-1319, 31)
+travel_enabled = false
 
 [node name="PixelFloorStop5" parent="Transporters/Elevator4" unique_id=316634137 instance=ExtResource("10_bsumw")]
 position = Vector2(-1320, 126)
