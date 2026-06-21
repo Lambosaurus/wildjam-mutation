@@ -20,10 +20,10 @@ const NEW_MUTANT = preload('res://creatures/mutant/mutant.tscn')
 @export var initial_mutations: Array[Mutation]
 
 @export_group("BOIDS Controls")
-@export var BOIDS_REPULSION = 1000.0
-@export var BOIDS_ATTRACTION = 1500.0
-@export var BOIDS_COHESION = 3.0
-@export var BOIDS_THRESH_MIN = 100.0
+@export var BOIDS_REPULSION = 500.0
+@export var BOIDS_ATTRACTION = 2000.0
+@export var BOIDS_COHESION = 1.0
+@export var BOIDS_THRESH_MIN = 200.0
 @export var BOIDS_THRESH_MAX = 1000.0
 
 @export var health = 100
@@ -169,7 +169,7 @@ func start_boids_action() -> void:
 
 	return start_action(
 		Action.walk,
-		clampf(abs(force.x) / BOIDS_THRESH_MAX, 0.1, 1.0),
+		clampf(abs(force.x) / BOIDS_THRESH_MAX, 0.1, 0.9) + randf_range(0, 0.1),
 		vector_to_direction(force.x)
 	)
 
