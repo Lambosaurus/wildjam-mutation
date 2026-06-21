@@ -22,6 +22,5 @@ func apply_animation_state_to(body_part: BodyPart):
 	body_part.skeleton.animation.play(skeleton.animation.current_animation)
 	body_part.skeleton.animation.seek(skeleton.animation.current_animation_position)
 	
-
 func get_current_animation():
 	return skeleton.animation.current_animation

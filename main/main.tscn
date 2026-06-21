@@ -23,6 +23,7 @@
 [ext_resource type="Resource" uid="uid://irdrkl0ue4od" path="res://creatures/human/types/security_officer.tres" id="15_re7it"]
 [ext_resource type="Resource" uid="uid://droqwktc0jqvp" path="res://creatures/human/types/security_enforcer.tres" id="16_d00gp"]
 [ext_resource type="Resource" uid="uid://cirk3igetj714" path="res://creatures/human/types/boss.tres" id="17_d8vpj"]
+[ext_resource type="Script" uid="uid://bk7xfb1qrwxek" path="res://main/main_camera.gd" id="19_n53tw"]
 
 [node name="Main" type="Node2D" unique_id=634852315 node_paths=PackedStringArray("swat_spawn_point")]
 script = ExtResource("1_3wy1v")
@@ -282,7 +283,9 @@ position = Vector2(769, -98)
 human_type = ExtResource("17_d8vpj")
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=35768897]
+process_mode = 3
 position = Vector2(576, 670)
+script = ExtResource("19_n53tw")
 
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=1429688143]
 process_mode = 3
