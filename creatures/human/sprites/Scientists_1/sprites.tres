@@ -80,27 +80,27 @@ region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24nvh"]
 atlas = ExtResource("3_o6y12")
-region = Rect2(0, 0, 131, 128)
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aano2"]
 atlas = ExtResource("3_o6y12")
-region = Rect2(131, 0, 131, 128)
+region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcypd"]
 atlas = ExtResource("3_o6y12")
-region = Rect2(262, 0, 131, 128)
+region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1t1mv"]
 atlas = ExtResource("3_o6y12")
-region = Rect2(393, 0, 131, 128)
+region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qw6ub"]
 atlas = ExtResource("3_o6y12")
-region = Rect2(524, 0, 131, 128)
+region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qm1mt"]
 atlas = ExtResource("3_o6y12")
-region = Rect2(655, 0, 131, 128)
+region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o6y12"]
 atlas = ExtResource("4_3nhdf")

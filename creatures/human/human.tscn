@@ -34,10 +34,11 @@ shape = SubResource("CapsuleShape2D_ebbsm")
 
 [node name="Spritesheet" type="AnimatedSprite2D" parent="." unique_id=2112778691]
 use_parent_material = true
-position = Vector2(1.9999998, -16.5)
-scale = Vector2(0.5625, 0.5546875)
+position = Vector2(2, -18)
+scale = Vector2(0.6, 0.6)
 sprite_frames = ExtResource("3_lk4ts")
 animation = &"idle"
+speed_scale = 1.6
 
 [node name="SelectionArea" parent="." unique_id=2102157275 node_paths=PackedStringArray("action_target", "highlight_target") instance=ExtResource("2_gnv0q")]
 group = "human"

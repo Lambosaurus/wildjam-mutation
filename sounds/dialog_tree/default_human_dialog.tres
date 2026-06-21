@@ -19,7 +19,15 @@
 [ext_resource type="AudioStream" uid="uid://edyuk30flohf" path="res://sounds/human_sounds/fear_haaaiuioooo.mp3" id="9_ep6f7"]
 [ext_resource type="AudioStream" uid="uid://c48p235j6wo23" path="res://sounds/human_sounds/fear_haaa_dodo_dasito.mp3" id="10_l6jee"]
 [ext_resource type="AudioStream" uid="uid://yvomn6qvprni" path="res://sounds/human_sounds/shimana_sobito.mp3" id="10_owyqi"]
+[ext_resource type="AudioStream" uid="uid://cnh3tiagdee4n" path="res://sounds/human_sounds/bi_do_do_ba_da_bu_do.mp3" id="11_1cnj2"]
+[ext_resource type="AudioStream" uid="uid://6j82ssuk3d7h" path="res://sounds/human_sounds/do_do_do_do.mp3" id="12_1wkdh"]
+[ext_resource type="AudioStream" uid="uid://y66afhmgxtpc" path="res://sounds/human_sounds/eh_he_sotoda.mp3" id="13_domwq"]
+[ext_resource type="AudioStream" uid="uid://bikpkyl3n1ieb" path="res://sounds/human_sounds/gagodo_gareshdi.mp3" id="14_0jarj"]
+[ext_resource type="AudioStream" uid="uid://cpbnfhkj3klq1" path="res://sounds/human_sounds/shio_so_so.mp3" id="15_2q8l8"]
+[ext_resource type="AudioStream" uid="uid://y1bgbd0p7d5t" path="res://sounds/human_sounds/birem_ba_dushda.mp3" id="16_dsc5t"]
+[ext_resource type="AudioStream" uid="uid://c7kb0y1qmgqmn" path="res://sounds/human_sounds/borgus_mmm_bardashun.mp3" id="17_5ckfs"]
 [ext_resource type="AudioStream" uid="uid://cjvq6y4ii1q1q" path="res://sounds/human_sounds/fear_huh_dasou.mp3" id="17_xo8nt"]
+[ext_resource type="AudioStream" uid="uid://cio3rb5sdhqh4" path="res://sounds/human_sounds/bordibordun_ba_didoodun.mp3" id="18_26r33"]
 [ext_resource type="AudioStream" uid="uid://bjm7lhww6bxe6" path="res://sounds/human_sounds/scream_1.mp3" id="18_83jn7"]
 [ext_resource type="AudioStream" uid="uid://bfopx8b40jxt6" path="res://sounds/human_sounds/scream_2.mp3" id="19_owyqi"]
 [ext_resource type="AudioStream" uid="uid://dm36ja6270gnq" path="res://sounds/human_sounds/fear_pirru_patoda.mp3" id="20_0kr53"]
@@ -112,9 +120,147 @@ clip = ExtResource("10_owyqi")
 dialog = "Printers broken again..."
 metadata/_custom_type_script = "uid://bs2lmby8suipk"
 
+[sub_resource type="Resource" id="Resource_726ms"]
+script = ExtResource("2_anr03")
+clip = ExtResource("4_2tvq5")
+dialog = "Does anyone know what goes on in the basement?"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_d2faq"]
+script = ExtResource("2_anr03")
+clip = ExtResource("8_gyeid")
+dialog = "I didn't even know we had a R&D department"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_1ov55"]
+script = ExtResource("2_anr03")
+clip = ExtResource("11_1cnj2")
+dialog = "Who ordered 20 barrels of assorted DNA?"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_m6p2q"]
+script = ExtResource("2_anr03")
+clip = ExtResource("9_83jn7")
+dialog = "An intern tried to bite me yesterday"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_me0cv"]
+script = ExtResource("2_anr03")
+clip = ExtResource("12_1wkdh")
+dialog = "Don't forget, tomorrow is 'bring your gecko to work day'"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_woanp"]
+script = ExtResource("2_anr03")
+clip = ExtResource("13_domwq")
+dialog = "How does this company actually make money?"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_voegr"]
+script = ExtResource("2_anr03")
+clip = ExtResource("14_0jarj")
+dialog = "I didn't even know we had a night shift"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_pv7jg"]
+script = ExtResource("2_anr03")
+clip = ExtResource("10_owyqi")
+dialog = "What does Greg even do?"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_wq0q5"]
+script = ExtResource("2_anr03")
+clip = ExtResource("15_2q8l8")
+dialog = "The microwave is full of tar again"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_xugl4"]
+script = ExtResource("2_anr03")
+clip = ExtResource("8_gyeid")
+dialog = "I need the budget summary on my desk by the morning"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_41e0n"]
+script = ExtResource("2_anr03")
+clip = ExtResource("16_dsc5t")
+dialog = "IT is changing our passwords again"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_vexsf"]
+script = ExtResource("2_anr03")
+clip = ExtResource("6_lwkkh")
+dialog = "I hate this job"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_47w83"]
+script = ExtResource("2_anr03")
+clip = ExtResource("17_5ckfs")
+dialog = "My bi-weekly performance review is tomorrow"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_4s8tj"]
+script = ExtResource("2_anr03")
+clip = ExtResource("3_makg3")
+dialog = "Todd just got promoted to demi chief requisition supervisor"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_rplpg"]
+script = ExtResource("2_anr03")
+clip = ExtResource("4_2tvq5")
+dialog = "Is it normal to get paid in shares?"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_a5dw8"]
+script = ExtResource("2_anr03")
+clip = ExtResource("7_8rsew")
+dialog = "The new interns have terrible work ethic"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_yyg8j"]
+script = ExtResource("2_anr03")
+clip = ExtResource("8_gyeid")
+dialog = "I haven't drunk enough coffee for this"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_mscpu"]
+script = ExtResource("2_anr03")
+clip = ExtResource("5_gf1mx")
+dialog = "Did you see the game yesterday?"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_2k4lf"]
+script = ExtResource("2_anr03")
+clip = ExtResource("16_dsc5t")
+dialog = "Do you think we have a fight club?"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_ilq2q"]
+script = ExtResource("2_anr03")
+clip = ExtResource("11_1cnj2")
+dialog = "Steve blew my budgets again"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_idggl"]
+script = ExtResource("2_anr03")
+clip = ExtResource("6_lwkkh")
+dialog = "Two pounds of wheat for a days wages, and do not damage the oil and wine!"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_u5vyg"]
+script = ExtResource("2_anr03")
+clip = ExtResource("9_83jn7")
+dialog = "I love my job"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
+[sub_resource type="Resource" id="Resource_2oxhu"]
+script = ExtResource("2_anr03")
+clip = ExtResource("18_26r33")
+dialog = "We need a new turbo encabulator"
+metadata/_custom_type_script = "uid://bs2lmby8suipk"
+
 [sub_resource type="Resource" id="Resource_kw76m"]
 script = ExtResource("1_pkxe5")
-speeches = Array[ExtResource("2_anr03")]([SubResource("Resource_1jmd3"), SubResource("Resource_xnll1"), SubResource("Resource_06ope"), SubResource("Resource_5uujc"), SubResource("Resource_1cnj2"), SubResource("Resource_1wkdh"), SubResource("Resource_domwq"), SubResource("Resource_0jarj")])
+speeches = Array[ExtResource("2_anr03")]([SubResource("Resource_1jmd3"), SubResource("Resource_xnll1"), SubResource("Resource_06ope"), SubResource("Resource_5uujc"), SubResource("Resource_1cnj2"), SubResource("Resource_1wkdh"), SubResource("Resource_domwq"), SubResource("Resource_0jarj"), SubResource("Resource_726ms"), SubResource("Resource_d2faq"), SubResource("Resource_1ov55"), SubResource("Resource_m6p2q"), SubResource("Resource_me0cv"), SubResource("Resource_woanp"), SubResource("Resource_voegr"), SubResource("Resource_pv7jg"), SubResource("Resource_wq0q5"), SubResource("Resource_xugl4"), SubResource("Resource_41e0n"), SubResource("Resource_vexsf"), SubResource("Resource_47w83"), SubResource("Resource_4s8tj"), SubResource("Resource_rplpg"), SubResource("Resource_a5dw8"), SubResource("Resource_yyg8j"), SubResource("Resource_mscpu"), SubResource("Resource_2k4lf"), SubResource("Resource_ilq2q"), SubResource("Resource_idggl"), SubResource("Resource_u5vyg"), SubResource("Resource_2oxhu")])
 metadata/_custom_type_script = "uid://b8pnktwqr4wnb"
 
 [sub_resource type="Resource" id="Resource_l6jee"]
